@@ -34,6 +34,8 @@ func init() {
 	var timeout time.Duration
 
 	exportCmd.Flags().DurationVar(&timeout, "timeout", 2*time.Minute, "HTTP timeout for API requests")
+
+	_ = viper.BindPFlag("timeout", exportCmd.Flags().Lookup("timeout"))
 }
 
 func runExport(cmd *cobra.Command, args []string) error {
