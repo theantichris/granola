@@ -46,4 +46,19 @@ func TestGetSupabase(t *testing.T) {
 			t.Errorf("expected error %v, got %v", ErrWrapperJSON, err)
 		}
 	})
+
+	t.Run("returns error for bad token JSON", func(t *testing.T) {
+		t.Parallel()
+
+		badTokenJSON := `{"workos_tokens": "{","session_id": "session_id_123",  "user_info": "{}"}`
+
+		_, err := getTokens([]byte(badTokenJSON), logger)
+		if err == nil {
+			t.Errorf("expected error, not nil")
+		}
+
+		if !errors.Is(err, ErrTokensJSON) {
+			t.Errorf("expected error %v, got %v", ErrTokensJSON, err)
+		}
+	})
 }
