@@ -4,14 +4,16 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"os"
 	"strings"
 	"time"
 
+	"github.com/spf13/afero"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 	"github.com/theantichris/granola/internal/api"
 )
+
+var appFS = afero.NewOsFs()
 
 var (
 	ErrSupabaseEmpty  = errors.New("supabase cannot be empty")
@@ -40,13 +42,11 @@ func init() {
 func runExport(cmd *cobra.Command, args []string) error {
 	filename := viper.GetString("supabase")
 
-	// Check file
 	if strings.TrimSpace(filename) == "" {
 		return fmt.Errorf("%w: set the path to supabase.json via flag, config file, or env variable", ErrSupabaseEmpty)
 	}
 
-	// Get supabase.json file contents
-	supabaseContent, err := os.ReadFile(filename)
+	supabaseContent, err := afero.ReadFile(appFS, filename)
 	if err != nil {
 		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
 	}
@@ -59,7 +59,6 @@ func runExport(cmd *cobra.Command, args []string) error {
 		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
 	}
 
-	// Print documents to stdout
 	fmt.Printf("%v", documents)
 
 	return nil
