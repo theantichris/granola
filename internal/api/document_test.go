@@ -59,4 +59,25 @@ func TestGetDocuments(t *testing.T) {
 			t.Errorf("expected error %v, got %v", ErrDocumentAPI, err)
 		}
 	})
+
+	t.Run("returns error for bad JSON", func(t *testing.T) {
+		t.Parallel()
+
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte("`invalid JSON`"))
+		}))
+		defer testServer.Close()
+
+		httpClient := &http.Client{Transport: testServer.Client().Transport}
+
+		_, err := GetDocuments(testServer.URL, httpClient, logger)
+		if err == nil {
+			t.Fatal("expected error getting documents, got nil")
+		}
+
+		if !errors.Is(err, ErrDocumentJSON) {
+			t.Errorf("expected error %v, got %v", ErrDocumentJSON, err)
+		}
+	})
 }
