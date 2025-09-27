@@ -10,8 +10,8 @@ import (
 )
 
 var (
-	ErrWrapperJSON         = errors.New("couldn't unmarshal wrapper JSON")
-	ErrTokensJSON          = errors.New("couldn't unmarshal token JSON")
+	ErrWrapperJSON         = errors.New("failed to unmarshal wrapper JSON")
+	ErrTokensJSON          = errors.New("failed to unmarshal token JSON")
 	ErrAccessTokenNotFound = errors.New("access token not found")
 )
 
@@ -36,7 +36,7 @@ func getAccessToken(file []byte, logger *log.Logger) (string, error) {
 
 	var tokens Tokens
 	if err := json.Unmarshal([]byte(wrapper.Tokens), &tokens); err != nil {
-		logger.Error("couldn't unmarshal token JSON", "error", err)
+		logger.Error(ErrTokensJSON.Error(), "error", err)
 
 		return "", fmt.Errorf("%w: %s", ErrTokensJSON, err)
 	}

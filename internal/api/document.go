@@ -16,9 +16,9 @@ const (
 )
 
 var (
-	ErrDocumentAPI  = errors.New("couldn't get documents")
-	ErrDocumentJSON = errors.New("couldn't unmarshal document JSON")
-	ErrResponseBody = errors.New("couldn't read response body")
+	ErrDocumentAPI  = errors.New("failed to get documents")
+	ErrDocumentJSON = errors.New("failed to unmarshal document JSON")
+	ErrResponseBody = errors.New("failed to read response body")
 )
 
 // GranolaResponse contains the documents retrieved from Granola.
