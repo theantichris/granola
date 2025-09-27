@@ -23,7 +23,7 @@ func Execute() {
 	err := RootCmd.Execute()
 	if err != nil {
 		Logger.Error("error running command", "error", err)
-		os.Exit(1) // TODO: Do I need to return an error here?
+		os.Exit(1)
 	}
 }
 
@@ -39,7 +39,7 @@ func init() {
 	RootCmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug mode")
 	RootCmd.PersistentFlags().StringVar(&supabase, "supabase", "", "path to supabase.json")
 
-	_ = viper.BindPFlag("config", RootCmd.PersistentFlags().Lookup("configFile"))
+	_ = viper.BindPFlag("config", RootCmd.PersistentFlags().Lookup("config"))
 	_ = viper.BindPFlag("debug", RootCmd.PersistentFlags().Lookup("debug"))
 	_ = viper.BindPFlag("supabase", RootCmd.PersistentFlags().Lookup("supabase"))
 }
@@ -54,7 +54,7 @@ func initConfig() {
 		Logger.Debug(".env file loaded successfully")
 	}
 
-	configFile := viper.GetString("configFile")
+	configFile := viper.GetString("config")
 
 	if configFile != "" {
 		viper.SetConfigFile(configFile)
@@ -83,8 +83,7 @@ func initConfig() {
 	}
 
 	if viper.GetBool("debug") {
-		debug := true
-		initLogger(debug)
+		initLogger(true)
 	}
 }
 
