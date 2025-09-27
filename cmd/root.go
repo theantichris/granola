@@ -13,7 +13,6 @@ var (
 	configFile string
 	Debug      bool
 	Logger     *log.Logger
-	EnvVar     string
 	Supabase   string
 )
 
