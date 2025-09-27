@@ -27,7 +27,7 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: testServer.Client().Transport}
 
-		actual, err := GetDocuments(testServer.URL, httpClient)
+		actual, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), httpClient)
 		if err != nil {
 			t.Fatalf("expected no error getting documents, got %v", err)
 		}
@@ -46,7 +46,7 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: &errorTransport{}}
 
-		_, err := GetDocuments("http://test.dev", httpClient)
+		_, err := GetDocuments("http://test.dev", []byte(accessTokenJSON), httpClient)
 		if err == nil {
 			t.Fatal("expected error getting documents, got nil")
 		}
@@ -67,13 +67,29 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: testServer.Client().Transport}
 
-		_, err := GetDocuments(testServer.URL, httpClient)
+		_, err := GetDocuments(testServer.URL, []byte(badTokenJSON), httpClient)
 		if err == nil {
 			t.Fatal("expected error getting documents, got nil")
 		}
 
-		if !errors.Is(err, ErrDocumentJSON) {
+		if !errors.Is(err, ErrTokensJSON) {
 			t.Errorf("expected error %v, got %v", ErrDocumentJSON, err)
+		}
+	})
+
+	t.Run("returns error for HTTP failure", func(t *testing.T) {
+		t.Parallel()
+
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {}))
+		testServer.Close()
+
+		_, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), http.DefaultClient)
+		if err == nil {
+			t.Fatal("expected error getting documents, got nil")
+		}
+
+		if !errors.Is(err, ErrDocumentAPI) {
+			t.Errorf("expected error %v, got %v", ErrDocumentAPI, err)
 		}
 	})
 }
