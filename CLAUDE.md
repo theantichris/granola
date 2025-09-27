@@ -85,6 +85,11 @@ The project follows a modular Go CLI application structure:
   - Debug mode can be enabled via `--debug` flag or config
   - Logger includes timestamp and caller information
   - Log levels: Debug, Info, Warn, Error (defaults to Warn, Debug with debug flag)
+  - **Logging Best Practices**:
+    - Log errors only at the command level (cmd package) where they are handled
+    - Internal packages should return errors without logging to avoid duplicates
+    - Commands return errors to Cobra rather than logging them (Cobra handles display)
+    - Debug/Info logging can occur at any level for progress tracking
 
 ## Key Dependencies
 
@@ -145,3 +150,6 @@ The project follows a modular Go CLI application structure:
 - Handle network errors and timeouts
 - Provide clear error messages for users
 - Support retry logic for failed API calls
+- Follow Go best practice: "log errors where they're handled, not where they're created"
+- Internal packages return wrapped errors without logging
+- Command functions return errors to Cobra for user display

@@ -130,6 +130,22 @@ clean, readable Markdown files with preserved metadata.
 - Data integrity verification
 - Clear error reporting with actionable messages
 
+### Logging Strategy
+
+#### Error Logging Best Practices
+
+- **Log Once**: Log errors only where they are handled (typically in cmd package), not where they are created
+- **Internal Packages**: Return errors without logging to prevent duplicate log entries
+- **Command Functions**: Return errors to Cobra framework rather than logging directly - Cobra handles error display to users
+- **Avoid Duplication**: Since Cobra prints returned errors to stderr, logging them in commands creates duplicate output
+
+#### Appropriate Logging Locations
+
+- **Debug/Info Logging**: Can occur at any level for progress tracking and debugging
+- **Error Logging**: Only at the top of the call stack where errors are actually handled
+- **Library Code**: Never log errors in internal packages - just wrap and return them
+- **Background Tasks**: Exception where error logging is required since there's no caller to return to
+
 ## Technical Architecture
 
 ### System Architecture
