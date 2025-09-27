@@ -31,7 +31,7 @@ type Document struct {
 	Title string `json:"title"`
 }
 
-// GetDocuments gets the respons from the Granola API and returns a slice of Documents.
+// GetDocuments gets the response from the Granola API and returns a slice of Documents.
 func GetDocuments(url string, file []byte, httpClient *http.Client) ([]Document, error) {
 	accessToken, err := getAccessToken(file)
 	if err != nil {
