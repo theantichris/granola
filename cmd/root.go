@@ -14,13 +14,14 @@ var (
 	Debug      bool
 	Logger     *log.Logger
 	EnvVar     string
+	Supabase   string
 )
 
 // RootCmd is the base command when called without any subcommands.
 var RootCmd = &cobra.Command{
-	Use:   "example",
-	Short: "An example application.",
-	Long:  "An example application, it doesn't do anything.",
+	Use:   "granola",
+	Short: "An application for exporting Granola notes.",
+	Long:  "An application for exporting Granola notes to Markdown files.",
 }
 
 // Execute adds initialization.
@@ -38,8 +39,10 @@ func init() {
 
 	RootCmd.PersistentFlags().StringVar(&configFile, "config", "", "config file (default is $HOME/.config.toml)")
 	RootCmd.PersistentFlags().BoolVar(&Debug, "debug", false, "enable debug mode")
+	RootCmd.PersistentFlags().StringVar(&Supabase, "supabase", "", "path to supabase.json")
 
 	_ = viper.BindPFlag("debug", RootCmd.PersistentFlags().Lookup("debug"))
+	_ = viper.BindPFlag("supabase", RootCmd.PersistentFlags().Lookup("supabase"))
 }
 
 // initConfig loads env variables and the config file.

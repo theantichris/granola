@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/charmbracelet/fang"
-	"github.com/theantichris/go-template/cmd"
+	"github.com/theantichris/granola/cmd"
 )
 
 func main() {

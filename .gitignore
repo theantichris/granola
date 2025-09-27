@@ -4,7 +4,7 @@
 *.dll
 *.so
 *.dylib
-go-template
+granola
 
 # Test binary, built with `go test -c`
 *.test
