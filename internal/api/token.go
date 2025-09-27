@@ -20,25 +20,24 @@ type Wrapper struct {
 
 // Tokens holds the access token and related information.
 type Tokens struct {
-	ExternalID string `json:"external_id"`
+	AccessToken string `json:"access_token"`
 }
 
-// getTokens takes the JSON data and returns the Granola token information.
-func getTokens(file []byte, logger *log.Logger) (Tokens, error) {
+// getAccessToken takes the JSON from supabase.json and returns the Granola access token.
+func getAccessToken(file []byte, logger *log.Logger) (string, error) {
 	var wrapper Wrapper
 	if err := json.Unmarshal(file, &wrapper); err != nil {
 		logger.Error(ErrWrapperJSON.Error(), "error", err)
 
-		return Tokens{}, fmt.Errorf("%w: %s", ErrWrapperJSON, err)
+		return "", fmt.Errorf("%w: %s", ErrWrapperJSON, err)
 	}
 
 	var tokens Tokens
-
 	if err := json.Unmarshal([]byte(wrapper.Tokens), &tokens); err != nil {
 		logger.Error("couldn't unmarshal token JSON", "error", err)
 
-		return Tokens{}, fmt.Errorf("%w: %s", ErrTokensJSON, err)
+		return "", fmt.Errorf("%w: %s", ErrTokensJSON, err)
 	}
 
-	return tokens, nil
+	return tokens.AccessToken, nil
 }

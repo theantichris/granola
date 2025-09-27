@@ -10,25 +10,21 @@ import (
 
 var logger *log.Logger = log.New(io.Discard)
 
-const testJSON = `{
-  "workos_tokens": "{\"external_id\":\"external_id_123\",\"access_token\":\"access_token_123\",\"expires_in\":43199,\"refresh_token\":\"refresh_token_123\",\"token_type\":\"Bearer\",\"obtained_at\":1758926490172,\"session_id\":\"session_id_123\"}",
-  "session_id": "session_id_123",
-  "user_info": "{\"id\":\"user_id_123\",\"email\":\"email_123@example.com\",\"user_metadata\":{\"name\":\"name_123\",\"picture\":\"picture_url_123\",\"hd\":\"domain_123.com\"},\"signed_in_on_platforms\":{\"macos\":true,\"windows\":true,\"ios\":true},\"dub_id\":null,\"signup_platform\":null,\"google_ads_click_id\":null,\"facebook_ads_click_id\":null}"
-}`
-
-func TestGetSupabase(t *testing.T) {
-	t.Run("gets the supabase information", func(t *testing.T) {
+func TestGetAccessToken(t *testing.T) {
+	t.Run("returns the access token", func(t *testing.T) {
 		t.Parallel()
 
-		actual, err := getTokens([]byte(testJSON), logger)
+		testJSON := `{"workos_tokens": "{\"access_token\":\"access_token_123\"}"}`
+
+		actual, err := getAccessToken([]byte(testJSON), logger)
 		if err != nil {
 			t.Fatalf("expect no error, got %v", err)
 		}
 
-		expected := Tokens{ExternalID: "external_id_123"}
+		expected := "access_token_123"
 
-		if actual.ExternalID != expected.ExternalID {
-			t.Errorf("expected external ID %q, got %q", expected.ExternalID, actual.ExternalID)
+		if actual != expected {
+			t.Errorf("expected access token %q, got %q", expected, actual)
 		}
 	})
 
@@ -37,7 +33,7 @@ func TestGetSupabase(t *testing.T) {
 
 		badWrapperJSON := "{"
 
-		_, err := getTokens([]byte(badWrapperJSON), logger)
+		_, err := getAccessToken([]byte(badWrapperJSON), logger)
 		if err == nil {
 			t.Fatalf("expected error, got nil")
 		}
@@ -52,7 +48,7 @@ func TestGetSupabase(t *testing.T) {
 
 		badTokenJSON := `{"workos_tokens": "{","session_id": "session_id_123",  "user_info": "{}"}`
 
-		_, err := getTokens([]byte(badTokenJSON), logger)
+		_, err := getAccessToken([]byte(badTokenJSON), logger)
 		if err == nil {
 			t.Errorf("expected error, not nil")
 		}
