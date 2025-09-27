@@ -14,9 +14,11 @@ A CLI tool for exporting your Granola notes to Markdown files.
 
 - 📝 **Export Granola Notes** - Export all your notes from the Granola API
 - 🔄 **JSON to Markdown** - Automatic conversion from JSON format to clean Markdown
-- 🏷️ **Metadata Preservation** - Maintains note metadata including creation dates and tags
+- 🏷️ **Metadata Preservation** - Maintains note metadata including creation
+ dates and tags
 - 🔐 **Bearer Token Auth** - Secure API authentication using bearer tokens
-- ⚙️ **Flexible Configuration** - Configure via environment variables, config files, or flags
+- ⚙️ **Flexible Configuration** - Configure via environment variables, config
+ files, or flags
 - 📁 **Batch Export** - Export all notes in a single command
 - 🚀 **Fast and Efficient** - Built with Go for optimal performance
 

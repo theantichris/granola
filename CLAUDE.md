@@ -118,12 +118,14 @@ The project follows a modular Go CLI application structure:
 ## Granola-Specific Implementation Notes
 
 ### API Integration
+
 - Bearer token authentication required for all API calls
 - Token should be stored securely (environment variable recommended)
 - API base URL is configurable for different environments
 - Handle API rate limiting and error responses gracefully
 
 ### Export Process
+
 1. Authenticate with Granola API using bearer token
 2. Fetch all notes from the API (returns JSON)
 3. Parse JSON response into Go structs
@@ -132,11 +134,13 @@ The project follows a modular Go CLI application structure:
 6. Save files to specified output directory
 
 ### File Naming
+
 - Use note title or ID for filename
 - Sanitize filenames for filesystem compatibility
 - Handle duplicate names appropriately
 
 ### Error Handling
+
 - Validate API token before making requests
 - Handle network errors and timeouts
 - Provide clear error messages for users

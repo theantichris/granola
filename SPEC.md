@@ -134,7 +134,7 @@ clean, readable Markdown files with preserved metadata.
 
 ### System Architecture
 
-```
+```text
 ┌─────────────┐     ┌──────────────┐     ┌─────────────┐
 │   CLI       │────▶│ API Client   │────▶│ Granola API │
 │  (Cobra)    │     │ (HTTP/Auth)  │     │   (JSON)    │
@@ -176,6 +176,7 @@ clean, readable Markdown files with preserved metadata.
 ### Data Model
 
 #### Note Structure (JSON from API)
+
 ```json
 {
   "id": "string",
@@ -191,6 +192,7 @@ clean, readable Markdown files with preserved metadata.
 ```
 
 #### Markdown Output Format
+
 ```markdown
 ---
 id: note-id
@@ -208,15 +210,18 @@ Note content in Markdown format...
 
 #### Granola API Endpoints
 
-**Authentication**
+Authentication
+
 - Header: `Authorization: Bearer <token>`
 
-**Get All Notes**
+Get All Notes
+
 - Endpoint: `GET /api/notes`
 - Response: JSON array of note objects
 - Pagination: Handle via query parameters if needed
 
-**Error Responses**
+Error Responses
+
 - 401: Invalid or missing authentication token
 - 429: Rate limit exceeded
 - 500: Server error
@@ -278,7 +283,7 @@ Not applicable - this is a CLI-only tool with no interactive TUI components.
 ## Risks and Mitigation
 
 | Risk                      | Impact | Probability | Mitigation Strategy                           |
-|---------------------------|--------|-------------|------------------------------------------------|
+|---------------------------|--------|-------------|-----------------------------------------------|
 | API changes/deprecation   | High   | Low         | Version API calls, maintain compatibility     |
 | Rate limiting             | Medium | Medium      | Implement retry logic with exponential backoff|
 | Large note collections    | Medium | Medium      | Stream processing, pagination support         |
@@ -346,7 +351,7 @@ Not applicable - this is a CLI-only tool with no interactive TUI components.
 
 ## Glossary
 
-| Term          | Definition                                                      |
+| Term          | Definition                                                     |
 |---------------|----------------------------------------------------------------|
 | Bearer Token  | Authentication token used to access Granola API                |
 | Frontmatter   | YAML metadata block at the beginning of Markdown files         |
