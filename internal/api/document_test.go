@@ -4,6 +4,7 @@ import (
 	"errors"
 	"net/http"
 	"net/http/httptest"
+	"strings"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
@@ -90,6 +91,30 @@ func TestGetDocuments(t *testing.T) {
 
 		if !errors.Is(err, ErrDocumentAPI) {
 			t.Errorf("expected error %v, got %v", ErrDocumentAPI, err)
+		}
+	})
+
+	t.Run("returns error for non-2xx status", func(t *testing.T) {
+		t.Parallel()
+
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusUnauthorized)
+		}))
+		defer testServer.Close()
+
+		httpClient := &http.Client{Transport: testServer.Client().Transport}
+
+		_, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), httpClient)
+		if err == nil {
+			t.Fatal("expected error getting documents, got nil")
+		}
+
+		if !errors.Is(err, ErrDocumentAPI) {
+			t.Errorf("expected error %v, got %v", ErrDocumentAPI, err)
+		}
+
+		if !strings.Contains(err.Error(), "401 Unauthorized") {
+			t.Errorf("expected error containing %q, got %q", "401 Unauthorized", err.Error())
 		}
 	})
 }
