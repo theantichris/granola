@@ -57,4 +57,19 @@ func TestGetAccessToken(t *testing.T) {
 			t.Errorf("expected error %v, got %v", ErrTokensJSON, err)
 		}
 	})
+
+	t.Run("returns error if no access token is found", func(t *testing.T) {
+		t.Parallel()
+
+		testJSON := `{"workos_tokens": "{\"session_id\":\"session_id_123\"}"}`
+
+		_, err := getAccessToken([]byte(testJSON), logger)
+		if err == nil {
+			t.Fatal("expected error, got nil")
+		}
+
+		if !errors.Is(err, ErrAccessTokenNotFound) {
+			t.Errorf("expected error %v, got %v", ErrAccessTokenNotFound, err)
+		}
+	})
 }

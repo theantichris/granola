@@ -4,13 +4,15 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"strings"
 
 	"github.com/charmbracelet/log"
 )
 
 var (
-	ErrWrapperJSON = errors.New("couldn't unmarshal wrapper JSON")
-	ErrTokensJSON  = errors.New("couldn't unmarshal token JSON")
+	ErrWrapperJSON         = errors.New("couldn't unmarshal wrapper JSON")
+	ErrTokensJSON          = errors.New("couldn't unmarshal token JSON")
+	ErrAccessTokenNotFound = errors.New("access token not found")
 )
 
 // Wrapper holds the data from Granola's supabase.json file.
@@ -37,6 +39,12 @@ func getAccessToken(file []byte, logger *log.Logger) (string, error) {
 		logger.Error("couldn't unmarshal token JSON", "error", err)
 
 		return "", fmt.Errorf("%w: %s", ErrTokensJSON, err)
+	}
+
+	if strings.TrimSpace(tokens.AccessToken) == "" {
+		logger.Error(ErrAccessTokenNotFound.Error())
+
+		return "", ErrAccessTokenNotFound
 	}
 
 	return tokens.AccessToken, nil
