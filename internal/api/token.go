@@ -5,8 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"strings"
-
-	"github.com/charmbracelet/log"
 )
 
 var (
@@ -26,24 +24,18 @@ type Tokens struct {
 }
 
 // getAccessToken takes the JSON from supabase.json and returns the Granola access token.
-func getAccessToken(file []byte, logger *log.Logger) (string, error) {
+func getAccessToken(file []byte) (string, error) {
 	var wrapper Wrapper
 	if err := json.Unmarshal(file, &wrapper); err != nil {
-		logger.Error(ErrWrapperJSON.Error(), "error", err)
-
 		return "", fmt.Errorf("%w: %s", ErrWrapperJSON, err)
 	}
 
 	var tokens Tokens
 	if err := json.Unmarshal([]byte(wrapper.Tokens), &tokens); err != nil {
-		logger.Error(ErrTokensJSON.Error(), "error", err)
-
 		return "", fmt.Errorf("%w: %s", ErrTokensJSON, err)
 	}
 
 	if strings.TrimSpace(tokens.AccessToken) == "" {
-		logger.Error(ErrAccessTokenNotFound.Error())
-
 		return "", ErrAccessTokenNotFound
 	}
 
