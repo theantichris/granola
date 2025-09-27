@@ -8,9 +8,9 @@ import (
 	"github.com/charmbracelet/log"
 )
 
-var logger *log.Logger = log.New(io.Discard)
-
 func TestGetAccessToken(t *testing.T) {
+	logger := log.New(io.Discard)
+
 	t.Run("returns the access token", func(t *testing.T) {
 		t.Parallel()
 

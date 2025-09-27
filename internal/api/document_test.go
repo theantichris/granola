@@ -1,16 +1,18 @@
 package api
 
 import (
-	"encoding/json"
 	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
+	"github.com/charmbracelet/log"
 	"github.com/google/go-cmp/cmp"
 )
 
 func TestGetDocuments(t *testing.T) {
+	logger := log.New(io.Discard)
+
 	t.Run("gets the Granola documents", func(t *testing.T) {
 		t.Parallel()
 
@@ -22,27 +24,13 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: testServer.Client().Transport}
 
-		response, err := httpClient.Get(testServer.URL)
+		actual, err := GetDocuments(testServer.URL, httpClient, logger)
 		if err != nil {
-			t.Fatalf("expected no error sending HTTP request, got %v", err)
+			t.Fatalf("expected no error getting documents, got %v", err)
 		}
 
-		responseBody, err := io.ReadAll(response.Body)
-		if err != nil {
-			t.Fatalf("expected no error reading response body, got %v", err)
-		}
-		defer response.Body.Close()
-
-		var actual GranolaResponse
-		err = json.Unmarshal(responseBody, &actual)
-		if err != nil {
-			t.Fatalf("expected no error unmarshaling response, got %v", err)
-		}
-
-		expected := GranolaResponse{
-			Documents: []Document{
-				{ID: "abc123", Title: "Test Meeting"},
-			},
+		expected := []Document{
+			{ID: "abc123", Title: "Test Meeting"},
 		}
 
 		if !cmp.Equal(actual, expected) {
