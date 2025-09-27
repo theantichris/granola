@@ -1,12 +1,25 @@
 package cmd
 
 import (
+	"errors"
+	"fmt"
+	"net/http"
+	"os"
+	"strings"
 	"time"
 
 	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
+	"github.com/theantichris/granola/internal/api"
 )
 
 var timeout time.Duration
+
+var (
+	ErrSupabaseEmpty  = errors.New("supabase cannot be empty")
+	ErrSupabaseRead   = errors.New("failed to read supabase.json")
+	ErrDocumentExport = errors.New("failed to export documents")
+)
 
 // exportCmd is the command to export Granola notes.
 var exportCmd = &cobra.Command{
@@ -25,9 +38,44 @@ func init() {
 }
 
 func runExport(cmd *cobra.Command, args []string) error {
-	// Check for supabase config value
-	// Read supabase file
-	// Get token
-	// Print token to stdout
+	supabaseFile := viper.GetString("supabase")
+
+	// Check file
+	if strings.TrimSpace(supabaseFile) == "" {
+		Logger.Error(ErrSupabaseEmpty)
+
+		return fmt.Errorf("%w: set the path to supabase.json via flag, config file, or env variable", ErrSupabaseEmpty)
+	}
+
+	// Get supabase.json file contents
+	supabaseContent, err := getSupabaseContent(supabaseFile)
+	if err != nil {
+		Logger.Error(ErrDocumentExport.Error(), "error", err)
+
+		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
+	}
+
+	// Get Documents
+	httpClient := http.Client{Timeout: timeout}
+	documents, err := api.GetDocuments("https://api.granola.ai/v2/get-documents", supabaseContent, &httpClient)
+	if err != nil {
+		Logger.Error(ErrDocumentExport.Error(), "error", err)
+
+		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
+	}
+
+	// Print documents to stdout
+	fmt.Printf("%v", documents)
+
 	return nil
+}
+
+// getSupabaseContent reads the supabase.json file and returns the content as []byte.
+func getSupabaseContent(filename string) ([]byte, error) {
+	content, err := os.ReadFile(filename)
+	if err != nil {
+		return nil, fmt.Errorf("%w: %s", ErrSupabaseRead, err)
+	}
+
+	return content, nil
 }
