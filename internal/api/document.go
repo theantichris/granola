@@ -6,8 +6,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-
-	"github.com/charmbracelet/log"
 )
 
 const (
@@ -33,7 +31,7 @@ type Document struct {
 }
 
 // GetDocuments gets the respons from the Granola API and returns a slice of Documents.
-func GetDocuments(url string, httpClient *http.Client, logger *log.Logger) ([]Document, error) {
+func GetDocuments(url string, httpClient *http.Client) ([]Document, error) {
 	// TODO: Get access token, check for err.
 	// TODO: Create HTTP request.
 	// TODO: Set headers.
@@ -41,8 +39,6 @@ func GetDocuments(url string, httpClient *http.Client, logger *log.Logger) ([]Do
 	// TODO: Refactor to use request.
 	response, err := httpClient.Get(url)
 	if err != nil {
-		logger.Error(ErrDocumentAPI.Error(), "error", err)
-
 		return []Document{}, fmt.Errorf("%w: %s", ErrDocumentAPI, err)
 	}
 
@@ -50,8 +46,6 @@ func GetDocuments(url string, httpClient *http.Client, logger *log.Logger) ([]Do
 
 	responseBody, err := io.ReadAll(response.Body)
 	if err != nil {
-		logger.Error(ErrResponseBody.Error(), "error", err)
-
 		return []Document{}, fmt.Errorf("%w: %s", ErrResponseBody, err)
 	}
 
@@ -61,8 +55,6 @@ func GetDocuments(url string, httpClient *http.Client, logger *log.Logger) ([]Do
 
 	var granolaResponse GranolaResponse
 	if err = json.Unmarshal(responseBody, &granolaResponse); err != nil {
-		logger.Error(ErrDocumentJSON, "error", err)
-
 		return []Document{}, fmt.Errorf("%w: %s", ErrDocumentJSON, err)
 	}
 

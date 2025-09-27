@@ -2,12 +2,10 @@ package api
 
 import (
 	"errors"
-	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 
-	"github.com/charmbracelet/log"
 	"github.com/google/go-cmp/cmp"
 )
 
@@ -18,8 +16,6 @@ func (e *errorTransport) RoundTrip(*http.Request) (*http.Response, error) {
 }
 
 func TestGetDocuments(t *testing.T) {
-	logger := log.New(io.Discard)
-
 	t.Run("gets the Granola documents", func(t *testing.T) {
 		t.Parallel()
 
@@ -31,7 +27,7 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: testServer.Client().Transport}
 
-		actual, err := GetDocuments(testServer.URL, httpClient, logger)
+		actual, err := GetDocuments(testServer.URL, httpClient)
 		if err != nil {
 			t.Fatalf("expected no error getting documents, got %v", err)
 		}
@@ -50,7 +46,7 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: &errorTransport{}}
 
-		_, err := GetDocuments("http://test.dev", httpClient, logger)
+		_, err := GetDocuments("http://test.dev", httpClient)
 		if err == nil {
 			t.Fatal("expected error getting documents, got nil")
 		}
@@ -71,7 +67,7 @@ func TestGetDocuments(t *testing.T) {
 
 		httpClient := &http.Client{Transport: testServer.Client().Transport}
 
-		_, err := GetDocuments(testServer.URL, httpClient, logger)
+		_, err := GetDocuments(testServer.URL, httpClient)
 		if err == nil {
 			t.Fatal("expected error getting documents, got nil")
 		}
