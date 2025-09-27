@@ -64,7 +64,7 @@ func initConfig() {
 
 		viper.AddConfigPath(home)
 		viper.AddConfigPath(".")
-		viper.SetConfigName(".config")
+		viper.SetConfigName(".granola")
 		viper.SetConfigType("toml")
 	}
 
