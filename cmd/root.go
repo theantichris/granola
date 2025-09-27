@@ -22,7 +22,8 @@ var RootCmd = &cobra.Command{
 func Execute() {
 	err := RootCmd.Execute()
 	if err != nil {
-		Logger.Error("error running command", "error", err)
+		Logger.Error("error running "+RootCmd.Use, "error", err)
+
 		os.Exit(1)
 	}
 }

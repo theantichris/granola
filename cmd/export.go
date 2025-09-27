@@ -13,8 +13,6 @@ import (
 	"github.com/theantichris/granola/internal/api"
 )
 
-var timeout time.Duration
-
 var (
 	ErrSupabaseEmpty  = errors.New("supabase cannot be empty")
 	ErrSupabaseRead   = errors.New("failed to read supabase.json")
@@ -27,14 +25,15 @@ var exportCmd = &cobra.Command{
 	Short: "Export Granola notes to Markdown.",
 	Long:  "Export Granola notes to Markdown.",
 	RunE:  runExport,
-	Args:  cobra.ArbitraryArgs,
 }
 
 // init initializes the export command.
 func init() {
 	RootCmd.AddCommand(exportCmd)
 
-	exportCmd.Flags().DurationVar(&timeout, "timout", 2*time.Minute, "HTTP timeout for API requests")
+	var timeout time.Duration
+
+	exportCmd.Flags().DurationVar(&timeout, "timeout", 2*time.Minute, "HTTP timeout for API requests")
 }
 
 func runExport(cmd *cobra.Command, args []string) error {
@@ -42,25 +41,20 @@ func runExport(cmd *cobra.Command, args []string) error {
 
 	// Check file
 	if strings.TrimSpace(supabaseFile) == "" {
-		Logger.Error(ErrSupabaseEmpty)
-
 		return fmt.Errorf("%w: set the path to supabase.json via flag, config file, or env variable", ErrSupabaseEmpty)
 	}
 
 	// Get supabase.json file contents
 	supabaseContent, err := getSupabaseContent(supabaseFile)
 	if err != nil {
-		Logger.Error(ErrDocumentExport.Error(), "error", err)
-
 		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
 	}
 
-	// Get Documents
+	// TODO: Add URL to config.
+	timeout := viper.GetDuration("timeout")
 	httpClient := http.Client{Timeout: timeout}
 	documents, err := api.GetDocuments("https://api.granola.ai/v2/get-documents", supabaseContent, &httpClient)
 	if err != nil {
-		Logger.Error(ErrDocumentExport.Error(), "error", err)
-
 		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
 	}
 

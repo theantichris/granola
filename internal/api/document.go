@@ -54,6 +54,10 @@ func GetDocuments(url string, file []byte, httpClient *http.Client) ([]Document,
 		return []Document{}, fmt.Errorf("%w: %s", ErrDocumentAPI, err)
 	}
 
+	defer func() {
+		_ = response.Body.Close()
+	}()
+
 	if response.StatusCode/100 != 2 {
 		return []Document{}, fmt.Errorf("%w: status=%s", ErrDocumentAPI, response.Status)
 	}
@@ -62,10 +66,6 @@ func GetDocuments(url string, file []byte, httpClient *http.Client) ([]Document,
 	if err != nil {
 		return []Document{}, fmt.Errorf("%w: %s", ErrResponseBody, err)
 	}
-
-	defer func() {
-		_ = response.Body.Close()
-	}()
 
 	var granolaResponse GranolaResponse
 	if err = json.Unmarshal(responseBody, &granolaResponse); err != nil {
