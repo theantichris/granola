@@ -1,6 +1,7 @@
 package api
 
 import (
+	"errors"
 	"io"
 	"net/http"
 	"net/http/httptest"
@@ -9,6 +10,12 @@ import (
 	"github.com/charmbracelet/log"
 	"github.com/google/go-cmp/cmp"
 )
+
+type errorTransport struct{}
+
+func (e *errorTransport) RoundTrip(*http.Request) (*http.Response, error) {
+	return nil, errors.New("forced transport error")
+}
 
 func TestGetDocuments(t *testing.T) {
 	logger := log.New(io.Discard)
@@ -35,6 +42,21 @@ func TestGetDocuments(t *testing.T) {
 
 		if !cmp.Equal(actual, expected) {
 			t.Errorf("expected response %v, got %v", expected, actual)
+		}
+	})
+
+	t.Run("returns error for bad HTTP request", func(t *testing.T) {
+		t.Parallel()
+
+		httpClient := &http.Client{Transport: &errorTransport{}}
+
+		_, err := GetDocuments("http://test.dev", httpClient, logger)
+		if err == nil {
+			t.Fatal("expected error getting documents, got nil")
+		}
+
+		if !errors.Is(err, ErrDocumentAPI) {
+			t.Errorf("expected error %v, got %v", ErrDocumentAPI, err)
 		}
 	})
 }
