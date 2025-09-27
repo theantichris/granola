@@ -34,8 +34,11 @@ type Document struct {
 
 // GetDocuments gets the respons from the Granola API and returns a slice of Documents.
 func GetDocuments(url string, httpClient *http.Client, logger *log.Logger) ([]Document, error) {
+	// TODO: Get access token, check for err.
+	// TODO: Create HTTP request.
 	// TODO: Set headers.
 
+	// TODO: Refactor to use request.
 	response, err := httpClient.Get(url)
 	if err != nil {
 		logger.Error(ErrDocumentAPI.Error(), "error", err)
