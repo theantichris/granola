@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	if err := fang.Execute(context.Background(), cmd.RootCmd); err != nil {
+	if err := fang.Execute(context.Background(), cmd.Execute()); err != nil {
 		os.Exit(1)
 	}
 }

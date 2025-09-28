@@ -21,9 +21,6 @@ var (
 	ErrDocumentExport = errors.New("failed to export documents")
 )
 
-// ExportCommand holds the dependencies for the export command.
-type ExportCommand struct{}
-
 // NewExportCmd creates a new ExportCommand and binds its flags.
 func NewExportCmd() *cobra.Command {
 	cmd := &cobra.Command{
@@ -46,12 +43,6 @@ func NewExportCmd() *cobra.Command {
 	cmd.Flags().DurationVar(&timeout, "timeout", 2*time.Minute, "HTTP timeout for API requests, default 2 minutes")
 
 	return cmd
-}
-
-// init initializes ExportCommand.
-func init() {
-	exportCmd := NewExportCmd()
-	RootCmd.AddCommand(exportCmd)
 }
 
 // exportNotes loads the contents of supabase.json and uses it to call and retrieve

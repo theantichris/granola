@@ -1,6 +1,8 @@
 package cmd
 
 import (
+	"errors"
+	"fmt"
 	"os"
 
 	"github.com/charmbracelet/log"
@@ -9,50 +11,74 @@ import (
 	"github.com/spf13/viper"
 )
 
-var Logger *log.Logger
+// ErrRootCmd is used when the root command fails to execute.
+var ErrRootCmd = errors.New("failed to run granola")
 
-// RootCmd is the base command when called without any subcommands.
-var RootCmd = &cobra.Command{
-	Use:   "granola",
-	Short: "An application for exporting Granola notes.",
-	Long:  "An application for exporting Granola notes to Markdown files.",
-}
+// NewRootCmd creates a new root command with the provided logger and binds flags.
+func NewRootCmd(logger *log.Logger) *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "granola",
+		Short: "An application for exporting Granola meeting notes.",
+		Long:  "An application for exporting Granola meeting notes to Markdown files.",
+		PreRunE: func(cmd *cobra.Command, args []string) error {
+			if err := viper.BindPFlag("config", cmd.PersistentFlags().Lookup("config")); err != nil {
+				return fmt.Errorf("%w: %s", ErrRootCmd, err)
+			}
 
-// Execute adds initialization.
-func Execute() {
-	err := RootCmd.Execute()
-	if err != nil {
-		Logger.Error("error running "+RootCmd.Use, "error", err)
+			if err := viper.BindPFlag("debug", cmd.PersistentFlags().Lookup("debug")); err != nil {
+				return fmt.Errorf("%w: %s", ErrRootCmd, err)
+			}
 
-		os.Exit(1)
+			if err := viper.BindPFlag("supabase", cmd.PersistentFlags().Lookup("supabase")); err != nil {
+				return fmt.Errorf("%w: %s", ErrRootCmd, err)
+			}
+
+			return nil
+		},
 	}
-}
-
-// init sets and binds flags.
-func init() {
-	cobra.OnInitialize(initConfig)
 
 	var configFile string
 	var debug bool
-	var supabase string
+	var supabaseFile string
 
-	RootCmd.PersistentFlags().StringVar(&configFile, "config", "", "config file (default is $HOME/.config.toml)")
-	RootCmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug mode")
-	RootCmd.PersistentFlags().StringVar(&supabase, "supabase", "", "path to supabase.json")
+	cmd.PersistentFlags().StringVar(&configFile, "config", "", "config file (default is $HOME/.config.toml)")
+	cmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug mode")
+	cmd.PersistentFlags().StringVar(&supabaseFile, "supabase", "", "supabase.json file")
 
-	_ = viper.BindPFlag("config", RootCmd.PersistentFlags().Lookup("config"))
-	_ = viper.BindPFlag("debug", RootCmd.PersistentFlags().Lookup("debug"))
-	_ = viper.BindPFlag("supabase", RootCmd.PersistentFlags().Lookup("supabase"))
+	cmd.AddCommand(NewExportCmd())
+
+	return cmd
 }
 
-// initConfig loads env variables and the config file.
-func initConfig() {
-	initLogger(false)
+// Execute creates the logger, initializes configuration, and executes the root command.
+func Execute() *cobra.Command {
+	logger := log.NewWithOptions(os.Stderr, log.Options{
+		ReportCaller:    true,
+		ReportTimestamp: true,
+		Level:           log.WarnLevel,
+	})
 
+	cobra.OnInitialize(func() {
+		initConfig(logger)
+	})
+
+	cmd := NewRootCmd(logger)
+
+	if err := cmd.Execute(); err != nil {
+		logger.Error(ErrRootCmd.Error(), "error", err)
+
+		return nil
+	}
+
+	return cmd
+}
+
+// initConfig loads env variables and the config file, then updates the logger level if debug mode is enabled.
+func initConfig(logger *log.Logger) {
 	if err := godotenv.Load(); err != nil {
-		Logger.Debug(".env file not found, using environment variables")
+		logger.Debug(".env file not found, using environment variables")
 	} else {
-		Logger.Debug(".env file loaded successfully")
+		logger.Debug(".env file loaded successfully")
 	}
 
 	configFile := viper.GetString("config")
@@ -75,28 +101,15 @@ func initConfig() {
 
 	if err := viper.ReadInConfig(); err != nil {
 		if _, ok := err.(viper.ConfigFileNotFoundError); ok {
-			Logger.Debug("config file not found")
+			logger.Debug("config file not found")
 		} else {
-			Logger.Error("error loading config file", "error", err)
+			logger.Error("error loading config file", "error", err)
 		}
 	} else {
-		Logger.Debug("using config file", "file", viper.ConfigFileUsed())
+		logger.Debug("using config file", "file", viper.ConfigFileUsed())
 	}
 
 	if viper.GetBool("debug") {
-		initLogger(true)
-	}
-}
-
-// initLogger initializes the logger.
-func initLogger(debug bool) {
-	Logger = log.New(os.Stderr)
-	Logger.SetReportCaller(true)
-	Logger.SetReportTimestamp(true)
-
-	if debug {
-		Logger.SetLevel(log.DebugLevel)
-	} else {
-		Logger.SetLevel(log.WarnLevel)
+		logger.SetLevel(log.DebugLevel)
 	}
 }

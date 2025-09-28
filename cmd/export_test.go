@@ -1,10 +1,15 @@
 package cmd
 
-import "testing"
+import (
+	"testing"
 
-func TestGetSupabaseContent(t *testing.T) {
-	t.Run("returns the supabase content", func(t *testing.T) {
-		t.Parallel()
+	"github.com/spf13/afero"
+)
 
+func TestRunExport(t *testing.T) {
+	t.Run("exports Granola documents", func(t *testing.T) {
+		appFS = afero.NewMemMapFs()
+
+		afero.WriteFile(appFS, "/test/spabase.json", []byte(`{"workos_tokens": {}}`), 0644)
 	})
 }
