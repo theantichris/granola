@@ -44,25 +44,30 @@ go install github.com/theantichris/granola@latest
 
 ## Quick Start
 
-1. **Set up your Granola API token:**
+1. **Configure the path to your supabase.json file:**
 
    ```bash
-   export GRANOLA_API_TOKEN="your-bearer-token-here"
-   # Or add to .env file:
-   echo "GRANOLA_API_TOKEN=your-bearer-token-here" >> .env
+   # Via environment variable
+   export SUPABASE_FILE="/path/to/supabase.json"
+
+   # Or via .env file
+   echo "SUPABASE_FILE=/path/to/supabase.json" >> .env
+
+   # Or via command flag
+   granola export --supabase /path/to/supabase.json
    ```
 
 2. **Export all your notes:**
 
    ```bash
    granola export
-   # Notes will be exported to ./exports/ directory by default
+   # Currently prints to stdout (file export coming soon)
    ```
 
-3. **Specify a custom output directory:**
+3. **Export with custom timeout:**
 
    ```bash
-   granola export --output /path/to/output
+   granola export --timeout 5m
    ```
 
 ## Usage
@@ -70,11 +75,14 @@ go install github.com/theantichris/granola@latest
 ### Basic Commands
 
 ```bash
-# Export all notes with default settings
+# Export all notes (requires supabase file path to be configured)
 granola export
 
-# Export with custom output directory
-granola export --output ./my-notes
+# Export with specific supabase file
+granola export --supabase /path/to/supabase.json
+
+# Export with custom timeout
+granola export --timeout 5m
 
 # Export with debug logging
 granola export --debug
@@ -99,13 +107,12 @@ precedence:
 
 #### Configuration File
 
-Create a `.config.toml` file in your home directory or current directory:
+Create a `.granola.toml` file in your home directory or current directory:
 
 ```toml
 debug = true
-api_token = "your-bearer-token-here"
-api_url = "https://api.granola.app"
-output_dir = "./exports"
+supabase = "/path/to/supabase.json"
+timeout = "2m"
 ```
 
 #### Environment Variables
@@ -113,19 +120,15 @@ output_dir = "./exports"
 Create a `.env` file for local development:
 
 ```bash
-GRANOLA_API_TOKEN=your-bearer-token-here
-GRANOLA_API_URL=https://api.granola.app
-GRANOLA_OUTPUT_DIR=./exports
-DEBUG=true
+SUPABASE_FILE=/path/to/supabase.json
+DEBUG_MODE=true
 ```
 
 Or set environment variables directly:
 
 ```bash
-export GRANOLA_API_TOKEN="your-bearer-token-here"
-export GRANOLA_API_URL="https://api.granola.app"
-export GRANOLA_OUTPUT_DIR="./exports"
-export DEBUG=true
+export SUPABASE_FILE="/path/to/supabase.json"
+export DEBUG_MODE=true
 ```
 
 ## Project Structure
@@ -216,6 +219,7 @@ markdownlint-cli2 "**/*.md"
 
 - [Cobra](https://github.com/spf13/cobra) - CLI framework
 - [Viper](https://github.com/spf13/viper) - Configuration management
+- [Afero](https://github.com/spf13/afero) - Filesystem abstraction for testing
 - [Charmbracelet Log](https://github.com/charmbracelet/log) - Structured logging
 - [Charmbracelet Fang](https://github.com/charmbracelet/fang) - Enhanced
   command execution

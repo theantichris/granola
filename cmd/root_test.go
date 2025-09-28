@@ -115,7 +115,12 @@ SUPABASE_FILE=/path/to/supabase.json`
 		if err != nil {
 			t.Fatalf("failed to get the current working directory: %v", err)
 		}
-		defer os.Chdir(oldWd)
+
+		defer func() {
+			if err := os.Chdir(oldWd); err != nil {
+				t.Fatalf("failed to change to old working directory: %v", err)
+			}
+		}()
 
 		if err := os.Chdir(tmpDir); err != nil {
 			t.Fatalf("failed to change to temp directory: %v", err)

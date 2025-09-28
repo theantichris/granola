@@ -24,9 +24,11 @@ clean, readable Markdown files with preserved metadata.
 
 ### Goals and Objectives
 
+- [x] Provide simple, secure authentication via Supabase tokens
+- [x] Connect to Granola API with proper headers
+- [x] Support configurable timeout for API requests
 - [ ] Export all notes from Granola API to local Markdown files
 - [ ] Preserve note metadata (creation date, tags, etc.) in exports
-- [ ] Provide simple, secure authentication via bearer tokens
 - [ ] Support batch export of all notes in a single command
 - [ ] Create well-organized file structure for exported notes
 - [ ] Incremental exports (only new notes)
@@ -73,10 +75,10 @@ clean, readable Markdown files with preserved metadata.
 
 #### Core Features
 
-1. **API Authentication**
-   - Secure authentication using bearer tokens
+1. **API Authentication** ✅
+   - Secure authentication using Supabase tokens
+   - Token extraction from supabase.json file
    - Token configuration via environment variables or config file
-   - Validation of token before API calls
    - Priority: High
 
 2. **Note Export**
@@ -181,13 +183,15 @@ clean, readable Markdown files with preserved metadata.
 - **Framework**: Cobra (CLI framework)
 - **Configuration**: Viper (TOML config files, environment variables, flags)
 - **Logging**: Charmbracelet/log (structured logging with caller and timestamp)
+- **Testing**: Afero for filesystem abstraction
 - **Build & Release**: GoReleaser (automated multi-platform builds and releases)
 - **Key Libraries**:
   - charmbracelet/fang: Enhanced command execution with context
   - godotenv: .env file support for local development
+  - spf13/afero: Filesystem abstraction for testable file operations
   - net/http: HTTP client for API communication
   - encoding/json: JSON parsing and serialization
-  - gopkg.in/yaml.v3: YAML frontmatter generation
+  - gopkg.in/yaml.v3: YAML frontmatter generation (planned)
 
 ### Data Model
 
@@ -228,13 +232,18 @@ Note content in Markdown format...
 
 Authentication
 
-- Header: `Authorization: Bearer <token>`
+- Header: `Authorization: Bearer <token>` (extracted from supabase.json)
+- Additional Headers:
+  - `User-Agent: Granola/5.354.0`
+  - `X-Client-Version: 5.354.0`
+  - `Content-Type: application/json`
+  - `Accept: */*`
 
-Get All Notes
+Get All Documents
 
-- Endpoint: `GET /api/notes`
-- Response: JSON array of note objects
-- Pagination: Handle via query parameters if needed
+- Endpoint: `GET https://api.granola.ai/v2/get-documents`
+- Response: JSON object with `docs` array containing document objects
+- HTTP Client: Configurable timeout (default 2 minutes)
 
 Error Responses
 
@@ -259,9 +268,8 @@ granola [global-flags] <command> [command-flags]
 granola export [flags]
 
 # Export Flags
---output string   Output directory (default: ./exports)
---token string    Granola API token (overrides env/config)
---api-url string  Granola API URL (default: https://api.granola.app)
+--supabase string    Path to supabase.json file (overrides env/config)
+--timeout duration   HTTP timeout for API requests (default: 2m)
 ```
 
 ### Terminal User Interface
@@ -272,11 +280,21 @@ Not applicable - this is a CLI-only tool with no interactive TUI components.
 
 ### Testing Approach
 
-- **Unit testing**: Test individual components (converter, models)
-- **Integration testing**: Test API client with mock server
-- **End-to-end testing**: Full export workflow with test data
-- **Performance testing**: Benchmark large note exports (1000+ notes)
-- **Error scenario testing**: Invalid tokens, network failures, malformed data
+- **Unit testing**: Test individual components with dependency injection
+  - Using sub-test pattern for better test organization
+  - Happy path testing implemented
+  - Mock filesystem using Afero for file operations
+  - All tests should be independent and run in parallel using `t.Parallel()` whenever possible
+- **Integration testing**: Test API client with mock server (planned)
+- **End-to-end testing**: Full export workflow with test data (planned)
+- **Performance testing**: Benchmark large note exports (1000+ notes) (planned)
+- **Error scenario testing**: Invalid tokens, network failures, malformed data (planned)
+
+### Current Test Coverage
+
+- `cmd/root.go`: Unit tests for command creation and configuration
+- `cmd/export.go`: Basic test structure (awaiting API interface refactoring)
+- `internal/api/`: Token extraction and document fetching tests
 
 ## Documentation
 
