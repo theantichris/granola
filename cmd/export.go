@@ -16,30 +16,47 @@ import (
 var appFS = afero.NewOsFs()
 
 var (
+	ErrExportCmdInit  = errors.New("failed to initialize the export command")
 	ErrSupabaseEmpty  = errors.New("supabase cannot be empty")
 	ErrDocumentExport = errors.New("failed to export documents")
 )
 
-// exportCmd is the command to export Granola notes.
-var exportCmd = &cobra.Command{
-	Use:   "export",
-	Short: "Export Granola notes to Markdown.",
-	Long:  "Export Granola notes to Markdown.",
-	RunE:  runExport,
-}
+// ExportCommand holds the dependencies for the export command.
+type ExportCommand struct{}
 
-// init initializes the export command.
-func init() {
-	RootCmd.AddCommand(exportCmd)
+// NewExportCmd creates a new ExportCommand and binds its flags.
+func NewExportCmd() *cobra.Command {
+	cmd := &cobra.Command{
+		Use:   "export",
+		Short: "Export Granola notes to Markdown.",
+		Long:  "Export Granola notes to Markdown. WIP, current prints to stdout",
+		PreRunE: func(cmd *cobra.Command, args []string) error {
+			if err := viper.BindPFlag("timeout", cmd.Flags().Lookup("timeout")); err != nil {
+				return fmt.Errorf("%w: %s", ErrExportCmdInit, err)
+			}
+
+			return nil
+		},
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return exportNotes()
+		},
+	}
 
 	var timeout time.Duration
+	cmd.Flags().DurationVar(&timeout, "timeout", 2*time.Minute, "HTTP timeout for API requests, default 2 minutes")
 
-	exportCmd.Flags().DurationVar(&timeout, "timeout", 2*time.Minute, "HTTP timeout for API requests")
-
-	_ = viper.BindPFlag("timeout", exportCmd.Flags().Lookup("timeout"))
+	return cmd
 }
 
-func runExport(cmd *cobra.Command, args []string) error {
+// init initializes ExportCommand.
+func init() {
+	exportCmd := NewExportCmd()
+	RootCmd.AddCommand(exportCmd)
+}
+
+// exportNotes loads the contents of supabase.json and uses it to call and retrieve
+// the documents from the Granola API.
+func exportNotes() error {
 	filename := viper.GetString("supabase")
 
 	if strings.TrimSpace(filename) == "" {
