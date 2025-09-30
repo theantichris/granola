@@ -170,7 +170,7 @@ The project follows a modular Go CLI application structure:
 
 - Use note title as filename, fallback to ID if title is empty
 - Sanitize filenames by removing invalid characters (regex: `[<>:"/\\|?*\x00-\x1f]`)
-- Handle duplicate names by appending _2, _3, etc.
+- Handle duplicate names by appending `_2`, `_3`, etc.
 - Limit filename length to 100 characters for compatibility
 
 ### Error Handling
