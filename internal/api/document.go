@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 )
 
 const (
@@ -25,10 +26,34 @@ type GranolaResponse struct {
 	Documents []Document `json:"docs"`
 }
 
+// ProseMirrorNode represents a node in the ProseMirror document structure.
+type ProseMirrorNode struct {
+	Type    string                 `json:"type"`
+	Content []ProseMirrorNode      `json:"content,omitempty"`
+	Text    string                 `json:"text,omitempty"`
+	Attrs   map[string]interface{} `json:"attrs,omitempty"`
+}
+
+// ProseMirrorDoc represents the ProseMirror document structure.
+type ProseMirrorDoc struct {
+	Type    string            `json:"type"`
+	Content []ProseMirrorNode `json:"content,omitempty"`
+}
+
+// LastViewedPanel contains the ProseMirror content.
+type LastViewedPanel struct {
+	Content *ProseMirrorDoc `json:"content,omitempty"`
+}
+
 // Document contains the meeting documents from Granola.
 type Document struct {
-	ID    string `json:"id"`
-	Title string `json:"title"`
+	ID              string           `json:"id"`
+	Title           string           `json:"title"`
+	Content         string           `json:"content"`
+	CreatedAt       string           `json:"created_at"`
+	UpdatedAt       string           `json:"updated_at"`
+	Tags            []string         `json:"tags"`
+	LastViewedPanel *LastViewedPanel `json:"last_viewed_panel,omitempty"`
 }
 
 // GetDocuments gets the response from the Granola API and returns a slice of Documents.
@@ -38,7 +63,17 @@ func GetDocuments(url string, file []byte, httpClient *http.Client) ([]Document,
 		return []Document{}, err
 	}
 
-	httpRequest, err := http.NewRequest(http.MethodGet, url, nil)
+	requestBody := map[string]interface{}{
+		"limit":                    100,
+		"offset":                   0,
+		"include_last_viewed_panel": true,
+	}
+	bodyBytes, err := json.Marshal(requestBody)
+	if err != nil {
+		return []Document{}, fmt.Errorf("%w: %s", ErrHTTPRequest, err)
+	}
+
+	httpRequest, err := http.NewRequest(http.MethodPost, url, strings.NewReader(string(bodyBytes)))
 	if err != nil {
 		return []Document{}, fmt.Errorf("%w: %s", ErrHTTPRequest, err)
 	}

@@ -45,7 +45,7 @@ func NewRootCmd(logger *log.Logger) *cobra.Command {
 	cmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug mode")
 	cmd.PersistentFlags().StringVar(&supabaseFile, "supabase", "", "supabase.json file")
 
-	cmd.AddCommand(NewExportCmd())
+	cmd.AddCommand(NewExportCmd(logger))
 
 	return cmd
 }

@@ -12,14 +12,12 @@ A CLI tool for exporting your Granola notes to Markdown files.
 
 ## Features
 
-- 📝 **Export Granola Notes** - Export all your notes from the Granola API
-- 🔄 **JSON to Markdown** - Automatic conversion from JSON format to clean Markdown
-- 🏷️ **Metadata Preservation** - Maintains note metadata including creation
- dates and tags
-- 🔐 **Bearer Token Auth** - Secure API authentication using bearer tokens
-- ⚙️ **Flexible Configuration** - Configure via environment variables, config
- files, or flags
-- 📁 **Batch Export** - Export all notes in a single command
+- 📝 **Export Granola Notes** - Export all your notes from the Granola API to local Markdown files
+- 🔄 **JSON to Markdown** - Automatic conversion from JSON format to clean Markdown with YAML frontmatter
+- 🏷️ **Metadata Preservation** - Maintains note metadata including creation dates, update dates, and tags
+- 🔐 **Bearer Token Auth** - Secure API authentication using bearer tokens from Supabase
+- ⚙️ **Flexible Configuration** - Configure via environment variables, config files, or flags
+- 📁 **Batch Export** - Export all notes in a single command to a specified directory
 - 🚀 **Fast and Efficient** - Built with Go for optimal performance
 
 ## Installation
@@ -61,10 +59,16 @@ go install github.com/theantichris/granola@latest
 
    ```bash
    granola export
-   # Currently prints to stdout (file export coming soon)
+   # Exports to ./notes directory by default
    ```
 
-3. **Export with custom timeout:**
+3. **Export with custom output directory:**
+
+   ```bash
+   granola export --output /path/to/output
+   ```
+
+4. **Export with custom timeout:**
 
    ```bash
    granola export --timeout 5m
@@ -80,6 +84,9 @@ granola export
 
 # Export with specific supabase file
 granola export --supabase /path/to/supabase.json
+
+# Export to custom output directory
+granola export --output /path/to/notes
 
 # Export with custom timeout
 granola export --timeout 5m
@@ -113,6 +120,7 @@ Create a `.granola.toml` file in your home directory or current directory:
 debug = true
 supabase = "/path/to/supabase.json"
 timeout = "2m"
+output = "/path/to/notes"
 ```
 
 #### Environment Variables
@@ -139,9 +147,10 @@ granola/
 │   ├── root.go         # Root command and configuration
 │   └── export.go       # Export command implementation
 ├── internal/
-│   ├── api/            # Granola API client
-│   ├── converter/      # JSON to Markdown converter
-│   └── models/         # Data models for notes
+│   ├── api/            # Granola API client and document models
+│   ├── converter/      # Document to Markdown converter
+│   ├── prosemirror/    # ProseMirror JSON to Markdown converter
+│   └── writer/         # File system writer for Markdown files
 ├── main.go             # Application entry point
 ├── go.mod              # Go module dependencies
 ├── go.sum              # Dependency checksums

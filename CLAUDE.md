@@ -73,9 +73,10 @@ The project follows a modular Go CLI application structure:
   - `cmd/root.go` - Defines the root command with configuration initialization using constructor pattern
   - `cmd/export.go` - Implements the export command for fetching and converting notes
 - **Internal Packages**:
-  - `internal/api/` - Granola API client with Supabase token authentication
-  - `internal/converter/` - JSON to Markdown conversion logic (to be implemented)
-  - `internal/models/` - Data models for Granola notes and metadata (to be implemented)
+  - `internal/api/` - Granola API client with Supabase token authentication and document models (including ProseMirror structures)
+  - `internal/converter/` - Document to Markdown conversion with YAML frontmatter
+  - `internal/prosemirror/` - ProseMirror JSON to Markdown conversion
+  - `internal/writer/` - File system writer for Markdown files with sanitization
 - **Configuration**: Supports multiple configuration sources:
   - Environment variables via `.env` file (using godotenv)
   - Config file (`.granola.toml` in home directory or current directory)
@@ -138,7 +139,8 @@ The project follows a modular Go CLI application structure:
 - Bearer token authentication required for all API calls
 - Token extracted from supabase.json file (WorkOS tokens)
 - Token file path configured via `--supabase` flag or `SUPABASE_FILE` environment variable
-- API endpoint: `https://api.granola.ai/v2/get-documents`
+- API endpoint: `https://api.granola.ai/v2/get-documents` (POST request)
+- Request body includes: `limit: 100`, `offset: 0`, `include_last_viewed_panel: true`
 - Required headers:
   - `Authorization: Bearer <token>`
   - `User-Agent: Granola/5.354.0`
@@ -147,23 +149,26 @@ The project follows a modular Go CLI application structure:
   - `Accept: */*`
 - HTTP client with configurable timeout (default 2 minutes)
 - Handle API rate limiting and error responses gracefully
+- Content is returned in ProseMirror JSON format in `last_viewed_panel.content`
 
 ### Export Process
 
 1. Load supabase.json file from configured path
 2. Extract access token from WorkOS tokens in supabase.json
-3. Authenticate with Granola API using bearer token
+3. Authenticate with Granola API using bearer token (POST request with include_last_viewed_panel)
 4. Fetch all documents from the API (returns JSON with `docs` array)
-5. Parse JSON response into Go structs
-6. Convert each document to Markdown format (to be implemented)
-7. Preserve metadata as YAML frontmatter (to be implemented)
-8. Save files to specified output directory (to be implemented)
+5. Parse JSON response into Go structs (Document model with ID, Title, LastViewedPanel, CreatedAt, UpdatedAt, Tags)
+6. Convert ProseMirror JSON content to Markdown (supports headings, paragraphs, bullet lists, nested lists)
+7. Add YAML frontmatter with metadata
+8. Sanitize filenames and handle duplicates
+9. Save files to specified output directory (default: ./notes)
 
 ### File Naming
 
-- Use note title or ID for filename
-- Sanitize filenames for filesystem compatibility
-- Handle duplicate names appropriately
+- Use note title as filename, fallback to ID if title is empty
+- Sanitize filenames by removing invalid characters (regex: `[<>:"/\\|?*\x00-\x1f]`)
+- Handle duplicate names by appending _2, _3, etc.
+- Limit filename length to 100 characters for compatibility
 
 ### Error Handling
 

@@ -21,8 +21,12 @@ func TestGetDocuments(t *testing.T) {
 		t.Parallel()
 
 		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			// Verify it's a POST request
+			if r.Method != http.MethodPost {
+				t.Errorf("expected POST request, got %s", r.Method)
+			}
 			w.WriteHeader(http.StatusOK)
-			_, _ = w.Write([]byte("{\"docs\":[{\"id\":\"abc123\",\"title\":\"Test Meeting\"}]}"))
+			_, _ = w.Write([]byte("{\"docs\":[{\"id\":\"abc123\",\"title\":\"Test Meeting\",\"content\":\"Meeting notes\",\"created_at\":\"2024-01-01T00:00:00Z\",\"updated_at\":\"2024-01-02T00:00:00Z\",\"tags\":[\"work\",\"planning\"]}]}"))
 		}))
 		defer testServer.Close()
 
@@ -34,7 +38,15 @@ func TestGetDocuments(t *testing.T) {
 		}
 
 		expected := []Document{
-			{ID: "abc123", Title: "Test Meeting"},
+			{
+				ID:              "abc123",
+				Title:           "Test Meeting",
+				Content:         "Meeting notes",
+				CreatedAt:       "2024-01-01T00:00:00Z",
+				UpdatedAt:       "2024-01-02T00:00:00Z",
+				Tags:            []string{"work", "planning"},
+				LastViewedPanel: nil,
+			},
 		}
 
 		if !cmp.Equal(actual, expected) {

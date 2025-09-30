@@ -27,10 +27,10 @@ clean, readable Markdown files with preserved metadata.
 - [x] Provide simple, secure authentication via Supabase tokens
 - [x] Connect to Granola API with proper headers
 - [x] Support configurable timeout for API requests
-- [ ] Export all notes from Granola API to local Markdown files
-- [ ] Preserve note metadata (creation date, tags, etc.) in exports
-- [ ] Support batch export of all notes in a single command
-- [ ] Create well-organized file structure for exported notes
+- [x] Export all notes from Granola API to local Markdown files
+- [x] Preserve note metadata (creation date, tags, etc.) in exports
+- [x] Support batch export of all notes in a single command
+- [x] Create well-organized file structure for exported notes
 - [ ] Incremental exports (only new notes)
 
 ### Success Criteria
@@ -81,19 +81,19 @@ clean, readable Markdown files with preserved metadata.
    - Token configuration via environment variables or config file
    - Priority: High
 
-2. **Note Export**
+2. **Note Export** ✅
    - Fetch all notes from Granola API
    - Parse JSON response data
    - Handle pagination if required
    - Priority: High
 
-3. **Markdown Conversion**
+3. **Markdown Conversion** ✅
    - Convert JSON note data to Markdown format
    - Preserve note content and formatting
    - Add metadata as YAML frontmatter
    - Priority: High
 
-4. **File Management**
+4. **File Management** ✅
    - Create output directory structure
    - Generate appropriate filenames
    - Handle duplicate names
@@ -295,6 +295,8 @@ Not applicable - this is a CLI-only tool with no interactive TUI components.
 - `cmd/root.go`: Unit tests for command creation and configuration
 - `cmd/export.go`: Basic test structure (awaiting API interface refactoring)
 - `internal/api/`: Token extraction and document fetching tests
+- `internal/converter/`: Markdown conversion tests
+- `internal/writer/`: File writing and filename sanitization tests
 
 ## Documentation
 

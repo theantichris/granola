@@ -12,6 +12,7 @@ granola
 # Test data
 supabase.json
 granola-response.json
+notes/
 
 # Code coverage profiles and other test artifacts
 *.out
