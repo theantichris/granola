@@ -31,7 +31,7 @@ clean, readable Markdown files with preserved metadata.
 - [x] Preserve note metadata (creation date, tags, etc.) in exports
 - [x] Support batch export of all notes in a single command
 - [x] Create well-organized file structure for exported notes
-- [ ] Incremental exports (only new notes)
+- [x] Incremental exports (only updates files when notes are modified)
 
 ### Success Criteria
 

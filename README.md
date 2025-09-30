@@ -13,11 +13,12 @@ A CLI tool for exporting your Granola notes to Markdown files.
 ## Features
 
 - 📝 **Export Granola Notes** - Export all your notes from the Granola API to local Markdown files
-- 🔄 **JSON to Markdown** - Automatic conversion from JSON format to clean Markdown with YAML frontmatter
+- 🔄 **JSON to Markdown** - Automatic conversion from ProseMirror JSON to clean Markdown with YAML frontmatter
 - 🏷️ **Metadata Preservation** - Maintains note metadata including creation dates, update dates, and tags
 - 🔐 **Bearer Token Auth** - Secure API authentication using bearer tokens from Supabase
 - ⚙️ **Flexible Configuration** - Configure via environment variables, config files, or flags
 - 📁 **Batch Export** - Export all notes in a single command to a specified directory
+- ⚡ **Incremental Updates** - Only updates files when notes are modified (compares timestamps)
 - 🚀 **Fast and Efficient** - Built with Go for optimal performance
 
 ## Installation

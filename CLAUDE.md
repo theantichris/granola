@@ -158,10 +158,13 @@ The project follows a modular Go CLI application structure:
 3. Authenticate with Granola API using bearer token (POST request with include_last_viewed_panel)
 4. Fetch all documents from the API (returns JSON with `docs` array)
 5. Parse JSON response into Go structs (Document model with ID, Title, LastViewedPanel, CreatedAt, UpdatedAt, Tags)
-6. Convert ProseMirror JSON content to Markdown (supports headings, paragraphs, bullet lists, nested lists)
-7. Add YAML frontmatter with metadata
-8. Sanitize filenames and handle duplicates
-9. Save files to specified output directory (default: ./notes)
+6. For each document:
+   - Check if file exists and compare `updated_at` timestamp with file modification time
+   - Skip if file is up-to-date (incremental export)
+   - Convert ProseMirror JSON content to Markdown (supports headings, paragraphs, bullet lists, nested lists)
+   - Add YAML frontmatter with metadata
+   - Sanitize filenames and handle duplicates
+   - Save/update file in output directory (default: ./notes)
 
 ### File Naming
 
