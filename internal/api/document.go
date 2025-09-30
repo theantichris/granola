@@ -57,55 +57,71 @@ type Document struct {
 }
 
 // GetDocuments gets the response from the Granola API and returns a slice of Documents.
+// It automatically handles pagination to fetch all documents.
 func GetDocuments(url string, file []byte, httpClient *http.Client) ([]Document, error) {
 	accessToken, err := getAccessToken(file)
 	if err != nil {
 		return []Document{}, err
 	}
 
-	requestBody := map[string]interface{}{
-		"limit":                    100,
-		"offset":                   0,
-		"include_last_viewed_panel": true,
-	}
-	bodyBytes, err := json.Marshal(requestBody)
-	if err != nil {
-		return []Document{}, fmt.Errorf("%w: %s", ErrHTTPRequest, err)
-	}
+	var allDocuments []Document
+	offset := 0
+	limit := 100
 
-	httpRequest, err := http.NewRequest(http.MethodPost, url, strings.NewReader(string(bodyBytes)))
-	if err != nil {
-		return []Document{}, fmt.Errorf("%w: %s", ErrHTTPRequest, err)
-	}
+	for {
+		requestBody := map[string]interface{}{
+			"limit":                     limit,
+			"offset":                    offset,
+			"include_last_viewed_panel": true,
+		}
+		bodyBytes, err := json.Marshal(requestBody)
+		if err != nil {
+			return []Document{}, fmt.Errorf("%w: %s", ErrHTTPRequest, err)
+		}
 
-	httpRequest.Header.Set("Authorization", "Bearer "+accessToken)
-	httpRequest.Header.Set("Accept", "*/*")
-	httpRequest.Header.Set("User-Agent", userAgent)
-	httpRequest.Header.Set("X-Client-Version", xClientVersion)
-	httpRequest.Header.Set("Content-Type", "application/json")
+		httpRequest, err := http.NewRequest(http.MethodPost, url, strings.NewReader(string(bodyBytes)))
+		if err != nil {
+			return []Document{}, fmt.Errorf("%w: %s", ErrHTTPRequest, err)
+		}
 
-	response, err := httpClient.Do(httpRequest)
-	if err != nil {
-		return []Document{}, fmt.Errorf("%w: %s", ErrDocumentAPI, err)
-	}
+		httpRequest.Header.Set("Authorization", "Bearer "+accessToken)
+		httpRequest.Header.Set("Accept", "*/*")
+		httpRequest.Header.Set("User-Agent", userAgent)
+		httpRequest.Header.Set("X-Client-Version", xClientVersion)
+		httpRequest.Header.Set("Content-Type", "application/json")
 
-	defer func() {
+		response, err := httpClient.Do(httpRequest)
+		if err != nil {
+			return []Document{}, fmt.Errorf("%w: %s", ErrDocumentAPI, err)
+		}
+
+		if response.StatusCode/100 != 2 {
+			_ = response.Body.Close()
+			return []Document{}, fmt.Errorf("%w: status=%s", ErrDocumentAPI, response.Status)
+		}
+
+		responseBody, err := io.ReadAll(response.Body)
 		_ = response.Body.Close()
-	}()
+		if err != nil {
+			return []Document{}, fmt.Errorf("%w: %s", ErrResponseBody, err)
+		}
 
-	if response.StatusCode/100 != 2 {
-		return []Document{}, fmt.Errorf("%w: status=%s", ErrDocumentAPI, response.Status)
+		var granolaResponse GranolaResponse
+		if err = json.Unmarshal(responseBody, &granolaResponse); err != nil {
+			return []Document{}, fmt.Errorf("%w: %s", ErrDocumentJSON, err)
+		}
+
+		// Add documents from this page to the result
+		allDocuments = append(allDocuments, granolaResponse.Documents...)
+
+		// If we got fewer documents than the limit, we've reached the end
+		if len(granolaResponse.Documents) < limit {
+			break
+		}
+
+		// Move to the next page
+		offset += limit
 	}
 
-	responseBody, err := io.ReadAll(response.Body)
-	if err != nil {
-		return []Document{}, fmt.Errorf("%w: %s", ErrResponseBody, err)
-	}
-
-	var granolaResponse GranolaResponse
-	if err = json.Unmarshal(responseBody, &granolaResponse); err != nil {
-		return []Document{}, fmt.Errorf("%w: %s", ErrDocumentJSON, err)
-	}
-
-	return granolaResponse.Documents, nil
+	return allDocuments, nil
 }
