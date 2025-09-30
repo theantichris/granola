@@ -43,17 +43,28 @@ go install github.com/theantichris/granola@latest
 
 ## Quick Start
 
+### Finding Your Supabase Credentials
+
+Granola stores authentication credentials in a `supabase.json` file. The location
+depends on your operating system:
+
+- **macOS**: `~/Library/Application Support/Granola/supabase.json`
+- **Linux**: `~/.config/Granola/supabase.json` or `~/.local/share/Granola/supabase.json`
+- **Windows**: `%APPDATA%\Granola\supabase.json`
+
+### Setup
+
 1. **Configure the path to your supabase.json file:**
 
    ```bash
    # Via environment variable
-   export SUPABASE_FILE="/path/to/supabase.json"
+   export SUPABASE_FILE="$HOME/Library/Application Support/Granola/supabase.json"
 
    # Or via .env file
-   echo "SUPABASE_FILE=/path/to/supabase.json" >> .env
+   echo "SUPABASE_FILE=$HOME/Library/Application Support/Granola/supabase.json" >> .env
 
    # Or via command flag
-   granola export --supabase /path/to/supabase.json
+   granola export --supabase "$HOME/Library/Application Support/Granola/supabase.json"
    ```
 
 2. **Export all your notes:**
@@ -74,6 +85,51 @@ go install github.com/theantichris/granola@latest
    ```bash
    granola export --timeout 5m
    ```
+
+### What Gets Exported
+
+Each note is exported as a separate Markdown file with:
+
+- **YAML frontmatter** containing metadata (ID, created/updated timestamps, tags)
+- **Note title** as a top-level heading
+- **Note content** converted from ProseMirror JSON to Markdown format
+  - Supports headings, paragraphs, bullet lists, and nested lists
+
+**Example output:**
+
+```markdown
+---
+id: abc-123
+created: "2024-01-01T00:00:00Z"
+updated: "2024-01-02T00:00:00Z"
+tags:
+  - work
+  - planning
+---
+
+# Meeting Notes
+
+## Key Points
+
+- First important point
+- Second important point
+  - Nested detail
+
+Action items discussed...
+```
+
+### Incremental Exports
+
+The CLI intelligently handles repeated exports:
+
+- **First run**: All notes are exported
+- **Subsequent runs**: Only new or updated notes are written
+- **Timestamp comparison**: Files are only updated if the note's `updated_at`
+  timestamp is newer than the existing file's modification time
+- **Performance**: Saves time by skipping unchanged notes
+
+This means you can safely run `granola export` multiple times without worrying
+about unnecessary file writes.
 
 ## Usage
 
