@@ -54,7 +54,7 @@ func Write(documents []api.Document, outputDir string, fs afero.Fs) error {
 	return nil
 }
 
-// formatTranscript creates a plain text transcript with a metadata header.
+// formatTranscript creates a plain text document with a metadata header.
 func formatTranscript(doc api.Document) string {
 	// Get content with priority: NotesPlain > Notes (ProseMirror→plain text) > OriginalContent (HTML stripped) > Content
 	var content string

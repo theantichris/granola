@@ -1,3 +1,4 @@
+// Package transcript provides functionality for formatting and writing transcript files.
 package transcript
 
 import (

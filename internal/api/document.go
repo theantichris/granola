@@ -10,7 +10,9 @@ import (
 )
 
 const (
-	userAgent      = "Granola/5.354.0"
+	// userAgent is the User-Agent header value sent with API requests.
+	userAgent = "Granola/5.354.0"
+	// xClientVersion is the X-Client-Version header value sent with API requests.
 	xClientVersion = "5.354.0"
 )
 

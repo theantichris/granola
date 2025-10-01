@@ -1,3 +1,4 @@
+// Package api provides functionality for interacting with the Granola API.
 package api
 
 import (

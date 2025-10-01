@@ -1,3 +1,4 @@
+// Package converter provides functionality for converting Granola documents to Markdown format.
 package converter
 
 import (

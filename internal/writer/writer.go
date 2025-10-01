@@ -1,3 +1,4 @@
+// Package writer provides functionality for writing Granola documents to Markdown files.
 package writer
 
 import (

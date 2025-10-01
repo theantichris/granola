@@ -1,3 +1,4 @@
+// Package prosemirror provides functionality for converting ProseMirror documents to Markdown and plain text.
 package prosemirror
 
 import (

@@ -1,3 +1,4 @@
+// Package cache provides functionality for reading and parsing the Granola local cache file.
 package cache
 
 import (

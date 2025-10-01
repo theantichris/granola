@@ -1,3 +1,4 @@
+// Package cmd implements the CLI commands for the Granola application.
 package cmd
 
 import (
