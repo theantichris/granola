@@ -1,5 +1,14 @@
 # Granola CLI
 
+```text
+                              _
+  __ _ _ __ __ _ _ __   ___ | | __ _
+ / _` | '__/ _` | '_ \ / _ \| |/ _` |
+| (_| | | | (_| | | | | (_) | | (_| |
+ \__, |_|  \__,_|_| |_|\___/|_|\__,_|
+ |___/
+```
+
 [![Go Version](https://img.shields.io/github/go-mod/go-version/theantichris/granola)](https://go.dev/)
 [![Go Reference](https://pkg.go.dev/badge/github.com/theantichris/granola.svg)](https://pkg.go.dev/github.com/theantichris/granola)
 [![Go Report Card](https://goreportcard.com/badge/github.com/theantichris/granola)](https://goreportcard.com/report/github.com/theantichris/granola)
