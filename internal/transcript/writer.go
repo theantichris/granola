@@ -12,7 +12,10 @@ import (
 	"github.com/theantichris/granola/internal/prosemirror"
 )
 
-var invalidCharsRegex = regexp.MustCompile(`[<>:"/\\|?*\x00-\x1f]`)
+var (
+	invalidCharsRegex = regexp.MustCompile(`[<>:"/\\|?*\x00-\x1f]`)
+	htmlTagRegex      = regexp.MustCompile(`<[^>]*>`)
+)
 
 // Write writes documents as plain text transcript files to the specified output directory.
 func Write(documents []api.Document, outputDir string, fs afero.Fs) error {
@@ -119,8 +122,7 @@ func formatTranscript(doc api.Document) string {
 // stripHTML removes HTML tags from a string to produce plain text.
 func stripHTML(html string) string {
 	// Remove HTML tags
-	re := regexp.MustCompile(`<[^>]*>`)
-	text := re.ReplaceAllString(html, "")
+	text := htmlTagRegex.ReplaceAllString(html, "")
 
 	// Decode common HTML entities
 	text = strings.ReplaceAll(text, "&amp;", "&")
