@@ -8,17 +8,19 @@
 [![License](https://img.shields.io/github/license/theantichris/granola)](LICENSE)
 [![Release](https://img.shields.io/github/v/release/theantichris/granola)](https://github.com/theantichris/granola/releases)
 
-A CLI tool for exporting your Granola notes to Markdown files.
+A CLI tool for exporting your Granola notes and transcripts.
 
 ## Features
 
-- 📝 **Export Granola Notes** - Export all your notes from the Granola API to local Markdown files
+- 📝 **Export Granola Notes** - Export AI-generated notes from the Granola API to local Markdown files
+- 🎙️ **Export Raw Transcripts** - Export verbatim meeting transcripts with timestamps from local cache
 - 🔄 **JSON to Markdown** - Automatic conversion from ProseMirror JSON to clean Markdown with YAML frontmatter
 - 🏷️ **Metadata Preservation** - Maintains note metadata including creation dates, update dates, and tags
-- 🔐 **Bearer Token Auth** - Secure API authentication using bearer tokens from Supabase
+- ⏱️ **Timestamp Tracking** - Transcripts include precise timestamps and speaker identification
+- 🔐 **Secure Access** - API authentication using bearer tokens from Supabase, local cache file reading for transcripts
 - ⚙️ **Flexible Configuration** - Configure via environment variables, config files, or flags
-- 📁 **Batch Export** - Export all notes in a single command to a specified directory
-- ⚡ **Incremental Updates** - Only updates files when notes are modified (compares timestamps)
+- 📁 **Batch Export** - Export all notes or transcripts in a single command to specified directories
+- ⚡ **Incremental Updates** - Only updates files when content is modified (compares timestamps)
 - 🚀 **Fast and Efficient** - Built with Go for optimal performance
 
 ## Installation
@@ -43,7 +45,11 @@ go install github.com/theantichris/granola@latest
 
 ## Quick Start
 
-### Finding Your Supabase Credentials
+### Exporting AI-Generated Notes
+
+Notes are AI-processed summaries and formatted content exported from the Granola API.
+
+#### Finding Your Supabase Credentials
 
 Granola stores authentication credentials in a `supabase.json` file. The location
 depends on your operating system:
@@ -52,7 +58,7 @@ depends on your operating system:
 - **Linux**: `~/.config/Granola/supabase.json` or `~/.local/share/Granola/supabase.json`
 - **Windows**: `%APPDATA%\Granola\supabase.json`
 
-### Setup
+#### Setup
 
 1. **Configure the path to your supabase.json file:**
 
@@ -64,29 +70,57 @@ depends on your operating system:
    echo "SUPABASE_FILE=$HOME/Library/Application Support/Granola/supabase.json" >> .env
 
    # Or via command flag
-   granola export --supabase "$HOME/Library/Application Support/Granola/supabase.json"
+   granola notes --supabase "$HOME/Library/Application Support/Granola/supabase.json"
    ```
 
 2. **Export all your notes:**
 
    ```bash
-   granola export
+   granola notes
    # Exports to ./notes directory by default
    ```
 
 3. **Export with custom output directory:**
 
    ```bash
-   granola export --output /path/to/output
+   granola notes --output /path/to/output
    ```
 
 4. **Export with custom timeout:**
 
    ```bash
-   granola export --timeout 5m
+   granola notes --timeout 5m
+   ```
+
+### Exporting Raw Transcripts
+
+Transcripts are verbatim meeting dialogue with timestamps, exported from the local cache file.
+
+**Note**: Raw transcripts are only available for meetings where audio recording was enabled.
+
+1. **Export all transcripts:**
+
+   ```bash
+   granola transcripts
+   # Exports to ./transcripts directory by default
+   # Reads from ~/Library/Application Support/Granola/cache-v3.json (macOS)
+   ```
+
+2. **Export with custom output directory:**
+
+   ```bash
+   granola transcripts --output /path/to/output
+   ```
+
+3. **Specify custom cache file location:**
+
+   ```bash
+   granola transcripts --cache /path/to/cache-v3.json
    ```
 
 ### What Gets Exported
+
+#### Notes (Markdown files)
 
 Each note is exported as a separate Markdown file with:
 
@@ -95,7 +129,7 @@ Each note is exported as a separate Markdown file with:
 - **Note content** converted from ProseMirror JSON to Markdown format
   - Supports headings, paragraphs, bullet lists, and nested lists
 
-**Example output:**
+**Example note output:**
 
 ```markdown
 ---
@@ -118,17 +152,44 @@ tags:
 Action items discussed...
 ```
 
+#### Transcripts (Text files)
+
+Each transcript is exported as a plain text file with:
+
+- **Header section** containing metadata (title, ID, created/updated timestamps, segment count)
+- **Transcript segments** with timestamps and speaker identification
+  - **[HH:MM:SS] format** for timestamps
+  - **Speaker labels**: "System" (other participants) or "You" (user's microphone)
+  - **Verbatim dialogue** including filler words and pauses
+
+**Example transcript output:**
+
+```text
+================================================================================
+🤖 Team Sync Meeting
+ID: abc-123
+Created: 2024-01-01T14:00:00.000Z
+Updated: 2024-01-01T15:30:00.000Z
+Segments: 142
+================================================================================
+
+[14:00:04] System: Good morning everyone, how's it going?
+[14:00:06] You: Good morning! Ready to start.
+[14:00:09] System: Great! Let's dive into the agenda.
+[14:00:12] You: Sounds good to me.
+```
+
 ### Incremental Exports
 
 The CLI intelligently handles repeated exports:
 
-- **First run**: All notes are exported
-- **Subsequent runs**: Only new or updated notes are written
-- **Timestamp comparison**: Files are only updated if the note's `updated_at`
+- **First run**: All notes/transcripts are exported
+- **Subsequent runs**: Only new or updated files are written
+- **Timestamp comparison**: Files are only updated if the document's `updated_at`
   timestamp is newer than the existing file's modification time
-- **Performance**: Saves time by skipping unchanged notes
+- **Performance**: Saves time by skipping unchanged files
 
-This means you can safely run `granola export` multiple times without worrying
+This means you can safely run `granola notes` or `granola transcripts` multiple times without worrying
 about unnecessary file writes.
 
 ## Usage
@@ -137,26 +198,36 @@ about unnecessary file writes.
 
 ```bash
 # Export all notes (requires supabase file path to be configured)
-granola export
+granola notes
 
-# Export with specific supabase file
-granola export --supabase /path/to/supabase.json
+# Export notes with specific supabase file
+granola notes --supabase /path/to/supabase.json
 
-# Export to custom output directory
-granola export --output /path/to/notes
+# Export notes to custom output directory
+granola notes --output /path/to/notes
 
-# Export with custom timeout
-granola export --timeout 5m
+# Export notes with custom timeout
+granola notes --timeout 5m
 
-# Export with debug logging
-granola export --debug
+# Export notes with debug logging
+granola notes --debug
+
+# Export all transcripts (uses default cache file location)
+granola transcripts
+
+# Export transcripts with custom cache file
+granola transcripts --cache /path/to/cache-v3.json
+
+# Export transcripts to custom output directory
+granola transcripts --output /path/to/transcripts
 
 # Use custom config file
-granola --config /path/to/config.toml export
+granola --config /path/to/config.toml notes
 
 # Display help
 granola --help
-granola export --help
+granola notes --help
+granola transcripts --help
 ```
 
 ### Configuration
@@ -202,11 +273,14 @@ export DEBUG_MODE=true
 granola/
 ├── cmd/
 │   ├── root.go         # Root command and configuration
-│   └── export.go       # Export command implementation
+│   ├── notes.go        # Notes export command (API-based)
+│   └── transcripts.go  # Transcripts export command (cache-based)
 ├── internal/
 │   ├── api/            # Granola API client and document models
+│   ├── cache/          # Cache file reader for transcripts
 │   ├── converter/      # Document to Markdown converter
 │   ├── prosemirror/    # ProseMirror JSON to Markdown converter
+│   ├── transcript/     # Transcript formatter and writer
 │   └── writer/         # File system writer for Markdown files
 ├── main.go             # Application entry point
 ├── go.mod              # Go module dependencies
@@ -278,7 +352,7 @@ golangci-lint run
 brew install markdownlint-cli2
 
 # Run Markdown linter
-markdownlint-cli2 "**/*.md"
+markdownlint-cli2 "**/*.md" "#notes" "#transcripts"
 ```
 
 ## Dependencies

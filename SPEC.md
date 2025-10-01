@@ -2,72 +2,84 @@
 
 ## Executive Summary
 
-Granola CLI is a command-line tool that enables users to export their notes from
-the Granola note-taking application to local Markdown files. The tool provides
-a simple, efficient way to backup, migrate, or work with Granola notes outside
+Granola CLI is a command-line tool that enables users to export their notes and transcripts from
+the Granola note-taking application to local files. The tool provides two export capabilities:
+exporting AI-generated notes to Markdown files and exporting raw meeting transcripts to text files.
+It offers a simple, efficient way to backup, migrate, or work with Granola content outside
 the application while preserving all metadata and formatting.
 
 ## Project Overview
 
 ### Problem Statement
 
-Users of the Granola note-taking application need a way to export their notes
-for backup, migration, or offline access. Currently, notes are only accessible
+Users of the Granola note-taking application need a way to export their notes and transcripts
+for backup, migration, or offline access. Currently, notes and transcripts are only accessible
 through the Granola application, limiting users' ability to work with their
 content in other tools or preserve it locally.
 
 ### Solution
 
-A command-line tool that connects to the Granola API, authenticates using
-bearer tokens, fetches all user notes in JSON format, and converts them to
-clean, readable Markdown files with preserved metadata.
+A command-line tool with two export capabilities:
+
+1. **Notes Export**: Connects to the Granola API, authenticates using bearer tokens,
+   fetches all AI-generated notes in JSON format, and converts them to clean Markdown files
+2. **Transcripts Export**: Reads the local Granola cache file, extracts raw meeting transcripts
+   with timestamps and speaker identification, and exports them to plain text files
 
 ### Goals and Objectives
 
-- [x] Provide simple, secure authentication via Supabase tokens
+- [x] Provide simple, secure authentication via Supabase tokens (for API access)
 - [x] Connect to Granola API with proper headers
 - [x] Support configurable timeout for API requests
 - [x] Export all notes from Granola API to local Markdown files
+- [x] Export raw transcripts from local cache to text files
 - [x] Preserve note metadata (creation date, tags, etc.) in exports
-- [x] Support batch export of all notes in a single command
-- [x] Create well-organized file structure for exported notes
-- [x] Incremental exports (only updates files when notes are modified)
+- [x] Include timestamps and speaker identification in transcripts
+- [x] Support batch export of all notes and transcripts in single commands
+- [x] Create well-organized file structure for exported content
+- [x] Incremental exports (only updates files when content is modified)
 
 ### Success Criteria
 
 - Successfully exports 100% of user notes from Granola API
+- Successfully exports 100% of available transcripts from cache file
 - Maintains data integrity during conversion (no content loss)
-- Preserves all metadata in a standard format (YAML frontmatter)
+- Preserves all metadata in standard formats (YAML frontmatter for notes, text header for transcripts)
 - Completes export process efficiently (< 1 minute for 1000 notes)
 - Produces valid, readable Markdown files compatible with common editors
+- Produces readable transcript files with accurate timestamps and speaker labels
 
 ## Scope
 
 ### In Scope
 
-- Bearer token authentication with Granola API
+- Bearer token authentication with Granola API (for notes)
 - Fetching all notes via API endpoints
-- JSON to Markdown conversion
-- Metadata preservation in YAML frontmatter
-- Configurable output directory
+- Reading transcripts from local cache file
+- JSON to Markdown conversion for notes
+- Transcript segment formatting with timestamps
+- Metadata preservation (YAML frontmatter for notes, text header for transcripts)
+- Configurable output directories
 - Error handling and retry logic
 - Debug mode for troubleshooting
 
 ### Out of Scope
 
 - Two-way synchronization with Granola
-- Selective note export (filtering)
+- Selective export (filtering by date, tags, etc.)
 - Real-time export/watch mode
-- Export to formats other than Markdown
-- Note editing or modification capabilities
+- Export to formats other than Markdown/plain text
+- Content editing or modification capabilities
+- Named speaker identification (not available in Granola data)
+- Transcript export from API (not available - only in cache file)
 
 ### Future Considerations
 
-- Support for modified note exports
 - Export filtering by date, tags, or categories
 - Multiple export formats (HTML, PDF, etc.)
 - Integration with other note-taking tools
 - Scheduled/automated exports
+- Transcript search and indexing
 
 ## Requirements
 
@@ -87,13 +99,20 @@ clean, readable Markdown files with preserved metadata.
    - Handle pagination if required
    - Priority: High
 
-3. **Markdown Conversion** ✅
+3. **Transcript Export** ✅
+   - Read local Granola cache file
+   - Parse double-JSON encoded cache structure
+   - Extract transcript segments with timestamps
+   - Map speaker sources to readable labels
+   - Priority: High
+
+4. **Markdown Conversion** ✅
    - Convert JSON note data to Markdown format
    - Preserve note content and formatting
    - Add metadata as YAML frontmatter
    - Priority: High
 
-4. **File Management** ✅
+5. **File Management** ✅
    - Create output directory structure
    - Generate appropriate filenames
    - Handle duplicate names
@@ -153,15 +172,16 @@ clean, readable Markdown files with preserved metadata.
 ### System Architecture
 
 ```text
+Notes Export Path (API-based):
 ┌─────────────┐     ┌──────────────┐     ┌─────────────┐
 │   CLI       │────▶│ API Client   │────▶│ Granola API │
-│  (Cobra)    │     │ (HTTP/Auth)  │     │   (JSON)    │
+│  (notes)    │     │ (HTTP/Auth)  │     │   (JSON)    │
 └─────────────┘     └──────────────┘     └─────────────┘
        │                    │
        │                    ▼
        │            ┌──────────────┐
        │            │ JSON Parser  │
-       │            │   (Models)   │
+       │            │ (ProseMirror)│
        │            └──────────────┘
        │                    │
        │                    ▼
@@ -172,8 +192,33 @@ clean, readable Markdown files with preserved metadata.
                             │
                             ▼
                     ┌──────────────┐
-                    │ File System  │
-                    │   (Export)   │
+                    │ File Writer  │
+                    │  (Markdown)  │
+                    └──────────────┘
+
+Transcripts Export Path (Cache-based):
+┌─────────────┐     ┌──────────────┐     ┌─────────────┐
+│   CLI       │────▶│Cache Reader  │────▶│ Cache File  │
+│(transcripts)│     │(Double-JSON) │     │  (Local)    │
+└─────────────┘     └──────────────┘     └─────────────┘
+       │                    │
+       │                    ▼
+       │            ┌──────────────┐
+       │            │  Transcript  │
+       │            │  Segments    │
+       │            └──────────────┘
+       │                    │
+       │                    ▼
+       │            ┌──────────────┐
+       └───────────▶│  Formatter   │
+                    │(Timestamps/  │
+                    │  Speakers)   │
+                    └──────────────┘
+                            │
+                            ▼
+                    ┌──────────────┐
+                    │ File Writer  │
+                    │    (Text)    │
                     └──────────────┘
 ```
 
@@ -251,6 +296,43 @@ Error Responses
 - 429: Rate limit exceeded
 - 500: Server error
 
+#### Cache File Structure
+
+Location
+
+- **macOS**: `~/Library/Application Support/Granola/cache-v3.json`
+- **Linux**: `~/.config/Granola/cache-v3.json` or `~/.local/share/Granola/cache-v3.json`
+- **Windows**: `%APPDATA%\Granola\cache-v3.json`
+
+Format
+
+Double-JSON encoded structure:
+
+- Outer JSON: `{"cache": "<json-string>"}`
+- Inner JSON (parsed from cache string):
+  - `state.documents`: Map of document ID to document metadata
+  - `state.transcripts`: Map of document ID to array of transcript segments
+
+Transcript Segment Structure
+
+```json
+{
+  "id": "segment-id",
+  "document_id": "doc-id",
+  "start_timestamp": "2024-01-01T14:00:00.000Z",
+  "end_timestamp": "2024-01-01T14:00:05.000Z",
+  "text": "Spoken text content",
+  "source": "system|microphone",
+  "is_final": true
+}
+```
+
+Important Notes
+
+- Transcripts are only available for meetings where audio recording was enabled
+- The Granola API does NOT provide transcript data - only available in cache file
+- Speaker identification is limited to "system" (other participants) and "microphone" (user)
+
 ## User Interface
 
 ### Command-Line Interface
@@ -264,12 +346,20 @@ granola [global-flags] <command> [command-flags]
 --debug          Enable debug logging
 --help           Show help
 
-# Export Command
-granola export [flags]
+# Notes Command (export AI-generated notes from API)
+granola notes [flags]
 
-# Export Flags
+# Notes Flags
 --supabase string    Path to supabase.json file (overrides env/config)
 --timeout duration   HTTP timeout for API requests (default: 2m)
+--output string      Output directory (default: ./notes)
+
+# Transcripts Command (export raw transcripts from cache)
+granola transcripts [flags]
+
+# Transcripts Flags
+--cache string       Path to cache file (default: ~/Library/Application Support/Granola/cache-v3.json)
+--output string      Output directory (default: ./transcripts)
 ```
 
 ### Terminal User Interface
@@ -387,13 +477,17 @@ Not applicable - this is a CLI-only tool with no interactive TUI components.
 
 ## Glossary
 
-| Term          | Definition                                                     |
-|---------------|----------------------------------------------------------------|
-| Bearer Token  | Authentication token used to access Granola API                |
-| Frontmatter   | YAML metadata block at the beginning of Markdown files         |
-| Export        | Process of downloading and converting notes to local files     |
-| Granola       | The note-taking application from which notes are exported      |
-| Markdown      | Plain text formatting syntax for creating formatted documents  |
+| Term              | Definition                                                     |
+|-------------------|----------------------------------------------------------------|
+| Bearer Token      | Authentication token used to access Granola API                |
+| Cache File        | Local file storing Granola data including transcript segments  |
+| Frontmatter       | YAML metadata block at the beginning of Markdown files         |
+| Export            | Process of downloading/reading and converting content to local files |
+| Granola           | The note-taking application from which notes and transcripts are exported |
+| Markdown          | Plain text formatting syntax for creating formatted documents  |
+| Transcript        | Verbatim meeting dialogue with timestamps and speaker labels   |
+| Transcript Segment| Individual piece of dialogue with timestamp and speaker source |
+| ProseMirror       | JSON document format used by Granola for rich text content     |
 
 ## References
 

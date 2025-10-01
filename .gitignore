@@ -13,6 +13,7 @@ granola
 supabase.json
 granola-response.json
 notes/
+transcripts/
 
 # Code coverage profiles and other test artifacts
 *.out
