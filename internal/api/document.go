@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	"os"
 	"strings"
 )
 
@@ -262,16 +261,13 @@ func GetDocuments(url string, file []byte, httpClient *http.Client) ([]Document,
 
 		var granolaResponse GranolaResponse
 		if err = json.Unmarshal(responseBody, &granolaResponse); err != nil {
-			// Save the response for inspection
-			_ = os.WriteFile("/tmp/granola-api-error.json", responseBody, 0644)
-
 			// Try to parse as generic JSON to find where the error is
 			var raw interface{}
 			if jsonErr := json.Unmarshal(responseBody, &raw); jsonErr != nil {
-				return []Document{}, fmt.Errorf("%w: raw JSON parse failed: %s (saved to /tmp/granola-api-error.json)", ErrDocumentJSON, jsonErr)
+				return []Document{}, fmt.Errorf("%w: raw JSON parse failed: %s", ErrDocumentJSON, jsonErr)
 			}
 
-			return []Document{}, fmt.Errorf("%w: %s (saved to /tmp/granola-api-error.json)", ErrDocumentJSON, err)
+			return []Document{}, fmt.Errorf("%w: %s", ErrDocumentJSON, err)
 		}
 
 		// Add documents from this page to the result
