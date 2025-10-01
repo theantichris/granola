@@ -141,7 +141,8 @@ type Document struct {
 	UpdatedAt       string           `json:"updated_at"`
 	Tags            []string         `json:"tags"`
 	LastViewedPanel *LastViewedPanel `json:"last_viewed_panel,omitempty"`
-	Notes           *ProseMirrorDoc  `json:"-"` // New API structure - handled by custom unmarshaler
+	Notes           *ProseMirrorDoc  `json:"-"`      // New API structure - handled by custom unmarshaler
+	NotesPlain      string           `json:"notes_plain"` // Plain text version of notes
 }
 
 // UnmarshalJSON implements custom JSON unmarshaling for Document.
@@ -157,6 +158,7 @@ func (d *Document) UnmarshalJSON(data []byte) error {
 		Tags            []string         `json:"tags"`
 		LastViewedPanel *LastViewedPanel `json:"last_viewed_panel,omitempty"`
 		NotesRaw        json.RawMessage  `json:"notes"`
+		NotesPlain      string           `json:"notes_plain"`
 	}{}
 
 	if err := json.Unmarshal(data, &aux); err != nil {
@@ -171,6 +173,7 @@ func (d *Document) UnmarshalJSON(data []byte) error {
 	d.UpdatedAt = aux.UpdatedAt
 	d.Tags = aux.Tags
 	d.LastViewedPanel = aux.LastViewedPanel
+	d.NotesPlain = aux.NotesPlain
 
 	// Handle the notes field if present
 	if len(aux.NotesRaw) > 0 && string(aux.NotesRaw) != "null" {

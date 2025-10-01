@@ -46,6 +46,7 @@ func NewRootCmd(logger *log.Logger) *cobra.Command {
 	cmd.PersistentFlags().StringVar(&supabaseFile, "supabase", "", "supabase.json file")
 
 	cmd.AddCommand(NewNotesCmd(logger))
+	cmd.AddCommand(NewTranscriptsCmd(logger))
 
 	return cmd
 }

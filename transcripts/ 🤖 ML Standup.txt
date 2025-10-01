@@ -1,0 +1,230 @@
+================================================================================
+ 🤖 ML Standup
+ID: e009577d-4740-437e-963c-6c59177a8db7
+Created: 2025-09-29T18:59:25.005Z
+Updated: 2025-09-30T12:04:33.621Z
+Segments: 222
+================================================================================
+
+[19:00:19] System: Good afternoon, Christopher. Good to see you again.
+[19:00:20] You: Hello.
+[19:00:23] You: 25.
+[19:00:42] You: Oh, have you noticed I got the huddle links into the meeting invites and Google Calendar.
+[19:00:50] System: I think that's based.
+[19:00:53] System: It's been really useful.
+[19:00:55] System: Already.
+[19:00:57] System: Little thing like that. It's just so smooth.
+[19:01:00] System: Appreciate it.
+[19:01:25] You: Have you heard from Dib today?
+[19:01:27] System: Yeah, I've been talking to him a little bit. On, off, I don't know.
+[19:01:28] You: Okay?
+[19:01:31] System: If he knew about this meeting, he's not invited on the calendar.
+[19:01:35] You: Is it? Oh, my God.
+[19:01:36] You: Are you serious?
+[19:01:38] You: Did I do that?
+[19:01:38] System: Yeah.
+[19:01:39] System: Donna notice. Have him on. Probably because you said this up before.
+[19:01:42] System: He was here.
+[19:01:44] You: Let me fix that.
+[19:01:52] System: Actually noticed in our 101, I just forgot immediately. I'm sorry. I'm like,
+[19:01:55] You: 's all right.
+[19:01:57] You: Well, I got that fixed.
+[19:02:01] System: It's all good.
+[19:02:07] You: The normal mixture.
+[19:02:36] You: But.
+[19:02:38] You: It is.
+[19:02:39] You: On the top.
+[19:02:46] You: Of the digital stretch.
+[19:02:47] You: Right there.
+[19:02:47] You: It looks like you really stretched it out.
+[19:02:50] You: Good.
+[19:03:10] You: When you wash your hair.
+[19:03:38] You: Well, that was totally on me. And if he doesn't show up, that was totally my fault for not for him not even knowing this was a thing.
+[19:03:46] System: Okay?
+[19:03:48] You: We can go ahead and talk in a few. Shows up, he shows up. If not, I mean, you know, most of what I want us to do this week.
+[19:03:54] You: I want to note that I'll be on vacation next week.
+[19:03:58] You: So I'll be gone.
+[19:04:01] You: All through that.
+[19:04:03] You: Got a doctor's appointment Friday morning.
+[19:04:08] You: There and then. Okay, well, as far as what I am working on,
+[19:04:13] You: Outside of the things that we've already talked about, my big priorities this week are getting our road back, getting our team charter, and having a draft proposal for a data engineering team.
+[19:04:27] You: See here.
+[19:04:28] You: Making the decision on Connie.
+[19:04:34] You: What am I done today?
+[19:04:37] You: Is a very good question.
+[19:04:48] You: I did do an interview for a data engineer.
+[19:04:53] You: One on one.
+[19:04:57] You: Getting our software capital since we're at the end of the month.
+[19:04:59] You: So, actually, you might not know that I do this. And all the engineering managers, we do software. We have to do software capitalization.
+[19:05:07] You: Work. And so there's some things that always fall through the cracks at the end of the month. And so at the end of the month, I go through and I make sure things have that.
+[19:05:14] You: And that's mostly PRs that aren't tied to Jira.
+[19:05:18] You: If a PR is tied to a thing in Jira, it happens automatically.
+[19:05:23] You: But if we have a PR that's not tied to an issue in jira, then I've got to go in the software capitalization system.
+[19:05:31] You: And give it a category. And so I did that also earlier today.
+[19:05:37] You: Caught Kevin up with the embeddings work.
+[19:05:42] System: Yeah.
+[19:05:44] System: We don't have. So that's interesting. Ems, do capex here?
+[19:05:48] System: Capex report. You guys do the recording. We're just the alignment.
+[19:05:49] You: Yeah.
+[19:05:51] You: Just the categories that we're responsible for making sure our work's correctly categorized.
+[19:05:57] You: And finance does the capex. And so Denver is the person that does that. So also the engineering manager that's kind of in charge of making sure software capitalization happens.
+[19:06:08] You: I set up. We used to do the system in Notion with Notion databases.
+[19:06:12] You: And so that's why.
+[19:06:13] You: And so now we're pulling the information directly from Jira. Hey Dev, report. We're pulling the information directly from Jira and GitHub.
+[19:06:23] You: And so I helped. Once we switched over to jira, I helped get us off of using Notion into that to make the process more automated than it was. It's still not quite as automated as I would like.
+[19:06:36] You: But yeah.
+[19:06:37] System: That's lit.
+[19:06:38] You: Engineering managers are responsible for making sure all of their work for the month has the proper category.
+[19:06:44] System: Seems like an LLM would be a good classifier for Is this Capex or not?
+[19:06:50] System: But I didn't say that.
+[19:06:51] You: That, my friend, is an operation cycle project.
+[19:06:59] You: All right.
+[19:07:00] You: Yeah. So I didn't do a whole lot of real beating today already. Just some meetings, interviews, software capitalization work.
+[19:07:10] You: One on ones and stuff.
+[19:07:13] You: So our team priorities for the week.
+[19:07:15] You: Are going to be our Q4 roadmap.
+[19:07:18] You: Which I would like to have ready to present to leadership.
+[19:07:24] You: By the end of this week, since we're starting work on Monday.
+[19:07:27] You: And past that, us getting our team chartered. We don't have to have that finalized this week, but having good progress on our team charter this week or my two top priorities.
+[19:07:38] You: I'm also working on a proposal for data engineering team.
+[19:07:43] You: Which I am already starting to manage two people to work on data, but their focus is primarily going to be user analytics and working with user analytics team.
+[19:07:52] You: I am going to create a proposal of extending that team and the team's responsibilities to data governance.
+[19:07:58] You: And so my personal priority is to have that document ready to give to Jeff by the end of this week. Also.
+[19:08:06] You: And that I'm off next week for vacation.
+[19:08:09] You: Raj.
+[19:08:12] System: Yeah.
+[19:08:12] System: The threads have been tying together are just loose ends on all of the ML stuff that has been in flight. On upcycle I was trying to get, we deployed a Gemini 270M, a very tiny LLM to production because we have enough memory on our systems for that.
+[19:08:28] System: It's just to play with. It's not for anything real.
+[19:08:29] System: I still can't get it working. I've just been messing with it. So, you know, that's not here. Neither here nor there.
+[19:08:34] System: I? Fletcher was an intern, worked with data team.
+[19:08:37] System: He pushed a detector system, which came up in team when I was out. It's pretty cool.
+[19:08:42] System: There will be more work on that kind of stuff later. But I tried. I didn't have time to get to that. Basically, we want to train in our own data.
+[19:08:49] System: This is a hero code for it from an AI I don't know if it's good.
+[19:08:51] System: The PR is still open. I just left it there.
+[19:08:54] System: Other than that, I've just been doing lots of little random things.
+[19:08:57] System: I want. I gave feedback to Christopher on the notion document for the readme. I'm open to any changes. I don't really care, as long as it's clear. I'm fine with everybody's feedback.
+[19:09:07] System: As far as technically things, I just want democratic decision making so that people who use the repo are the ones driving that kind of change.
+[19:09:13] System: I don't care. Please do whatever you guys want to do with the tool and make me happy.
+[19:09:17] System: So I can only give my own perspective on that, and I'm happy to continue.
+[19:09:20] System: Other than that, I've been catching up on all my OO messages. Lots of little things. Little threads, Happy things.
+[19:09:26] System: Also giving feedback on the management playbook repo that you asked for.
+[19:09:31] System: And that's pretty much going to be my day, I think, is just catching up.
+[19:09:35] System: This week we are talking about priorities. I want to devote some time to thinking about the quote, unquote monkey on the back of the semantic search project. And I just want to make sure that I have clarity for myself before I come to you on what the next steps are.
+[19:09:54] You: Iv.
+[19:09:55] System: Sorry. I'm walking to get lunch. But they don't know about this meeting.
+[19:10:00] You: Yeah, that was all me.
+[19:10:00] System: Yeah.
+[19:10:04] System: No worries. I hope you guys don't mind.
+[19:10:06] System: I'm taking a walk.
+[19:10:06] You: Not at all.
+[19:10:08] System: So it's an entertaining background for you guys.
+[19:10:10] System: Yeah. So I spent last week onboarding. Finished and graduated. Company cam. So you're looking at the latest graduate.
+[19:10:18] System: This week. I've been going through ccml, looking through some of the onboarding docs.
+[19:10:24] System: I had a one on one yesterday, last week with Christopher, kind of looking through what the onboarding projects look like.
+[19:10:29] System: So I've been going through those, happy to kind of help out in any way. I'm very interested in working kind of on this roadmap for the next kind of work cycle. And I'm very curious. Christopher, you mentioned we kind of want to send that over to leadership.
+[19:10:46] System: He's still there.
+[19:10:48] You: Yeah, I'm still here.
+[19:10:49] System: Ok. Ok. Yeah. I'm curious. Do we have any directives from leadership maybe, like, at a high level on kind of what they're looking for us to accomplish so we can kind of scope the work around that? What kind of, like, are there other goals?
+[19:11:01] You: So the kind of overarching long term goal that the company is looking at right now is making company cam that next employee at your company. We are marketing and branding.
+[19:11:18] You: Has pushed way back on making it like your best employee or the only employee you need to another employee that you have there.
+[19:11:26] You: And so that is going to be our big kind of North Star of things to do.
+[19:11:35] You: Our running experiments and finding the features and the data that we have in order to be able to support things like industry classification.
+[19:11:43] You: Can we tell when a project has been complete?
+[19:11:47] You: Are we able to generate marketing stuff?
+[19:11:50] You: I think also things that for quarter four that I would like for us to be able to look at that I think will have good immediate value or things like what can we detect roof damage in a photo?
+[19:12:04] You: Can we detect quality assurance things in a photo?
+[19:12:08] You: And so that one's kind of been.
+[19:12:13] You: In the back of my head for years because I think this might have been the year. It might have been the year you joined Raj, or it might have been the year before. But we had a live customer interview.
+[19:12:21] You: And they have a workflow where they have a huge, like, 75 inch TV in their office.
+[19:12:28] You: That stays on the live photo feed. So as people in the field are taking photos, they're watching them come in live.
+[19:12:36] You: To look for quality insurance.
+[19:12:38] You: To look for safety violations.
+[19:12:40] You: Things like that.
+[19:12:42] You: And so.
+[19:12:44] You: Stuff around that.
+[19:12:47] You: I want to get a steer to, and I think that can tie in with the onboarding projects that we have.
+[19:12:54] You: With identifying industry and stuff like that.
+[19:12:57] You: What you share here.
+[19:12:58] You: Raj.
+[19:13:00] System: I was talking to Olga the PM this morning on Team Consume friend of mine. She was asking me more about the business strategy with regards to Agent. I shared a comment or I asked Ron a question after I got back from OO on that product in engineering thread.
+[19:13:14] System: Because I think agents are a misstep in the industry overall for a lot of reasons. I'm happy to talk about that opinion because it may be a hot take. I don't know why.
+[19:13:21] System: But I shared this list with Olga. It's from the book the AI Con. Very good book for practical business things. Not just understanding AI in a different context, but when talking about is an AI solution good for X problem? You can ask any of these questions. They're all very good.
+[19:13:35] System: You had mentioned we're pushing back on the branding for your best AI employee. That is a specific question in the book where they say, ah, this is a sign of too good to be true marketing.
+[19:13:45] System: There you go. I just brought it up because it came up.
+[19:13:49] System: I think we should be strategic about how we decide to kind of pivot on the vision moving forward. Because to your point, Raj, and what you shared with me last week, Christopher, that the kind of video, when we think about what the next gen app company Cam is, it very much lends itself to applications. A lot of the use cases, they kind of show. I think they're kind of heavily leading on that.
+[19:14:10] System: So kind of deciding where our roadmap would want to lead us and then kind of setting up a charter based on that would be very helpful, maybe to do this week.
+[19:14:19] You: That is the plan, sir.
+[19:14:24] You: Things like that. What features can we extract from what we have in order to support the field service workers where they're at right now?
+[19:14:33] You: And then also be thinking about supporting the CSM initiative. It's official now. It's been announced we are doing that.
+[19:14:44] You: Supporting those two different things, really. The field service worker that we have right now and then the back office, like lead generation funnel stuff that we are wanting to get into.
+[19:14:59] System: Also, Christopher, I'm curious. What is the growth of the data team look like? Do you have any plans?
+[19:15:03] System: To grow the number of employees. Are we kind of at that stage or we're looking to hire.
+[19:15:08] You: So we are hiring two people right now for this.
+[19:15:12] You: And the focus of these people right now is not what we would call data engineering.
+[19:15:18] You: Their primary focus is to partner and work with user analytics to get our venting system cleaned up.
+[19:15:25] You: Into a place where product can add meaningful events.
+[19:15:30] You: I made that very clear that I wanted that. This is not a team that will be adding events. Product teams still need to be responsible for adding their own events.
+[19:15:39] You: We're just going to have dedicated people to help get us to a place to do that.
+[19:15:43] You: Past that. That's where I want to get. I want to steer the team and the team's responsibility.
+[19:15:50] You: Into traditional data engineering also.
+[19:15:53] You: That is the proposal that I am going to work on this week. I've already talked to Jeff and David about it.
+[19:15:58] You: And I said, I'll have a proposal for it this week.
+[19:16:02] You: The only pushback that I've got from that which isn't really pushback, it's more of a concern.
+[19:16:07] You: Is that we don't want to set up a team of gatekeeping.
+[19:16:11] You: We want this to be collaborative and democratic.
+[19:16:16] You: About this, but I want but have people who can own that area of the business, the data area of the business.
+[19:16:23] You: And have ownership and guidance and work with the other teams.
+[19:16:28] You: To do things.
+[19:16:35] System: Makes sense. Yeah, I was just curious because I have some connections who are in the kind of data engineering space who I've been saying nothing but good things to about company Cam. So we're hiring. Looking like.
+[19:16:44] You: Well keep them in their back pocket.
+[19:16:50] You: So if things go according to how I would like them to go, we would be looking to hire one or two in Q4.
+[19:16:59] You: At the earliest, at the latest Q1. So I will keep you all updated how those conversations go.
+[19:17:13] System: Cool. Yeah, that sounds good. One last thing for me is, like I said, I'm continuing to onboard going through ccml. Raj, if you kind of need an extra set of hands or eyes to look at anything. I know you mentioned with Gemini, things like this, happy to help out as well.
+[19:17:14] You: All right.
+[19:17:26] System: But yeah. Besides, I could use assistance with as we go into quarterly planning.
+[19:17:32] System: I just want your general eyes. What are things that smell bad that I don't know about? What are things you would change just looking at this? And let's talk about how to make a good ML environment, because I just went from a starter sauce. Maybe we got something a little bit more tailored to what we're building here.
+[19:17:47] System: Yeah, that's a good point actually. So I was hoping to have a conversation with you and Joe about this. I had a one on one with Jill last week as well. So one big thing I do want to talk about is kubernetes. We're using kubernetes, Joe.
+[19:18:02] System: Is very kubernetes forward. And while I think that his motivations make a lot of sense, I don't know if we're kind of going with an overkill of a solution.
+[19:18:14] System: When I kind of asked him about it, A lot of the motivations around the kind of work that we want to do, which, to be fully transparent on, I don't have 100% context, right?
+[19:18:21] System: So my conversation with Joe last week was a lot of hypotheticals based on my understanding of the work that we want to do at CompanyCam. But I haven't had a chance to kind of look at our existing CI CD processes, the way we plan on deploying models, things like this. So hopefully, as I kind of spend more time doing deep dive onboarding this week as opposed to general CompanyCam stuff.
+[19:18:39] System: I'd love to kind of set up a meeting with you, maybe late this week, and Joe as well, discussing kind of what the future of deployment and maintaining our infrastructure looks like and if EKS is really what we need.
+[19:18:50] System: I'm aligned with you 100%. I share that opinion. And two things I can recommend.
+[19:18:54] System: We can set up time with Joe, but also set up sometime with me if you want to do a deep dive.
+[19:18:59] System: The Gemini model is a great way to mess with how to get a model to production. If you just want to kind of see it work.
+[19:19:04] System: So let me know. Ask any questions, I'm available.
+[19:19:09] System: Sounds good. Thank you.
+[19:19:10] System: Raj.
+[19:19:12] You: If you all haven't done this already, make sure that you get your scorecards for Connie and by the end of the day, so I can take a look at those in the morning and get a decision made.
+[19:19:24] You: I would like to have a decision made tomorrow.
+[19:19:30] You: And then.
+[19:19:30] System: Do we have follow up discussion on this or is this kind of just once we submit the scorecards of decision.
+[19:19:36] You: Submit your cards, I will read them. If I need further clarity or discussion from your cards, I will always reach out.
+[19:19:47] You: If you all want to talk about it now, though, I've got time. We can do that also.
+[19:19:52] System: Well, I guess I was asking more generally, like, when we think about the way that we structure interviews, I think it would be helpful for us.
+[19:19:57] System: Aside from submitting scorecards to maybe have like a quick 15 minute after where we get everybody together who participated in the interviews and just kind of talk through our impressions.
+[19:20:05] System: Because I think some people will have blind spots that other people might be able to address.
+[19:20:05] You: Ok?
+[19:20:09] System: Things like that, it would be good to have some kind of consensus.
+[19:20:12] You: Yeah, I am fine with that.
+[19:20:18] System: So maybe instead of having the conversation here, could we schedule something like tomorrow or day after with Dr. Dan as well?
+[19:20:26] You: Was then on the interview.
+[19:20:28] System: Yeah, he was there.
+[19:20:29] You: Ok. I will do my best to try to make that happen.
+[19:20:35] You: I do not have any free time.
+[19:20:39] You: So far this week. We have a team meeting tomorrow to do Q4 and charter stuff.
+[19:20:45] You: We could have the first bit of that time having that conversation. I can see a dang can come.
+[19:20:51] You: If you like to do that.
+[19:20:58] You: That sound good?
+[19:21:01] You: Ok?
+[19:21:05] You: Let's look at what Dan's schedule is like.
+[19:21:12] You: He is free during that time.
+[19:21:19] You: And so I am going to.
+[19:21:23] You: Invite him to tomorrow's.
+[19:21:28] You: Meeting.
+[19:21:36] You: All right.
+[19:21:39] You: That's awesome. And then I'll also make sure that you're aware. Div, I will be out of town next week for vacation.
+[19:21:48] System: Have a good pto.
+[19:21:49] You: Yeah.
+[19:21:50] You: And then I've got doctor's appointment on Friday morning, so I'll be out for a little bit.
+[19:21:53] You: Then.
+[19:21:56] You: All right. Thank you all. We'll talk to you tomorrow.

@@ -1,0 +1,283 @@
+================================================================================
+🤖 Raj / Christopher 1:1
+ID: 743f0ae5-37e4-48d8-9ec4-b51b43040e24
+Created: 2025-09-29T18:29:59.102Z
+Updated: 2025-09-30T12:04:33.622Z
+Segments: 275
+================================================================================
+
+[18:30:04] System: Good morning, Christopher. How's it going?
+[18:30:06] You: Good. How are you, raj?
+[18:30:09] System: Oh, my tto was so good. I feel really nice.
+[18:30:12] You: Awesome.
+[18:30:13] You: Good time with the dogs.
+[18:30:15] System: Yeah.
+[18:30:17] System: This. Definitely good. Needed rest.
+[18:30:19] You: Good. Awesome.
+[18:30:22] You: Oh.
+[18:30:25] You: Busy week so far. You're catching up.
+[18:30:28] You: I know that I probably flooded you with a lot of stuff the last half of that week.
+[18:30:28] System: Oh, yeah.
+[18:30:35] System: Oh, this is all good. You know, it was helpful to just put a later tag on it in Slack and then I feel like I got through most of it. I would appreciate it if I missed anything. You let me know though, as usual.
+[18:30:44] You: Yeah, that is the way I think. Those are the. I mean, those are the big things. Dustin's research on partitioning the database.
+[18:30:58] You: The readme stuff.
+[18:30:58] System: Did you want to that one? A little bit.
+[18:31:01] You: What?
+[18:31:02] System: Did you want to discuss that one in particular? A little bit.
+[18:31:05] You: If you want to.
+[18:31:07] You: We can. We can discuss.
+[18:31:08] System: I left some feedback on the back end Engineers thread with that. I think it was mostly a document about.
+[18:31:14] System: What kind of partitioning would we go for versus sharding or all that, which are good. You know, I'm happy that they are going through thinking about that.
+[18:31:16] You: Yeah.
+[18:31:21] System: I think that one thing I want to get aligned on, though, is the need for that. I am open to if we don't need it, but I am suggesting we probably would. That's the conversation we can have.
+[18:31:31] System: As search gets more or especially image search gets more used. But I do want them to prepare for it. I don't know what that means for them.
+[18:31:36] You: Yeah.
+[18:31:37] System: Though that makes sense.
+[18:31:38] You: Yeah, I saw your reply to the thread. I'm subscribed to it, so I can kind of keep up with that. I've got my sync with Munyo this week.
+[18:31:48] You: To kind of get further on there.
+[18:31:50] You: With that and where it's at.
+[18:31:53] System: Yeah, I don't think that's. I just want to again, reiterate. I don't think we need to have them do anything yet, but if this is all, like, in alignment for them, then I'm happy to.
+[18:32:03] You: Yeah, okay.
+[18:32:05] You: Noted, sir.
+[18:32:07] You: Let's see here.
+[18:32:20] You: Okay?
+[18:32:21] You: All right.
+[18:32:24] You: You're very energized by new people.
+[18:32:26] You: I am too.
+[18:32:27] System: It's been really nice, even for the few days that I overlapped outside of my pto just talking to Diff. I like having another person on the team. Matt was great too while he was here. So, you know, it's good that we have someone who can help us get on the road too. I really like Dave, and I think we're going to have a better time.
+[18:32:47] System: And I do think that already we've set out on a better foot with this, by the way, in terms of, like, we're going to get them in a place where they feel comfortable and we can use the skills and whatnot, and it's going to be better.
+[18:32:58] You: Yeah, I agree.
+[18:32:59] You: So having the work that you and I have done.
+[18:33:04] You: To kind of, you know, make this focus team, and then we're going to continue to do is going to have better outcomes.
+[18:33:11] You: In the future.
+[18:33:12] System: It feels good to have them already.
+[18:33:14] System: You know?
+[18:33:16] You: All right, let's align on priorities.
+[18:33:20] System: Yeah, I mean mechanically, too. Injira, like, I think I know what I'm working on next, but I want to confirm.
+[18:33:24] You: So.
+[18:33:26] You: Yeah.
+[18:33:27] You: Okay?
+[18:33:29] You: So that is going to be a priority number one for us as the machine learning team to figure out this week.
+[18:33:35] You: Is kind of get our Q2 projects in line of what we're going to do.
+[18:33:41] You: And so, part of the team time that I've got for us this week,
+[18:33:46] You: That is our focus. Let's talk about what we are actually going to do, what we want to deliver in Q4.
+[18:33:53] You: And start putting that together.
+[18:33:53] System: Love it.
+[18:33:56] You: So the quarter starts next week, so that's kind of priority number one for us.
+[18:34:01] You: Nothing to do outside of those meetings other than maybe think and ask questions and stuff.
+[18:34:10] You: And so our first meeting is tomorrow at 12:30 Eastern.
+[18:34:15] You: Nine thirty your time.
+[18:34:19] System: And question. I see 3ml team times on the calendar or each of these for distinct.
+[18:34:21] You: Yes.
+[18:34:23] You: No. This is time for us.
+[18:34:25] You: So the two things that I want us to do this week is one, get our Q4 at least the beginning of our Q4 roadmap put together, and I want us to have our draft team charter together.
+[18:34:37] System: Okay?
+[18:34:38] You: That's our focus for our time this week.
+[18:34:40] You: And so wherever I had a gap in my calendar, I just blocked time for us to have time to get together and work on that stuff.
+[18:34:48] System: Small suggestions or I don't know if I can do this, but could you edit the descriptions on the calendar to just list those two priorities that'll help me stay organized?
+[18:34:57] You: I can. Let's see here.
+[18:34:58] System: The last one has the team charter, but the other two don't have reference to what we'd be doing, so that that would help.
+[18:35:03] You: Yeah.
+[18:35:04] You: Let's see.
+[18:35:08] You: Meaning priorities. Yeah. The first one, I just made a meeting for a team charter, and then I realized, like, oh, shit, the quarter starting.
+[18:35:16] You: Q4 roadmap.
+[18:35:19] System: Yeah.
+[18:35:20] System: Just those two bullet points even would be wonderful.
+[18:35:20] You: Team.
+[18:35:22] You: Yep. I'm getting it on there right now. Charter.
+[18:35:22] System: Thank you.
+[18:35:27] System: Yes.
+[18:35:28] System: Sir.
+[18:35:28] System: Love it.
+[18:35:33] You: And then.
+[18:35:36] You: I might be able to get us another meeting on Wednesday.
+[18:35:42] You: During the product review time. I need to sync up with Anna because this is Inputs Week.
+[18:35:50] System: Yeah, that's all good.
+[18:35:52] You: To do that.
+[18:35:54] You: So I'll figure that out.
+[18:35:57] System: I have my little desk flippy. Sometimes I put on camera.
+[18:35:58] You: Awesome.
+[18:36:04] System: Sounds good.
+[18:36:04] You: It's awesome.
+[18:36:05] You: Yeah, okay.
+[18:36:07] System: Seriously.
+[18:36:08] You: Yeah.
+[18:36:09] You: All right. Linux plus Cocam. Is it possible? Yeah, it is possible. So I've already kind of just floated the idea.
+[18:36:19] You: By jeff.
+[18:36:20] You: About this.
+[18:36:21] You: I think the big challenge.
+[18:36:23] You: For us is just going to be it right now, as they're trying to get that. Because they're going to need to put up a provisioning system. I think it's a great idea.
+[18:36:32] You: I would probably pick Linux.
+[18:36:34] You: If I had the choice also.
+[18:36:37] You: I think that.
+[18:36:40] You: I think it's a good idea.
+[18:36:42] You: So yeah, we can do things online virtually. I actually talked to Dev about this too last week, and he prefers back and doing things.
+[18:36:49] You: Like on aws or he was talking about some Google platform that he's using. That's not part of.
+[18:36:56] You: Google.
+[18:36:57] You: Yeah, something like that.
+[18:37:00] You: But I think there's merit to being able to go faster working on this stuff locally. Having the Cuda drivers, that honestly seems like kind of a no brainer.
+[18:37:14] You: To me.
+[18:37:15] System: It's more of a reference thing. I think we will need to build for Max anyway, so it's not really a net time saving so much is it just makes my life easier because Linux is like an old friend, you know, it's easy.
+[18:37:17] You: Yeah.
+[18:37:25] System: Makes sense.
+[18:37:26] You: Which you work faster.
+[18:37:30] System: Yeah. It just makes me happy. So, you know, it's like a low priority thing.
+[18:37:34] System: But, you know, I do think a lot of mlp like it.
+[18:37:36] You: Yeah, I think it makes sense. I think as an organization, even in.
+[18:37:48] You: Oh, goodness. Sal pees is linux.
+[18:37:51] You: But he's also a contractor. He supplies his own machines.
+[18:37:54] You: And stuff, so. But we've already have someone here, so they actually might already have something set up for provisioning.
+[18:38:01] You: For linux.
+[18:38:02] You: But I'm working on that conversation. When are you up for a device renewal?
+[18:38:02] System: Great.
+[18:38:08] System: I think coming up this December will be year two, so next December will be your third.
+[18:38:13] You: Okay?
+[18:38:17] System: I could definitely wait. I don't like e waste, so it's all good.
+[18:38:19] You: Yeah.
+[18:38:22] You: A lot of talk. Definitely wouldn't go to waste.
+[18:38:26] You: I think it makes sense.
+[18:38:28] You: Myself.
+[18:38:32] System: Small question on that. Say that that comes up for a new role, the laptop will get recycled or whatever. You know, I'm not concerned with the end of life cycle for that product, but what about.
+[18:38:41] You: That laptop becomes your personal property.
+[18:38:44] System: Yeah. Yeah, that's a concern for me, too, a little bit, because I already have a lot of computers, so I would probably find a way to recycle it.
+[18:38:50] You: Yeah.
+[18:38:50] System: But I guess just a general question.
+[18:38:52] System: Do we buy refurb or do we only buy new?
+[18:38:55] You: We buy new.
+[18:38:57] System: Okay?
+[18:39:01] You: But yeah, I mean that once you have that laptop, recycle it. Maybe donate it to a school where children's organization or something like that.
+[18:39:09] System: Differently ways that I feel comfortable doing that. But more of my question was just like, from a procurement standpoint,
+[18:39:11] You: Yeah.
+[18:39:15] System: And ecological alignment.
+[18:39:17] System: It might be a good idea to look into.
+[18:39:21] System: More ethical procurement pipeline, if you get what I mean. Like that. That's the thing. A small thing to think about.
+[18:39:22] You: Yeah.
+[18:39:26] You: Okay?
+[18:39:27] You: Yeah.
+[18:39:28] System: Have you ever heard of the website back market?
+[18:39:30] System: As a curio.
+[18:39:33] System: That market is a website where they take refurbished. They have, like, they work with refurbishers of all kinds of sizes. They take old tech and they fix it up, and then they market it at much better prices for people like me. Like, for instance, I have a home lab and I'm like, downstairs, I'M like, okay, I need to get a media center going. Well, let me just get something off back market because it's not net new production, right?
+[18:39:51] System: It's something in the ecosystem already, so I can put it to good use.
+[18:39:54] System: I think more companies should consider, even for, like, maybe you're in the office and you want a TV and a sales floor. Maybe get one refurb, you know, because that's not a critical thing. Maybe. I don't know.
+[18:40:05] System: If you get what I'm saying. Like it's a good idea to align on better practices for buying stuff already in circulation. I don't know. Just a suggestion.
+[18:40:14] You: Yeah.
+[18:40:16] You: I'll write that down.
+[18:40:16] System: Cheaper.
+[18:40:17] System: Too.
+[18:40:19] System: I appreciate it.
+[18:40:24] You: I put that in the wrong section.
+[18:40:32] You: I put it in the wrong section again.
+[18:40:41] You: Okay. Yeah. So let's talk about your enterprise architecture.
+[18:40:46] System: Yeah, I didn't do any of the EA reading because I was just handling other little things from this long quarter. I'm happy to move the goalpost on that and do that reading later.
+[18:40:55] You: Okay. Yeah, let's look at that right now.
+[18:40:58] System: Maybe open that.
+[18:40:58] System: Up.
+[18:41:00] You: This is still an area that's valuable for you, that you want to keep part of.
+[18:41:04] System: Yes.
+[18:41:04] You: Okay?
+[18:41:07] You: But since I'll just move these things out to the end of the year right now.
+[18:41:13] System: Yeah. Togaf Part 1 can move to 31 like the rest of them.
+[18:41:17] You: Yeah, yeah, we'll just do that.
+[18:41:18] System: Solid.
+[18:41:21] System: Those my only deadline, quote, unquote, things have been done.
+[18:41:25] You: Yeah. As far as your mentorship, I'm gonna go ahead and check off that SQL class for product managers right now.
+[18:41:36] System: Yeah.
+[18:41:48] You: And I talked to David, you know, about this last week, and this was. David said he actually did the same thing at a place that he was at before, Teach a product manager SQL, and that there's value in there.
+[18:42:00] You: And I do apologize on my miscommunication.
+[18:42:04] You: I cleared up what the actual goals and requirements are. When, David? Last week.
+[18:42:08] You: And he said that he wants. We've got the security lead starting in October, and he wants to wait.
+[18:42:13] You: To there and let the security lead make the decision on who we give Blazor access to.
+[18:42:19] System: Sure. Yeah, I'm happy. I want to leave that up to the PMS in the course. Once we get that, I'm going to put it on my list. I'll communicate in that channel that we're thinking about that it's going to come later and give an apology. And then by that, time. If they still are interested, then yeah, let's. Let's resume if they want.
+[18:42:33] You: Yeah.
+[18:42:34] System: I think that's. That's totally fair.
+[18:42:39] You: See grow.
+[18:42:40] You: What else do we have on here? So we have that.
+[18:42:44] You: Quantifying communication.
+[18:42:47] You: For business, roi.
+[18:42:48] System: The IRR document that I want to produce. Now that they got the dashboard, I took a look. It's not very granular, just from Curse three. I don't want to give feedback on that because I don't know.
+[18:42:56] System: But I. Yeah, yeah, yeah, 100%.
+[18:42:57] You: Yeah, he's still working on it.
+[18:43:01] System: But looking at that, I think it once it gets to a state with more stuff, I can probably write that if for now it could be useful.
+[18:43:08] System: I'll align on that later, But I think. Yeah, the main blocker there is. I just need time to do it.
+[18:43:13] System: Maybe even outside of off cycle, because that's a good business project. Or, I mean, it is for my development. So whenever we can.
+[18:43:14] You: Ok?
+[18:43:20] System: Maybe next up cycle. We dedicate time just for me to knock that out as a priority.
+[18:43:26] You: Ay.
+[18:43:26] You: Yeah.
+[18:43:27] System: It'll be easier to do with more mles because they can take care of, like, the kind of hard edges of ML stuff, like little bugs and things that come up.
+[18:43:29] You: Let's see.
+[18:43:35] System: So that, you know, it frees me up. And I've cycled too. I feel more able to do those things.
+[18:43:38] You: Thank you.
+[18:43:40] You: Upcycle here.
+[18:43:43] You: And then broaden strategic and fluence. You wanted to sit on sales demos.
+[18:43:48] System: I haven't had time for that yet, but I'm. I'm going to talk to them. I. I think the sales leader floor of the floor is back, so I forget his name, but I'm going to speak to him.
+[18:43:50] You: Okay?
+[18:43:50] You: Yeah.
+[18:44:05] You: If you want to also, and kind of a different context, but if you look on, it doesn't look like they're actually doing one. But normally on Tuesdays.
+[18:44:18] You: The input team has a meeting called Discovery Weekly.
+[18:44:24] You: And that is a time where the input team gets together with their cells, data and customer service partners.
+[18:44:32] You: To talk about things that they're doing and get feedback.
+[18:44:36] You: Not quite the same thing as a sales call. Probably not even in the same ballpark as the sales call.
+[18:44:41] You: But if you ever want to attend some of that, let me know and I can get Anna to extend you an invite.
+[18:44:49] System: I will definitely reach out to them as a separate bullet point on that rope pan, kind of, because that is also useful.
+[18:44:55] You: Yeah.
+[18:44:55] System: That sounds good.
+[18:44:56] You: Okay?
+[18:44:57] System: And I got my dinner off. One second. I'm just eating something as we talk.
+[18:45:00] You: That's fine.
+[18:45:01] System: That's letting you know.
+[18:45:04] You: I've always been one to eat on camera.
+[18:45:05] You: Myself.
+[18:45:07] You: Whether that's good or bad.
+[18:45:10] You: I finally got.
+[18:45:11] System: There are certain foods where they're just noisy, and I, I, I'm mindful of it, but generally I'll, I'll eat on Camden sometimes.
+[18:45:15] You: Yeah.
+[18:45:16] You: Yeah.
+[18:45:18] You: Crunching in someone's ear when they're wearing headphones.
+[18:45:22] You: Is never comfortable.
+[18:45:25] System: 100%.
+[18:45:28] You: All right. Well, we got through everything here. What else do you have on your mind?
+[18:45:32] System: The last action item that I wanted to talk about. When are we going to dedicate time to building an AI ranking internal document for that?
+[18:45:44] You: I think right now that is on your plate to start a draft. If this is something that you want to work synchronously with just all of us on that way.
+[18:45:57] You: We can schedule some time.
+[18:45:59] You: In order to do that.
+[18:46:03] System: I think that's not necessarily an upcycle project. That's definitely a product project, because we do need to give that guidance to teams.
+[18:46:09] System: Right.
+[18:46:10] You: Yeah.
+[18:46:15] You: I agree with. That's not an Op Cycles project.
+[18:46:19] You: That's something that we can be doing now.
+[18:46:23] You: And I think that a lot of stuff that.
+[18:46:28] You: Might be considered op cycle by other teams probably is not kind of real up cycles work. So I am not going to have a hard line deciding what we want to do during a production cycle versus an operation cycle.
+[18:46:45] You: If there's something that you want to do or get done, let's talk about it and say, ok, well, let's do that now. Or, no, let's hold off on that.
+[18:46:52] System: Yeah, that's helpful, I guess. In that case, should I make at least a ticket for it or associated to some type of initiative and then we can talk about in our orderly plan.
+[18:47:00] You: Yeah, that's a good idea.
+[18:47:04] System: It would take a good chunk of time, not super long, but we got online.
+[18:47:10] You: Just make a story on Jira for it and let's get it on there and not overthink too much about how we want to do that right now.
+[18:47:21] System: Excellent. That's all I need. Thank you.
+[18:47:26] You: Awesome. All right, what else?
+[18:47:30] System: Overall, that's about all I got for today.
+[18:47:33] System: It's Monday, so I'm back from PTO and just, like, getting my head back in things.
+[18:47:35] You: Yeah.
+[18:47:37] System: And it's going well so far.
+[18:47:40] You: Awesome. That's great to hear.
+[18:47:44] System: Just a little bit after Connie's interview, which I can talk about too, if you want, but is telling me that he's look, he got a lot of helpful context from you as regards to onboarding projects. So he's having a good time with that, and I feel good about that, too. So I opened the floor. I told him if he needs anything, ask me and we'll. We'll. We'll kick it off and see what he wants to do later.
+[18:48:02] You: Okay, awesome.
+[18:48:04] You: That's great.
+[18:48:05] You: Let's see here.
+[18:48:08] You: All right, well.
+[18:48:11] You: We've got 12 minutes until stand up.
+[18:48:14] You: So I will see you here in about 12 minutes.
+[18:48:17] You: For our first team. Stand up.
+[18:48:18] System: Excellent. Thank you.
+[18:48:18] System: Sir.
+[18:48:20] System: That's exciting.
+[18:48:21] You: Yeah.
+[18:48:21] System: Legit. I like talking to people.
+[18:48:25] You: I'm looking forward to.
+[18:48:28] You: Getting backfilled on input and have more synchronous team time.
+[18:48:37] System: Yeah.
+[18:48:38] You: All right, man.
+[18:48:39] System: Great work.
+[18:48:39] System: Thanks.
+[18:48:40] System: Sir.
+[18:48:40] You: I'll talk to you in a bit.

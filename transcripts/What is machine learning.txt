@@ -1,0 +1,78 @@
+================================================================================
+What is machine learning
+ID: 4b65ae8f-ac80-43b1-809d-b85b54b5a944
+Created: 2025-09-29T13:27:00.556Z
+Updated: 2025-09-30T12:04:33.622Z
+Segments: 70
+================================================================================
+
+[13:27:16] System: So what is machine learning?
+[13:27:19] System: In this video, you learn the definition of what it is and also get a sense of when you might want to apply it. Let's take a look together.
+[13:27:28] System: Here's the definition of what is machine learning? The distributed to author Samuel.
+[13:27:34] System: He defined machine learning as the field of study that gives computers the ability to learn.
+[13:27:38] System: Without being explicitly programmed. Sammy's claim to fame was that back in the 1950s, he wrote a checklist playing program.
+[13:27:47] System: And the amazing thing about this program was that author Samuel himself wasn't a very good checkers player.
+[13:27:54] System: What he did was he had programmed a computer to play maybe tens of thousands of games against itself.
+[13:28:00] System: And by watching what sorts of board positions tended to delete the wins and what positions tend to delete the losses. The checkers playing program learned over time whether good or bad board positions. By trying to get to good and avoid bad positions, this program learned to get better and better at playing checkers.
+[13:28:20] System: Because a computer had the patience to play tens of thousands of games against itself.
+[13:28:25] System: But was able to get so much checkers playing experience that eventually it became a better checkers player.
+[13:28:32] System: Than author Samuel himself.
+[13:28:34] System: Now throughout these videos, besides me trying to talk about stuff.
+[13:28:38] System: I'll occasionally ask you a question.
+[13:28:40] System: To help make sure you understand the content.
+[13:28:43] System: Here's one about what happens in the computer. Had played far fewer games.
+[13:28:48] System: Please take a look and pick whichever you think is a better answer.
+[13:29:09] System: Thanks for looking at the quiz. And so if you had selected this answer,
+[13:29:16] System: With a made it worse, then you got it right.
+[13:29:19] System: In general, the more optionalities you give a learning algorithm to learn.
+[13:29:23] System: The better it will perform.
+[13:29:25] System: If you didn't select the correct answer the first time, that's totally okay too.
+[13:29:30] System: The point of these quiz questions isn't to see if you can get them all correct in the first try.
+[13:29:35] System: These questions are here just to help you practice the concepts you're learning.
+[13:29:40] System: Author Samuel's definition was a rather informal one.
+[13:29:42] System: But in the next two videos, we'll dive deeper together into one of the major types of machine learning algorithms.
+[13:29:51] System: In this class, you learn about many different learning algorithms. The two main types of machine learning are supervised learning and unsupervised learning.
+[13:30:02] System: We'll define what these terms mean more in the next couple videos.
+[13:30:07] System: Of these two. Supervised learning is the type of machine learning that is used most in many real world applications. And there has seemed the most rapid advancement and innovation.
+[13:30:19] System: In this specialization, which has three causes in total.
+[13:30:23] System: The first and second courses will focus on supervised learning, and the third will focus on unsupervised learning, recommender systems, and reinforcement learning.
+[13:30:34] System: By far the most used types of learning algorithms today are supervised learning, unsupervised learning, and recommender systems.
+[13:30:42] System: The other thing we'll spend a lot of time on in this specialization is practical advice for applying learning algorithms.
+[13:30:50] System: This is something I feel pretty strongly about.
+[13:30:53] System: Teaching about learning algorithms is like giving someone a set of tools.
+[13:30:58] System: An equally important, or even more important than making sure you have great tools is making sure you know how to apply them.
+[13:31:06] System: Because you know, what good is it if someone were to give you a standard yacht hammer or a steady hand drill and say good luck. Now you have all the tools you need to build a three story holes.
+[13:31:18] System: Doesn't really work like that.
+[13:31:20] System: And so too in machine learning.
+[13:31:22] System: Making sure you have the tools is really important, and so it's making sure that you know how to apply the tools of machine learning effectively.
+[13:31:31] System: So that's what you get in this class, the tools as well as the skills and applying them effectively.
+[13:31:38] System: I regularly visit with friends and teams in some of the top tech companies, and even today I see experienced machine learning teams apply machine learning algorithms to some problems, and sometimes they've been going at it for six months.
+[13:31:52] System: Without much success.
+[13:31:54] System: And when I look at what they're doing, I sometimes feel like I could have told them six months ago that the current approach won't work.
+[13:32:00] System: And there's a different way of using these tools that will give them a much better chance of success.
+[13:32:06] System: So in this class, one of the relatively unique things you learn is you learn a lot about the best practices for how to actually develop a practical, valuable machine learning system.
+[13:32:17] System: This way, you're less likely to end up in one of those teams that end up losing six months going in the wrong direction.
+[13:32:25] System: In this class, you gain a sense of how the most skilled machine learning engineers build systems and, I hope, focus on supervised learning. And the third will focus on unsupervised learning.
+[13:32:36] System: Recommender systems and reinforcement learning.
+[13:32:39] System: By far did most use. Types of learning algorithms today are supervised learning, unsupervised learning, and recommended systems.
+[13:32:48] System: The other thing we're spending a lot of time on in this specialization is practical advice for applying learning algorithms.
+[13:32:56] System: This is something I feel pretty strongly about.
+[13:32:58] System: Teaching about learning algorithms is like giving someone a set of tools.
+[13:33:04] System: An equally important, or even more important than making sure you have great tools is making sure you know how to apply them.
+[13:33:12] System: Because you know, what good is it if someone were to give you a state of the art hammer or a state of the art handle and say, good luck, now you have all the tools you need to build a three story house.
+[13:33:23] System: It doesn't really work like that.
+[13:33:25] System: And so too in machine learning.
+[13:33:28] System: Making sure you have the tools is really important, and so it's making sure that you know how to apply the tools of machine learning effectively.
+[13:33:36] System: So that's what you get in this class, the tools as well as the skills and applying them effectively.
+[13:33:43] System: I regularly visit with friends and teams in some of the top tech companies, and even today I see experienced machine learning teams apply machine learning algorithms to some problems, and sometimes they've been going at it for six months.
+[13:33:58] System: Without much success.
+[13:33:59] System: And when I look at what they're doing, I sometimes feel like I could have told them six months ago that the current approach won't work. And it's a different way of using these tools that will give them a much better chance of success.
+[13:34:11] System: So in this class, one of the relatively unique things you learn is you learn a lot about the best practices for how to actually develop a practical, valuable machine learning system.
+[13:34:23] System: This way, you're less likely to end up in one of those teams that end up losing six months going in the wrong direction.
+[13:34:30] System: In this class, you gain a sense of how the most skilled machine learning engineers build systems. And I hope you finish this.
+[13:34:38] System: Class as one of those very rare people in today's world.
+[13:34:41] System: Then know how to design and build serious machine learning systems.
+[13:34:46] System: So, lass, machine learning.
+[13:34:48] System: In the next video, let's look more deeply at what is supervised learning and also what is unsupervised learning.
+[13:34:56] System: In addition, you learn when you might want to use each of them. Supervise and unsupervised learning.
+[13:35:02] System: I'll see you in the next video.

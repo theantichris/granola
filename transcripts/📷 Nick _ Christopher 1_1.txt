@@ -1,0 +1,391 @@
+================================================================================
+📷 Nick / Christopher 1:1
+ID: 93501ea7-f1a3-48e8-8cfd-14ca11fb3ba0
+Created: 2025-09-30T16:00:59.069Z
+Updated: 2025-09-30T19:47:13.241Z
+Segments: 383
+================================================================================
+
+[16:01:06] System: Hello.
+[16:01:07] You: Hey, nick.
+[16:01:11] System: Did you just mention me Somewhere in a thread?
+[16:01:13] You: I mentioned the whole team somewhere in a thread.
+[16:01:16] System: Okay?
+[16:01:20] System: That's why I can't find it.
+[16:01:24] You: It was just because of Lisa Frank thing.
+[16:01:32] You: Devrandom.
+[16:01:35] You: Yeah.
+[16:01:52] System: Oh, join. Oh, dev random. Oh, I'm not in this channel.
+[16:01:55] You: You're not a dev random.
+[16:01:55] System: No wonder.
+[16:01:58] System: No.
+[16:01:58] You: How is that possible?
+[16:01:59] System: I'm in random.
+[16:02:01] System: What's the difference between random and Dev random?
+[16:02:04] You: Dev Random is just developer stuff.
+[16:02:08] System: Okay?
+[16:02:09] You: Developer specific stuff.
+[16:02:11] You: That everybody in Random might not get.
+[16:02:22] System: Oh, man, I've been missing out on all this stuff.
+[16:02:25] You: Yeah.
+[16:02:28] You: Did you not run the workflow that I created that would add you to a bunch of channels?
+[16:02:36] System: I'm sure I did.
+[16:02:37] You: Okay, then it's probably my fault. Maybe I forgot to put different on there.
+[16:02:41] System: But.
+[16:02:43] System: I mean, that was a while ago now. I don't know.
+[16:02:50] System: Yeah. I do not want to retire to a farm.
+[16:02:57] System: It's the old phrase getting put out to pasture.
+[16:02:57] You: Well.
+[16:03:01] You: Put me out to pasture because it sounds peaceful.
+[16:03:08] System: Man now.
+[16:03:09] System: I'm going to have to.
+[16:03:12] System: Now. I've got months of reading to catch up on.
+[16:03:13] You: I'm going to see a dip in Nick's productivity.
+[16:03:18] System: Yep.
+[16:03:20] You: Just ask Slack to summarize it.
+[16:03:23] System: Yeah.
+[16:03:27] System: IOS 26 feels real slow.
+[16:03:32] System: Yeah. You know, I. I don't think it. It. It's not any slower. It's not any faster. It. It just. It is. And it. It was.
+[16:03:43] System: Yeah, it looks more like plastic bubbles and feels cheap.
+[16:03:47] System: I don't think it feels cheap if. If anything.
+[16:03:51] System: I. I think that.
+[16:03:53] System: You know, they. Some of the things they did are nice.
+[16:03:57] System: But.
+[16:03:59] System: Some of it is just stupid.
+[16:04:02] System: Like how?
+[16:04:04] System: I don't know.
+[16:04:05] System: The. The. The corners are so damn rounded.
+[16:04:08] System: Like.
+[16:04:09] System: I would never have an app with rounded corners that. With that large of a radius like that. That's absolutely ridiculous.
+[16:04:18] You: Man 20 years ago. People love their rounded corners, though.
+[16:04:18] System: And.
+[16:04:22] System: Oh, yeah.
+[16:04:23] System: Yeah. I mean, don't get me wrong. Rounded corners are great. I. I love them.
+[16:04:27] System: But I don't need them like, you know, that big. It's like, I just need a little. Like, just give me a little round. I'm good.
+[16:04:34] System: You know, or. Or the, like, when the, like. I think it happens on, like, finder windows.
+[16:04:41] System: Is it a finder window? Yeah, like if you scroll all the way to the.
+[16:04:46] System: I've seen it in some places where if you scroll the. The scroll bar all the way to the bottom.
+[16:04:51] System: Like the scroll bar disappears into the rounded corner.
+[16:04:55] System: Because it doesn't. It wasn't rendering right.
+[16:05:00] You: Well.
+[16:05:00] System: Although they might have. Maybe they fixed that.
+[16:05:03] You: I specifically on the iPhone and the iPad. I think the liquid glass stuff that's clear or tinted looks bad.
+[16:05:04] System: Because my machine.
+[16:05:14] You: That to me just looks. I've tried it. I'm like, no, this just looks horrible. I will just stick to the normal dark icons, and I think that looks fine.
+[16:05:22] You: I don't think my phone's any slower.
+[16:05:24] You: But I also did a fresh install.
+[16:05:28] You: Which I always do whenever there's a major update. I just wiped the phone. Reinstall the new OS to get rid of all of the old stuff.
+[16:05:35] You: Now, Casey, my wife, she's complaining that her phone slowed down when she does have an older phone.
+[16:05:43] You: But it's not, like, that much older. Hold on a second. What do I have?
+[16:05:56] You: So I have a 14, so she has a 13, so it's not that old.
+[16:06:01] You: But she's complaining that it's slow, but she didn't do a fresh install.
+[16:06:05] You: She just ran the update.
+[16:06:09] System: Yeah, I've got a 16. So it. It runs. It runs just fine.
+[16:06:18] System: Yeah. I don't know.
+[16:06:19] You: I have no desire to get a new phone because when I use this for it works perfectly fine, which is pretty much nothing. It just sits on my desk unless I leave.
+[16:06:31] You: And then when I leave, it's mostly playing music.
+[16:06:31] System: Then why would you ever leave the.
+[16:06:33] System: Hell.
+[16:06:37] System: Yeah.
+[16:06:40] System: Yeah.
+[16:06:42] System: Well, anyway. Yeah.
+[16:06:45] System: Yeah. All right.
+[16:06:49] System: What else is new. So my. My desire to. To splurge on a. On a brand new, shiny new monitor.
+[16:06:56] System: With my $500.
+[16:07:00] System: Of new higher office update budget or whatever it's called.
+[16:07:06] System: The. The monitor that was supposed to be out.
+[16:07:10] System: At the beginning of August, then the end of August, then the middle of September. September is now early November.
+[16:07:19] System: So.
+[16:07:21] System: I won't. I will not be using my budget to. To buy a spiffy new monitor.
+[16:07:28] You: While it refreshes every three years.
+[16:07:29] System: And at that rate,
+[16:07:32] System: Yeah.
+[16:07:34] System: Yep.
+[16:07:37] System: But in the meantime, I'll probably just go. I don't know.
+[16:07:40] System: Buy some other. Maybe get some new headphones.
+[16:07:43] System: Maybe I'll get a keyboard like yours.
+[16:07:45] System: Because my old Apple keyboard, all the letters are starting to wear off and whatnot, so.
+[16:07:50] You: Oh, my God.
+[16:07:52] You: It's funny that you mentioned that, because actually, here's what I'm doing now.
+[16:07:56] You: Is that I'm using my normal Corsair keyboard.
+[16:08:00] You: And then I have my magic keyboard on my shelf under my desk for when I need to use touch. And then I just stick my hand over there and then use it to use the Touch id. But I'm not even using it as a keyboard anymore. It got to be too much.
+[16:08:15] You: So I'm using my normal mechanical keyboard.
+[16:08:19] You: That's an actual decent keyboard.
+[16:08:26] You: But actually. And I actually looked, and you can take apart the Apple keyboard.
+[16:08:34] You: And get just the pieces as a touch ID and then plug it in with USB to it if you wanted to do that.
+[16:08:42] You: I probably won't do that.
+[16:08:46] You: But. Yeah. So it's just sitting over here. I need touch id. I just stick my hand right over here. Hit touch id. It's on a shelf under the desk, so I don't see it. And I'm using an actual keyboard. That feels good to use.
+[16:08:46] System: Yeah.
+[16:08:58] You: I stopped using the magic mouse, and I'm using my normal Corsair mouse.
+[16:09:05] You: It's been a much better experience until I use the MacBook without a keyboard.
+[16:09:11] You: And they put that stupid globe button where the control button is on a normal keyboard.
+[16:09:18] You: And it messes up my muscle memory.
+[16:09:21] You: I'm so upset about. Like, everyone's complaining about liquid glass shit, and I'm like,
+[16:09:28] You: Put a different key layout than you do on your actual keyboards.
+[16:09:35] You: And so it's gonna mess people up using the control key, but they don't care.
+[16:09:39] You: Why should they? People are gonna buy it anyway.
+[16:09:40] System: Yeah.
+[16:09:43] System: Yep.
+[16:09:44] System: That's true.
+[16:09:47] System: Yeah.
+[16:09:48] System: Me. I used to always when. When we had our tracker office here in Denver.
+[16:09:57] System: I was responsible for. For doing all of the hardware acquisitions.
+[16:10:02] System: And, you know, like, basically, you know, ordering shit from the Apple Store.
+[16:10:06] System: And hell, even going to the Apple Store and, you know, picking up stuff, swapping, recycling, whatever.
+[16:10:12] System: And. And so I always.
+[16:10:15] System: I was always able to, you know, build a better life by, you know, stealing office supplies.
+[16:10:22] System: You know, there. There was always something that fell off the truck.
+[16:10:26] System: That ended up here at home.
+[16:10:27] You: Ma'am.
+[16:10:33] You: Finish your story that I got a related one.
+[16:10:37] System: But, yeah, now that. Now that, you know, there's no more office.
+[16:10:42] System: And the company no longer exists and, you know, working from home.
+[16:10:47] System: There's no truck for. For things to fall off of anymore.
+[16:10:53] System: So yeah.
+[16:10:53] You: I feel you there.
+[16:10:54] System: All my. All my shits outdated.
+[16:10:58] You: A long time ago.
+[16:11:00] You: Like 2004. I worked at a newspaper.
+[16:11:07] You: As the website and technology director at a newspaper.
+[16:11:13] You: And being a newspaper. It was the whole Mac egos. Like everything was a Mac ecosystem. We had big old.
+[16:11:20] You: Mac, like three different server back servers in the back room and everything.
+[16:11:26] You: And then the company that owned the newspaper did all these upgrades, and we had to decommission these servers. All three of them bitches ended up at my house.
+[16:11:38] System: Nice.
+[16:11:41] System: Were they like, were they the. The macOS or x serves?
+[16:11:46] You: They were just basically MacProdeskops towers. Yeah.
+[16:11:49] System: Okay?
+[16:11:53] You: I use those forever. It was nice.
+[16:11:57] System: Nice.
+[16:12:01] System: Yeah.
+[16:12:02] System: That reminds me even a longer time ago. Mid 2000? S.
+[16:12:11] System: When I was working for cheap tickets.
+[16:12:14] System: We were running everything on.
+[16:12:19] System: Son. Ultra Spark 5s.
+[16:12:24] System: And at some point.
+[16:12:27] System: They did, like, a big hardware refresh.
+[16:12:30] System: And they were like, all right, you know, we're going to get rid of all these Spark 5s. Like, does anybody want some?
+[16:12:37] System: So I grabbed five of them. I had a stack of five spark fives.
+[16:12:42] System: And.
+[16:12:43] System: I ended up giving four of them away to another friend of mine who was really into sun microsystem stuff.
+[16:12:52] System: And he was actually doing, like, Solaris training courses.
+[16:12:55] System: Like. Like consulting wise. He was, you know, offer. And. And so it was.
+[16:13:02] System: Great for him just to suddenly get a whole bunch of machines. And now he could set up labs and.
+[16:13:07] System: You know, work on it. Work on his course material and whatnot.
+[16:13:13] System: But, yeah, then eventually I was just like, you know what this is? This is just taking up room. And so I took it to a used computer shop, and I'm just like, here, take it.
+[16:13:23] System: Like I don't need it anymore.
+[16:13:25] System: But that was kind of fun.
+[16:13:30] System: Yeah.
+[16:13:32] System: Anyway, what else?
+[16:13:32] You: Yeah, well, sure glad Gran Dernola notes aren't public.
+[16:13:37] You: Because we might be in trouble.
+[16:13:40] You: Talking about?
+[16:13:41] You: Things falling off the company trucks.
+[16:13:47] System: Oh, yeah, I forgot about that.
+[16:13:51] System: Yeah.
+[16:13:51] You: I'll not add those to Lattice. Which also our notes and Modest are private. Even when Brian takes over and you start reporting to him.
+[16:14:00] You: He won't be able to see any of our one on one notes.
+[16:14:04] System: Okay?
+[16:14:06] You: Your growth plan, your feedback, stuff like that will move over and he'll be able to view those. But any of the notes that we've had in our time, those stay between you and I.
+[16:14:17] You: That's why they have that separate that's why they have that separate fill at the bottom called shared notes that you can put stuff into.
+[16:14:22] You: That's, like, the public area.
+[16:14:29] System: Speaking of that, when. When does this guy take over?
+[16:14:33] You: Well, he starts on the 6th.
+[16:14:35] System: Oh, that's right.
+[16:14:36] You: And so I'm meeting with Keegan tomorrow about his onboarding.
+[16:14:43] You: Thursday. Wait, what is he at? Today's Tuesday. Yeah, I'm meeting with Keegan on Thursday about what his onboarding is going to look like.
+[16:14:49] You: And how that's going to play out.
+[16:14:53] You: With the recent staffing changes and everything.
+[16:14:55] You: So the original plan is that by the end of October he should be fully in the position.
+[16:15:02] You: Which is thankful because I'm hiring more engineers. And so right now I'm up to 6, 7, 8. Possibly going to put out offer today would take me to nine. I've got another candidate that is going into technical, which would make it to 10, and then another open position.
+[16:15:03] System: Okay?
+[16:15:28] You: There, which would put me at 11.
+[16:15:36] System: So you're staffed up, you're overstaffed.
+[16:15:39] You: Not yet. I'm getting there.
+[16:15:41] You: I think the most people that I've managed here at a time has been 12.
+[16:15:46] System: Okay?
+[16:15:50] System: Yeah, back when I played engineering manager years ago.
+[16:15:54] System: The most I had was 13.
+[16:15:57] You: I think over eight is too many.
+[16:16:00] You: For one person.
+[16:16:03] System: It is.
+[16:16:04] You: To.
+[16:16:05] You: Do. Because a lot of things people don't think about is the time outside of meetings that you've got to spend per person.
+[16:16:13] You: Thinking about growth plans and all of that.
+[16:16:15] You: Kind of stuff.
+[16:16:17] You: Which I sadly and upset Lee don't have as much time to work with you all. Like, we've not even worked on a growth plan the entire time you've been here.
+[16:16:26] System: Yeah.
+[16:16:28] You: Which is, like, one of the things that I love doing.
+[16:16:34] System: So.
+[16:16:36] System: So what can we work on in the next 14 minutes?
+[16:16:39] You: Yeah.
+[16:16:40] You: Well, one thing I would like to ask that I'm asking everyone.
+[16:16:43] You: This week. My question of the week is what's one thing about your role or the work environment here that if we improved, it would make you feel more satisfied?
+[16:16:58] System: More pairing, probably.
+[16:17:01] System: Is. And this is actually something we're just talking with Allison and Matt about asking you that brought up the topic of what do y'all feel you need to do to become more full stack.
+[16:17:12] System: You know, because that's where the company wants to go.
+[16:17:17] System: You know, and we talked about some things, you know, but. But ultimately it was like. Yeah, just like, pairing, like, seeing how it's done and being able to.
+[16:17:25] System: You know, work with someone and get that hands on experience.
+[16:17:29] System: Instead of, you know, groping around in the dark, trying to figure this out.
+[16:17:34] System: Or what documentation should I be reading? What's the command?
+[16:17:39] System: This pr check failed. What do I do? I don't know.
+[16:17:42] System: If you've got a pair.
+[16:17:43] System: You know right away.
+[16:17:44] You: Okay?
+[16:17:45] System: So.
+[16:17:46] You: What's getting in the way of that?
+[16:17:48] System: Nothing.
+[16:17:50] System: Nothing at all.
+[16:17:51] System: Well, I mean.
+[16:17:53] System: For. For me to reach it out to, you know, somebody on the inputs team. There's absolutely nothing getting in the way of that.
+[16:18:01] System: Is what would maybe be nice. And let's not say that I haven't paired with people on other teams as well. I've done that, but it's. You just don't see it.
+[16:18:09] System: Happening quite as much.
+[16:18:11] System: So I think it might be a good opportunity.
+[16:18:15] System: Using the Shift to full stack, I think would be a good way to, you know, encourage just more pairing.
+[16:18:23] System: You know, front end engineers with back end engineers.
+[16:18:27] System: And potentially doing it not only within your team, but cross team.
+[16:18:31] System: And if you're doing across team now, you're learning, you know, other parts of the site.
+[16:18:37] System: And you're also learning and meeting new people. I mean, well, not necessarily new people, but.
+[16:18:43] System: You know what I mean?
+[16:18:45] System: You're building those work relationships.
+[16:18:47] You: Yeah.
+[16:18:48] System: So.
+[16:18:49] You: I'm crafting up.
+[16:18:54] You: A growth area for this right now. So the first thing I'm going to ask you is are you aware of the pair programming channel?
+[16:19:02] System: Yes.
+[16:19:03] You: Okay. All right. You weren't aware of Dead Red? I thought you just wanted to make sure. All right.
+[16:19:10] You: So I asked you what's getting in your way of this?
+[16:19:14] You: Doesn't seem like there's a lot. So my next question is going to ask, what's stopping you from doing this?
+[16:19:26] System: Being scared to talk to other people.
+[16:19:29] You: I don't believe that.
+[16:19:33] You: But is that true?
+[16:19:35] System: No, no, there's absolutely nothing stopping.
+[16:19:36] You: Okay?
+[16:19:39] You: All right.
+[16:19:41] You: That's one of my favorite questions to ask when people are like, well, I really want to be able to do this. I'm just like, well, what's stopping you? And most of the time, it's like, nothing's stopping me.
+[16:19:48] System: Yeah.
+[16:19:51] You: This is something that I could do right now.
+[16:19:52] System: It's fear.
+[16:19:54] System: Fear rejection.
+[16:19:57] You: That's how I ended up with dreadlocks is when I was younger and stuff. I wanted them during Covid. It just occurred to me. I was like, there's actually nothing stopping me from doing that.
+[16:20:06] You: And so here we are. And you report to a manager who has dreadlocks.
+[16:20:14] System: Yeah.
+[16:20:15] You: All right.
+[16:20:16] You: Are you familiar with smart goals?
+[16:20:21] System: Probably something.
+[16:20:22] You: Specific, measurable, achievable, relevant, time bound.
+[16:20:26] System: Yeah, yeah.
+[16:20:29] You: So let's take this area of what I called it to make it sound all professional in lattice is strength and culture of paraprogramming.
+[16:20:46] You: So to actually make this a growth area and a goal that you want to achieve.
+[16:20:52] You: We've got to say more than just I would like to pair more.
+[16:20:55] You: Because then that's not a goal, that's just a desire.
+[16:20:58] You: And so the next step to this is for you.
+[16:21:04] You: To look through. I just shared you my little write up on smart goals.
+[16:21:10] You: And answer these questions and think about okay?
+[16:21:13] You: What is the specific goal that I. What is the end? What am I trying to do here? And he did mention some of it that you had in here.
+[16:21:21] You: You know, measurable. How are we going to measure? How are we going to know that we're doing that? You're making progress on the thing that you want to do?
+[16:21:32] You: Is this achievable?
+[16:21:33] You: That's probably an easy one to answer.
+[16:21:35] You: Isn't relevant.
+[16:21:36] You: Also.
+[16:21:37] You: Pretty easy.
+[16:21:37] You: And then, you know, time bound. Like, what's the frame that you're looking at here?
+[16:21:42] You: So your work for the next week.
+[16:21:45] You: Actually two weeks since I won't be here next week.
+[16:21:48] You: Is to.
+[16:21:51] You: Answer these questions. And it doesn't have to be perfect.
+[16:21:59] You: And because what we'll do is you'll answer these questions.
+[16:22:04] You: Oh, are we going to meet? What, is today Tuesday? Yeah. Our next meeting is going to be on my birthday. Let me make sure that I didn't take that off.
+[16:22:13] You: A lot of times I'll take my birthdays off.
+[16:22:15] You: I. It doesn't say that I'm taking that day off, and so I don't think I'm going to take that day off.
+[16:22:21] You: This year, ok?
+[16:22:24] You: Yes.
+[16:22:25] System: Got the 14th.
+[16:22:25] You: Back on track.
+[16:22:26] You: Yeah. October 14th.
+[16:22:30] You: Let's see. And let's set this out.
+[16:22:30] System: All.
+[16:22:30] System: Right.
+[16:22:34] You: Not to the end of the year. And let's actually set this out to the end of November so then we can get this on.
+[16:22:45] You: Your end review.
+[16:22:46] You: All right.
+[16:22:47] You: So I created you a growth area. In there, you have a task called Create smart goal for October14.
+[16:22:52] You: Th.
+[16:22:54] You: Look through this framework.
+[16:22:56] You: Just write down your thoughts.
+[16:22:57] You: You and I will get together, we'll look at that, we'll refine it, and then talk about a plan to make it into action.
+[16:23:03] You: And that's how I do growth.
+[16:23:08] System: Sounds good.
+[16:23:10] You: I might not be very good at it, but I think I sound like I'm very good at it.
+[16:23:17] System: Yeah, well.
+[16:23:19] System: Don't necessarily have to be very good at it. You just need to. To be there, as, I think, the sounding board.
+[16:23:26] System: And somebody.
+[16:23:26] You: You're ultimately the one responsible for your growth, but my job here is to support you in that.
+[16:23:30] System: Right.
+[16:23:31] System: Right.
+[16:23:32] You: But I got to be good at that.
+[16:23:33] You: Because that's my job.
+[16:23:36] System: Yep.
+[16:23:36] You: I enjoy my job.
+[16:23:39] System: Y.
+[16:23:39] System: Ep.
+[16:23:41] You: All right, man.
+[16:23:43] System: I meant to ask how you were handling the departure of your long term manager.
+[16:23:54] You: I mean, you know, there. There's. There's Phils there.
+[16:23:58] You: I understand that these things happen.
+[16:24:03] You: You know, it is what it is. There's not a whole lot that I can, you know, that I can do about it.
+[16:24:13] You: Under, you know, I. You know, I have to, you know, have the same conversation to deal. You know, when this happens, you know about the anxiety around it. I don't know everything.
+[16:24:23] You: That was in the context of Jeff and AKB because, you know, she reported to Jeff.
+[16:24:30] You: And everything like that, so I have no idea.
+[16:24:33] You: Other than what I've been told, which is the thing that you've been told about that.
+[16:24:37] You: You know?
+[16:24:42] You: Gives me some anxiety and stuff like that, but, you know, there's other things that happen.
+[16:24:50] You: Know, I still feel pretty secure as you can anywhere that you're going. I have no indication that I'm on my way out or anything like that. You know, I'm still doing well. I've got stuff to do, receiving good feedback. So, you know, same thing I tell you all that, you know, it's. A surprise to everyone else because they weren't part of the situation.
+[16:25:12] You: It's normally not a surprise to the person that happens to.
+[16:25:22] You: But, you know, I got on LinkedIn and I gave her a recommendation on LinkedIn.
+[16:25:29] You: You know, there. And, you know, she thanked me and I thanked her for what she'd done, and, you know, that's. That's all there is for it right now. I'm sure that, you know, she needs. Whatever the decision, whether it was, you know, her, Jeff, or whatever, you know, there's time. There for her to figure out what's going on and everything.
+[16:25:46] You: And we. We keep moving on.
+[16:25:50] System: Yep.
+[16:25:57] You: And, yeah, I've not reported to her since I took over the R and D team earlier this year.
+[16:26:02] You: In spring, I report ed to David, you know, since then and stuff.
+[16:26:07] You: But, yeah, you know, she's. When I started.
+[16:26:11] You: David, Akb and I were all engineering managers. We are the only engineering managers who were here at that time that were still here. I guess. Allison, until recently.
+[16:26:22] You: All the other managers have been promoted from IC or been new hires.
+[16:26:29] You: So, you know, we had a. And I was. I was Allison's pier for about, like, two weeks, I think, and then she got promoted to director, and I started reporting to her.
+[16:26:43] You: But thank you for asking.
+[16:26:47] You: But, you know, at the end of the day,
+[16:26:48] You: Things are what they are.
+[16:26:50] You: No matter what happens.
+[16:26:52] You: I will be okay.
+[16:26:54] You: No matter what happens, you know you will be okay.
+[16:27:00] System: Yep.
+[16:27:03] System: It's just always hard to. To deal with some of that stuff.
+[16:27:06] System: Right at the time.
+[16:27:07] You: It is.
+[16:27:13] System: Right.
+[16:27:19] System: I thought I had something else I wanted to ask, but I can't.
+[16:27:35] System: I know. I had something else I wanted to ask and I totally blanking on it. I should have written it down somewhere.
+[16:27:40] You: Yeah, like lattice.
+[16:27:43] System: Yeah, yeah.
+[16:27:48] System: I never think.
+[16:27:49] System: To it pops up with a reminder. Hey, talk about these things.
+[16:27:57] System: And. And I always. What? What is lattice? Maybe that will jog my memory. Anything? I'm excited. Blockers, issues. What else is on my mind?
+[16:28:08] System: No, none of that's ring a bell.
+[16:28:14] System: How's my week going?
+[16:28:18] System: I guess my week is fine.
+[16:28:25] You: So much enthusiasm.
+[16:28:26] System: I have an idoc group.
+[16:28:28] System: Yeah.
+[16:28:29] System: Well, I was also just thinking, I have an eye doctor appointment this afternoon, which I am not excited about.
+[16:28:34] System: Because I'm down to only going.
+[16:28:38] System: I've had eye issues of the past.
+[16:28:41] System: And I would go to the eye doctor, like, I don't know, every four to six months. And now I'm back to just going yearly.
+[16:28:50] System: So. So when I go yearly, that also means they're going to dilate my eyes, which I always hate that so.
+[16:28:58] System: Because you're basically used for the next four to six hours.
+[16:28:58] You: Me too.
+[16:29:03] System: So.
+[16:29:06] System: Yeah.
+[16:29:08] System: Yeah. All right.
+[16:29:10] System: Well.
+[16:29:15] System: I guess that's probably about it for. For today.
+[16:29:17] You: Yeah, sir. All right, well, let me know if you need anything, and I will talk to you later.
+[16:29:23] System: All right, we'll see.

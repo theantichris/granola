@@ -126,3 +126,45 @@ func processNode(node api.ProseMirrorNode, indentLevel int, isTopLevel bool) str
 		return textContent
 	}
 }
+
+// ConvertToPlainText converts a ProseMirror document to plain text (no formatting).
+func ConvertToPlainText(doc *api.ProseMirrorDoc) string {
+	if doc == nil || doc.Type != "doc" || doc.Content == nil {
+		return ""
+	}
+
+	var output []string
+	for _, node := range doc.Content {
+		output = append(output, extractText(node))
+	}
+
+	return strings.TrimSpace(strings.Join(output, "\n\n"))
+}
+
+// extractText recursively extracts plain text from a ProseMirror node.
+func extractText(node api.ProseMirrorNode) string {
+	if node.Text != "" {
+		return node.Text
+	}
+
+	if node.Content == nil || len(node.Content) == 0 {
+		return ""
+	}
+
+	var texts []string
+	for _, child := range node.Content {
+		text := extractText(child)
+		if text != "" {
+			texts = append(texts, text)
+		}
+	}
+
+	// Join with space for inline content, newline for block content
+	separator := " "
+	switch node.Type {
+	case "paragraph", "heading", "listItem":
+		separator = "\n"
+	}
+
+	return strings.Join(texts, separator)
+}

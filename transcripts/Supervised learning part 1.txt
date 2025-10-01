@@ -1,0 +1,84 @@
+================================================================================
+Supervised learning part 1
+ID: 59e8ef48-dbf0-4816-a675-5357e63a3b39
+Created: 2025-09-30T14:03:53.420Z
+Updated: 2025-09-30T14:11:26.573Z
+Segments: 76
+================================================================================
+
+[14:04:18] System: Machine learning is creating tremendous economic values.
+[14:04:35] System: I think 99% of the economic value created by machine learning today is through one type of machine learning.
+[14:04:40] System: Which is called supervised learning.
+[14:04:43] System: Let's take a look at what that means.
+[14:04:46] System: Supervised machine learning, or more commonly supervised learning, refers to algorithms that learn x to Y or input to output mappings.
+[14:04:57] System: The key characteristic of supervised learning is that you give your learning algorithm examples to learn from.
+[14:05:05] System: That include the right answers, whereby right answer I mean the correct label y for a given input x, and is by seeing correct pairs of input x and desired output label y that the learning algorithm eventually learns to take just the input alone.
+[14:05:25] System: Without the output label.
+[14:05:27] System: And gives a reasonably accurate prediction or guess of the output.
+[14:05:32] System: Let's look at some examples.
+[14:05:35] System: If the input x is an email.
+[14:05:37] System: And the output Y. Is this email spam or not spam?
+[14:05:42] System: This gives you your spam filter.
+[14:05:46] System: Or if the input is an audio clip.
+[14:05:49] System: And the algorithm's job is to output the text transcript.
+[14:05:55] System: Then this is speech recognition.
+[14:05:59] System: Or if you want to input English and have it output the corresponding Spanish, Arabic, Hindi, Chinese, Japanese, or something else translation.
+[14:06:08] System: Then that machine translation.
+[14:06:12] System: Or the most lucrative form of supervised learning today is probably used in online advertising.
+[14:06:19] System: Nearly all the large online ad platforms have a learning algorithm that inputs some information about an ad and some information about you.
+[14:06:28] System: And then tries to figure out if you will click on that ad or not.
+[14:06:33] System: Because by showing you ads that you're slightly more likely to click on.
+[14:06:36] System: For these large online ad platforms. Every click this revenue.
+[14:06:41] System: This actually drives a lot of revenue for these companies.
+[14:06:44] System: This is something I once done a lot of work on.
+[14:06:46] System: Maybe not the most inspiring application, but it certainly has a significant economic impact.
+[14:06:52] System: In some companies today.
+[14:06:54] System: Or if you want to build a self driving car.
+[14:06:58] System: The learning algorithm will take its input and image and some information from other sensors, such as a radar or other things.
+[14:07:05] System: And then try to output the position of, say, other cars so your self driving car can safely drive around the other cars.
+[14:07:14] System: Or take manufacturing. I've actually done a lot of work in this sector at landing AI.
+[14:07:21] System: You can have a learning algorithm, Texas input a picture of a manufactured product, say a cell phone that just rolled off the production line.
+[14:07:30] System: And have the learning algorithm output whether or not there is a scratch.
+[14:07:35] System: Dent or other defect in the product.
+[14:07:37] System: This is called visual inspection and is helping manufacturers reduce or prevent defects in their products.
+[14:07:45] System: In all of these applications, you would first train your model with examples of input X and the right answers, that is the labels Y. After the model has learned from these input outputs or X and Y pairs, they can then take a brand new input X. Something is never seen before.
+[14:08:03] System: And try to produce the appropriate corresponding output Y.
+[14:08:09] System: Let's dive more deeply into one specific example.
+[14:08:14] System: Say you want to predict housing prices based on the size of a house.
+[14:08:19] System: You've collected some data and say you plot the data.
+[14:08:22] System: And it looks like this.
+[14:08:24] System: Here on the horizontal axis is the size of the house in square feet.
+[14:08:28] System: And yes, I live in the United States, where we still use square feet. I know most of the world uses square meters.
+[14:08:35] System: And here on the vertical axis is the price of the house in, say, thousands of dollars.
+[14:08:41] System: So with this data, let's say a friend wants to know what's the price for their 750 square foot house?
+[14:08:50] System: How can a learning algorithm help you?
+[14:08:53] System: One thing a learning algorithm might be able to do is, say, fit a straight line.
+[14:08:56] System: To the data.
+[14:08:58] System: And reading off the straight line, it looks like your friend's house could be sold for maybe about, I don't know, $150,000.
+[14:09:08] System: But filling a straight line isn't the only learning algorithm you can use.
+[14:09:12] System: There are others that could work better for this application.
+[14:09:15] System: For example, rather than fitting a straight line, you might decide that it's better to fit a curve, a function that's slightly more complicated or more complex.
+[14:09:25] System: Than a straight line.
+[14:09:27] System: If you do that and make a prediction here.
+[14:09:29] System: Then it looks like, well, your friend's hulls could be solved for closer to $200,000.
+[14:09:37] System: One of the things you see later in this class is how you can decide whether to fit a straight line, a curve, or another function.
+[14:09:45] System: That is even more complex to the data.
+[14:09:49] System: Now, it doesn't seem appropriate to pick the one that gives your friend the best price.
+[14:09:54] System: But one thing you see is how to get an algorithm to systematically choose the most appropriate line or curve or other thing to fit to this data.
+[14:10:06] System: What you've seen in this slide is an example of supervised learning.
+[14:10:10] System: Because we gave the algorithm a data set in which the so called right answer.
+[14:10:14] System: That is the label or the correct price. Y is given for every house on the plot.
+[14:10:21] System: And the task of the learning algorithm is to produce more of these right answers.
+[14:10:26] System: Specifically predicting what is the likely price for other houses like your friend's house.
+[14:10:32] System: That's why this is supervised learning.
+[14:10:35] System: To define a little bit more terminology.
+[14:10:38] System: This housing price prediction is the particular type of supervised learning called regression.
+[14:10:43] System: And by regression, I mean we're trying to predict a number from infinitely many possible numbers.
+[14:10:50] System: Such as the house prices in our example.
+[14:10:53] System: Which could be 150,000 or 70,000 or 183,000 or any other number in between.
+[14:11:02] System: So that's supervised learning.
+[14:11:04] System: Learning inputs, output or x to y mappings. And you saw in this video an example of regression.
+[14:11:12] System: Where the task is to predict a number.
+[14:11:14] System: But there's also a second major type of supervised learning problem.
+[14:11:19] System: Called classification.
+[14:11:21] System: Let's take a look at what that means in the next video.

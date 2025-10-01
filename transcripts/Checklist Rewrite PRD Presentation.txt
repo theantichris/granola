@@ -1,0 +1,416 @@
+================================================================================
+Checklist Rewrite PRD Presentation
+ID: 8fbf74db-edc8-4f90-bcb4-97928228c1df
+Created: 2025-09-30T17:29:33.766Z
+Updated: 2025-09-30T19:54:14.189Z
+Segments: 408
+================================================================================
+
+[17:30:05] System: Hey, Christopher.
+[17:30:06] You: Hey, lou.
+[17:30:22] System: Howdy.
+[17:30:25] You: Haven't seen you all week.
+[17:30:26] You: End.
+[17:30:32] You: Did our one on one get canceled this week?
+[17:30:36] System: I'm off telebat. Then you decline? I need a time.
+[17:30:39] You: Oh, did I? When did you move it to.
+[17:30:43] System: It's at the end of your day on Wednesday at 12:30. So 12, 1, 2.
+[17:30:49] System: 3:30.
+[17:30:50] You: Oh, I didn't decline it. If you put anything during that time, it automatically gets declined, so you'd have to let me know.
+[17:30:58] System: Oh, my bad.
+[17:30:59] You: Yeah. Would you have something booked as focus time in Google Calendar? Yep. There it is.
+[17:31:08] You: It will automatically decline anything that gets booked there.
+[17:31:12] You: And so.
+[17:31:15] You: I never even got a notification.
+[17:31:17] You: That you did that.
+[17:31:19] You: All right. There we go. Now we got it.
+[17:31:22] You: I don't get any Google Calendar emails. I just have them all automatically go to spam.
+[17:31:29] System: Okay? Because I did, like, leave a note and. Okay, I'll just make a point, just like you.
+[17:31:33] You: Yeah.
+[17:31:35] You: All right.
+[17:31:35] You: Awesome.
+[17:31:35] System: I guess it wouldn't matter for that long anymore anyway.
+[17:31:40] You: We'll see.
+[17:31:46] You: You up with a Keegan tomorrow and what Brian's onboarding is going to look like.
+[17:31:53] System: All right.
+[17:31:56] System: Oh, God. When does he start?
+[17:31:58] You: Company camp is on October 6th.
+[17:32:03] System: Okay?
+[17:32:05] System: There's something on the scene, like three fire trucks.
+[17:32:09] System: Have passed by and our dogs are going inside.
+[17:32:12] System: Do you hear that?
+[17:32:13] You: Is the National Guard there yet?
+[17:32:17] System: No.
+[17:32:20] System: Hopefully we'll stay away.
+[17:32:27] System: You're a us citizen, right?
+[17:32:31] System: Yes.
+[17:32:33] You: Let's not go there. Can we even ask that?
+[17:32:33] System: Not to realize.
+[17:32:35] System: Okay?
+[17:32:39] System: I don't know.
+[17:32:45] You: We certainly can't do the interview process.
+[17:32:45] System: Just.
+[17:32:48] System: I love you all.
+[17:32:49] System: But I'm not having this conversation right now.
+[17:32:53] System: I'll cancel the fucking meeting.
+[17:32:57] System: You know what? I do want to. I've been wanting to drop this into the mental health channel, but I have, because there's been literally zero mention of it. I want to drop in something along the lines of the complete lack of discussion of current events.
+[17:33:14] System: At work.
+[17:33:16] System: There is zero of that. And that, to me, is, like, mind blowing. And it's so refreshing.
+[17:33:24] System: I was going to say. So I'm happy to have these conversations, but I will not be using work things and will not do it over slack. I will not do it on this computer.
+[17:33:32] System: If anybody wants to have those conversations, I'll give you my phone number and we can hate each other off the clock.
+[17:33:40] System: Yep.
+[17:33:43] You: I do not condone anything Steven is saying, But I also can't stop you all from what you do.
+[17:33:48] You: And also whatever.
+[17:33:55] You: I ain't getting anybody's P Biz.
+[17:33:57] System: No.
+[17:34:01] System: And that, to me, that's like. What is it? The mental health thing right there? I mean, there's zero talk of it. It's just completely absent.
+[17:34:13] System: And it feels like a safe space.
+[17:34:18] System: We're missing.
+[17:34:21] System: Did I miss anybody?
+[17:34:24] System: Double check.
+[17:34:25] System: Calendar event.
+[17:34:30] System: It shouldn't take very long.
+[17:34:35] System: Jared did not say he was coming, so I'm not super worried about that.
+[17:34:40] System: I want to go ahead since this chat will save history.
+[17:34:48] System: There you go.
+[17:34:49] System: There are some caveats with this currently, which is, in my opinion, super fine.
+[17:34:55] System: Give me a second because I lost. There we go.
+[17:35:00] System: The main caveat is on items 7 and below. 7, 8, 9, 10. Ignore those for now because those are things we need to come up with as a team.
+[17:35:15] System: And I will get to those as we go through this. So I'm just going to go ahead and get started. If the other two don't join.
+[17:35:26] System: They can have the link. It is what it is.
+[17:35:29] System: So the idea here is. And I'll share my screen too, so we can read along.
+[17:35:34] You: Thank you. So now I can close that window.
+[17:35:38] System: So the idea here is to kind of get the beginning conversation with the whole team at this point.
+[17:35:46] System: About rewriting the checklist from scratch.
+[17:35:51] System: From my understanding, there seems to be some appetite for it because there's a large focus on it and because.
+[17:35:59] System: Well.
+[17:36:02] System: Luke has been vibe coding against checklists for a while.
+[17:36:06] System: So I think that's more to the point. Why? But either way, we have, from my understanding, we have some appetite for this.
+[17:36:13] System: And my goal through this meeting is to kind of just give a brief tldr we can talk through it.
+[17:36:21] System: And see. Like, am I overthinking this? Am I throwing out too much? Can we reuse some of what's already there so that way we don't have to run crazy migrations and shit like that later?
+[17:36:32] System: So essentially the executive summary is like checklist feature was built on legacy code, predates our current understanding, essentially our current product requirements and technical standards.
+[17:36:44] System: The technical debt has created insufficiencies in development, poor user experience, and limitations in our ability to implement highly requested features. This document outlines a comprehensive plan to refactor the Checklist feature to address these issues and enable further growth.
+[17:37:01] System: So basically, for me,
+[17:37:06] System: Getting through with the rewrite will allow us to do certain things that have been requested by the user's conditional subtasks.
+[17:37:16] System: Redoing the UI in a way that is more easily navigatable and also so we can scroll and do things as well.
+[17:37:27] System: And making it easier.
+[17:37:31] System: To modify.
+[17:37:32] System: I guess, moving forward because it feels like we've been doing patch on patch on patch.
+[17:37:39] System: So I'm going to go ahead and kind of skip two through four, because those are all really just leadership, et cetera.
+[17:37:54] System: I used Claude to get the functional requirements for both web and mobile. So this is kind of squished together. Requirements for both.
+[17:38:05] System: I didn't want to separate them because at the end of the day, we should be trying to strive for parity.
+[17:38:13] System: But core task management, crud operations, creating and editing.
+[17:38:20] System: Task organizations. They could be section list. Section list? Sorry. Sections can be created, edited, blah, blah, blah. For the majority, this is just creating parity.
+[17:38:26] You: Lamb. Ch.
+[17:38:27] You: Uck was so nice.
+[17:38:28] You: Rosemary.
+[17:38:32] System: With kind of a new back end, sort of.
+[17:38:36] System: Like, Part of this would entail migrating to V3. Part of this would entail.
+[17:38:40] You: I know.
+[17:38:40] You: I like cc.
+[17:38:41] You: R and you don't like C.
+[17:38:42] System: Assessing what we currently have and seeing what's reusable. And part of this is taking a step back and planning. Okay. We know that we have certain things coming up.
+[17:38:42] You: C.
+[17:38:45] You: R.
+[17:38:46] You: You.
+[17:38:47] You: Know.
+[17:38:52] System: How can we best set ourselves up for success?
+[17:38:57] System: Without actually writing that code yet.
+[17:39:01] System: A couple of new things that will be changed. Subtasks we're going to Change it from 1 to 5 to 1 to 3. If the users complain about that, we can make that change. But during a bunch of our user interviews and such,
+[17:39:18] System: 1 through 5. Seems like a bit much for them. They didn't care about that.
+[17:39:27] System: I see Devin typing, so I'm going to wait.
+[17:39:37] System: Exactly. Yeah.
+[17:39:41] System: But the subtasks are basically the same beyond that.
+[17:39:44] System: We'll do again the validation.
+[17:39:46] System: We've talked about conditional subtasks.
+[17:39:51] System: We're talking about conditional tasks, but this one's more of an assumption. So I'm probably going to pull this out, but it would behave the same way as conditional subtasks.
+[17:39:52] You: Don't worry.
+[17:39:52] You: About him. He's getting fired.
+[17:40:04] System: Photo and asset management. Basically, we're going to be adding in the ability to do photos and videos.
+[17:40:12] System: I don't think that's going to be too much of a huge issue because it's just a player and a different URL.
+[17:40:23] System: Asset sources Capture device library selection from existing projects same as it is now Asset display Horizontal scrollable Horizontal scrollable Photo gallery per task.
+[17:40:36] System: Like we do now.
+[17:40:38] System: Thumbnail previews on full screen, gallery navigation, et cetera. Templating will stay the same, largely.
+[17:40:48] System: We're looking at creating section snippets. So, like, instead of either using a template or duplicating.
+[17:40:57] System: Whole checklists we can save.
+[17:41:01] System: As an example.
+[17:41:04] System: Property manager and I need to go through and clean an apartment, but I don't know how many rooms they're going to be, so I just save a snippet of what that section would look like.
+[17:41:14] System: For a single room.
+[17:41:16] System: And then I can just implement sections.
+[17:41:19] System: Snippets.
+[17:41:20] System: Like that. So basically just saving objects instead of text, like we do now with snippets.
+[17:41:27] System: I do not expect this to be v1, but it is something that I would like to plan for.
+[17:41:37] System: User assignment.
+[17:41:41] System: Again, basically parity with what we're moving toward right now, since we're working on, or we'll be working on.
+[17:41:53] System: Since we'll be working on assigning items.
+[17:41:59] System: We can do conversation now if you want to.
+[17:42:04] System: There's not much left for me to go over if you want me to finish, and then we can go back and talk about it.
+[17:42:09] System: Cool. Ok. Anyway, user assignment, we're already working through that, so it should be fairly straightforward.
+[17:42:16] System: The permission system should stay the same.
+[17:42:18] System: And then there's two. Nick's point. Here's the screaming at your phone stuff.
+[17:42:24] System: There will be the voice to create, to complete.
+[17:42:27] System: Automatic task and subtask completion the same as we do right now.
+[17:42:32] System: We're looking at the real time processing status indicators.
+[17:42:37] System: So kind of what we have now with what phase of the stuff are we at?
+[17:42:44] System: Excuse me, et cetera.
+[17:42:49] System: Yeah, I see you.
+[17:42:53] System: Transcript management, so we'll be able to see transcripts at the whole checklist item tasket.
+[17:43:01] System: And then completion tracking and analytics.
+[17:43:05] System: So essentially progress indicators, completion states, PDF and data export.
+[17:43:11] System: We have.
+[17:43:16] System: Been some users that have said that they would like CSV export as well, so we'll likely need to add that. But that happened after I started work on this.
+[17:43:25] System: And then offline functionality.
+[17:43:28] System: View and complete tasks.
+[17:43:29] System: Sync. Pending changes when connections restored. Photo capture and queuing Connection status awareness.
+[17:43:35] System: All basically parity at this point.
+[17:43:42] System: We will continue with the same ui.
+[17:43:45] System: Lazy loading for large data sets.
+[17:43:47] System: So we'll have to find something other than pagination. Unless we're fine with that.
+[17:43:53] System: And then project and system integration V3 conversion real time updates and notifications. So we'll need to implement pusher.
+[17:44:03] System: And we'll have the event tracking, analytics and checklist will still be tied to specific projects.
+[17:44:11] System: There'll be project photo, library integration, project based permission, inheritance. So, like, if you're an admin on the project, you should be an admin on the checklists, things like that.
+[17:44:20] System: And then cross project template sharing.
+[17:44:25] System: We're looking at also getting into checklist management, bulk operations.
+[17:44:30] System: So multi select stuff, mass delete, mass duplicate things like that.
+[17:44:40] System: And then making sure that we've done our best on required field validation, et cetera.
+[17:44:49] System: Excuse me.
+[17:44:51] System: Let's see here. User. I don't think we need to go through that right now. Technical requirements, none of that really matters. I mean, we're going through typescript implementation.
+[17:44:59] System: Greater than 50% coverage.
+[17:45:02] System: And then these are all just the decisions.
+[17:45:05] System: Like we need to make some API decisions. Table list restructure considerations v3 endpoint implementation and the caching strategy.
+[17:45:13] System: How we're going to deal with notifications.
+[17:45:18] System: Determine the importance of backwards compatibility. If we're just going to run migrations.
+[17:45:22] System: And then a ton of front end considerations. Experiments to incorporate caching strategies on the mobile side.
+[17:45:30] System: And how we're going to consume the notifications.
+[17:45:39] System: And then the approach.
+[17:45:43] System: So there are phases that it's been broken out into, but this is an area where I want to work as an exercise with the rest of the team. So ignore everything in this toggle right now because it's going to be bad.
+[17:45:45] You: Right.
+[17:45:45] You: Now.
+[17:45:54] System: But the work approach.
+[17:45:55] You: I'm clicking on it.
+[17:46:01] System: I'm going to delete it now because you all suck.
+[17:46:06] System: And then the work approach essentially will be one of two ways. Let's split the party.
+[17:46:12] System: Basically, some of us work on the new implementation.
+[17:46:21] System: While still working on things to deliver.
+[17:46:23] System: To our customers. Or we just do an in place, piecemeal rewrite where we take a certain thing.
+[17:46:29] System: Rewrite it in place, and then it just shows up.
+[17:46:33] System: There's obvious benefits and considerations for each.
+[17:46:39] System: And then.
+[17:46:39] You: Can I give a suggestion for thought and how to approach this, even though it's not going to be up to me?
+[17:46:47] You: By the time we get to it.
+[17:46:47] System: Of course.
+[17:46:50] You: We've been talking the last few weeks about, like, having these, like, small, more focused iterations and having things to do while we are waiting for the learning from those iterations.
+[17:47:00] You: This is something that can fit really well in those learning periods.
+[17:47:09] System: Something that I was thinking of.
+[17:47:11] System: But.
+[17:47:13] System: My concern with that is that.
+[17:47:19] System: There is a possibility that we may not get a lot of those learning times.
+[17:47:23] System: And so specifically prioritizing it.
+[17:47:27] System: Like I'm down with that for sure, but specifically prioritizing it as well also kind of makes sense.
+[17:47:33] You: Yeah.
+[17:47:34] System: But I leave that open to the team to discuss and be like what is the best route? As long as we are keeping.
+[17:47:40] System: To these three things that we need to do, which is continue to release, do op stuff.
+[17:47:48] You: That. That brings up the point that I was actually talking about earlier today, that we also need to be careful as we're working in the same area of the code. If we have an experiment with something in checklists and we're determining how it engages other changes that we make to the checklist,
+[17:48:02] You: Could money those results.
+[17:48:03] You: So that's nothing that we have to figure out here, but something for the product tree to think about.
+[17:48:11] System: For sure. One thing, though, is I'm not super concerned about, and this depends on the release mechanism and how we decide to approach this work.
+[17:48:20] System: But I'm not super, super concerned about releasing a bunch of new stuff.
+[17:48:27] System: Regarding the rewrite, because the plan is to there's some stuff written in the descriptions for all of the checklist items moving forward, and that'll say something like,
+[17:48:42] System: Write in a way that this can be migrated to the new.
+[17:48:46] System: Checklist after rewrite, something along those lines. And so I'm fine.
+[17:48:52] System: Not releasing a bunch with the rewrite.
+[17:48:57] System: Because we'll have other work planned.
+[17:48:59] System: To continue that.
+[17:49:02] System: Whole. Let's release and get feedback and learnings quickly because right now the rewrite is just rewrited in parity. But make it better.
+[17:49:12] System: To solve a few of these items.
+[17:49:17] System: That users are super complaining about.
+[17:49:21] System: So, yes, that's obviously an open for discussion.
+[17:49:25] System: Steven, you had mentioned you wanted to talk about this. What you got?
+[17:49:38] System: I think this is awesome.
+[17:49:39] System: And I think we should do it.
+[17:49:42] System: Here are some concerns that I have.
+[17:49:46] System: One is that we're talking.
+[17:49:50] System: About?
+[17:49:55] System: Some new features.
+[17:50:01] System: And my experience.
+[17:50:03] System: Is usually that.
+[17:50:09] System: Rewriting to parity first New features second.
+[17:50:15] System: And there's a little bit of a blurring of the line here.
+[17:50:20] System: So I don't think it's a lot of blurring the line, but I just wanted to call it out as, like, a little bit of a concern.
+[17:50:27] System: And then the second thing that.
+[17:50:30] System: I sort of wanted to mention is that.
+[17:50:38] System: I don't see a ton.
+[17:50:41] System: In the executive summary problem statement opportunity stuff.
+[17:50:47] System: About the fact that it's building GraphQL.
+[17:50:53] System: And we want to do more with checklists, and we think the checklist is good.
+[17:50:58] System: But organizationally made a decision to migrate away from GraphQL. And in order to achieve the goals we need to do that.
+[17:51:06] System: And I don't know if that belongs here, so that's sort of like a second.
+[17:51:10] System: I don't know.
+[17:51:11] System: Because I don't really do the whole Communicate Outcome. Org stuff, right?
+[17:51:15] System: But it seems important to me to tell the org that the reason that we're doing this is a little bit because it will enable us to do stuff.
+[17:51:24] System: But it's also a lot because.
+[17:51:32] System: The reason that we're doing it is because we're trying to do this totally.
+[17:51:38] System: We are doing a thing organizationally.
+[17:51:42] System: This isn't by.
+[17:51:45] System: Our goal.
+[17:51:47] System: Yeah, this isn't for sure. Yeah, this isn't worth doing this because we're cool and hip.
+[17:51:54] System: And then the third thing that I haven't seen here.
+[17:52:00] System: Is any discussion about the data model.
+[17:52:02] System: And I don't know if that's a good thing or a bad thing at this level, because I'm not hip to.
+[17:52:15] System: How this should work.
+[17:52:20] System: But. Yeah. So we haven't touched. Yes. I'm sorry.
+[17:52:25] System: I skipped it intentionally.
+[17:52:27] System: Okay. Yeah. Because the stuff that I'm really wondering about is I'm very unclear on the. Has many and belongs to relationships in checklists.
+[17:52:39] System: And those strike me as very important parts of this thing. So those are the questions, areas of questions that I have.
+[17:52:47] System: Okay?
+[17:52:48] System: So let me address these, if that's okay, and then.
+[17:52:52] You: Can I address one real quick?
+[17:52:54] System: Sure.
+[17:52:55] You: Because I just want to say this.
+[17:52:57] You: Executives do not care about graphql.
+[17:53:02] You: It belongs in the document for while we're doing this.
+[17:53:05] You: But Luke isn't going to be like, oh, yeah, we need to get rid of GraphQL. He doesn't care about green crop.
+[17:53:09] You: Ql. He cares about us delivering features.
+[17:53:13] You: This makes this easier for us to deliver features.
+[17:53:18] You: And get to Luke's vision, and that's what the executive summary is for.
+[17:53:27] System: And I'm fine to modify it to, say, outdated architecture. And we've made a decision discipline wide to remove X, Y and Z, and I'm fine modifying that. That's also why we're doing this. That's why we're having this conversation. So I'm happy modifying it.
+[17:53:43] System: To add a little bit more.
+[17:53:48] System: Context.
+[17:53:50] System: But again, I don't really care about dropping name dropping graphql because I don't think it's going to add any cloud to this.
+[17:54:00] System: Regarding the data models and regarding what I would consider the phased approach.
+[17:54:06] System: And Nick. I'll address you stuff in a second.
+[17:54:09] System: Nick and I had already started talking a little bit about the data model. Came up, I think in study hall or something.
+[17:54:15] System: About the back end stuff.
+[17:54:23] System: I think it's worth it to take a step back and look at how it is now, because if we can modify in place and just make things optional.
+[17:54:31] System: That'll save us a ton of time.
+[17:54:33] System: And we won't have to do migrations or worry about backwards compatibility, things like that.
+[17:54:39] System: So I think it'd be worth it to do that.
+[17:54:44] System: And I think.
+[17:54:50] System: Give me a second. Slack is being extremely stupid right now. Sorry.
+[17:54:56] System: Yeah, agreed. And I don't want to have to deal with any of that if we can avoid it. Right, so if we, say, for instance, make modifications to the checklist table. It's only a couple of fields. Fine. Who cares?
+[17:55:08] System: Right.
+[17:55:12] System: Can you tldr me the first one that you were talking about, Devin? I'm sorry. I should have just addressed them one by one.
+[17:55:22] System: Yeah, maybe I shouldn't have rambled.
+[17:55:25] System: It's okay. I have shitty memory today anyway.
+[17:55:26] You: If I don't ramble, I would never say anything at all, Devin.
+[17:55:30] System: Yeah.
+[17:55:32] System: So I had three things right. One is we already talked about, and then the other one.
+[17:55:40] System: This has a little bit of a blurry boundary. Got it for me.
+[17:55:44] System: Okay, so some of these are put in there because I want to make sure that we end up putting them in.
+[17:55:50] System: Right. But I don't care if it happens during Rev1 because the idea is parity first and then move forward and put these other things in. Some of these are there to keep in mind because these are things that are going to have to go in.
+[17:56:06] System: But I'm with you.
+[17:56:08] System: I think parity first makes sense. It's the easiest to do, quickest to do.
+[17:56:14] System: But there's certain ones that I didn't want to have to write a separate doc for or anything like that that would like. We need to keep our. We need to keep our heads up for this. Like, the big one is the conditional subtask shit, right?
+[17:56:27] System: And I think that's a huge one, because with that, we may actually have to make significant model changes. I don't know.
+[17:56:33] System: But I also didn't want to lose track of that.
+[17:56:37] System: So does that help get rid of some of those blurry lines?
+[17:56:40] System: So what I heard you say is that the things that are blurry lines are the kind of thing that we're trying to do where we say, hey, keep in mind as you're doing this, that this future feature exists, and we probably want to build in a way that supports that, or at least doesn't. Close it off as a possibility.
+[17:57:00] System: Exactly pre plan for the future.
+[17:57:03] System: Essentially.
+[17:57:08] System: And yeah, I will add some V1 V2 notations in there as well. Thanks for that call out.
+[17:57:17] System: Ana.
+[17:57:19] System: Excuse me. So, that said, I'd like you guys to go ahead and chew on this for a while.
+[17:57:24] System: Make your comments. Like I said, ignore.
+[17:57:29] System: The phased approach because we're going to need to come to an agreement on data modeling and blah, blah, blah, and then we can break it out.
+[17:57:35] System: From there.
+[17:57:38] System: Like the risks and mitigations will change based on what we decide to do with essentially the back end. Oh, my God.
+[17:57:48] System: And then the trio will come through.
+[17:57:51] System: And check out the technical metrics, et cetera, and figure out timeline and resources, because all of these are huge lies right now, so ignore them.
+[17:58:01] System: But the key thing is make sure I didn't miss anything. Admittedly, Claude generated a bunch of this, but I went through and verified.
+[17:58:12] System: And then feel free to go. These are the users most these are the most common checklist requirements that we've gotten from users, so feel free.
+[17:58:21] System: To run through and check that out. These are some things that we want to keep in mind.
+[17:58:26] System: But we're not completely sold on them yet.
+[17:58:31] System: Can I ask another pesky question?
+[17:58:34] System: Of course.
+[17:58:35] System: Do you know how to ask any other kind of question?
+[17:58:37] System: That's true.
+[17:58:38] You: Hello.
+[17:58:38] You: Got him.
+[17:58:40] System: One of the things that.
+[17:58:47] System: I had taken away from our conversations with S3 or whatever.
+[17:58:52] System: Is that we are sort of. Oh, I too acute. So I have one after this.
+[17:58:57] System: There's another one.
+[17:59:00] System: Is that we sort of have multiple types of checklists.
+[17:59:11] System: Is exploring that part of this is there.
+[17:59:17] System: I have.
+[17:59:20] System: I'm fine with a rewrite in place that essentially takes all the GraphQL endpoints and turns them into.
+[17:59:28] System: Rest endpoints, and then we're just calling the function that are underlying. That seems like it should mostly be straightforward.
+[17:59:35] System: And we can make the UI call those new functions, and that seems like it should mostly be fine.
+[17:59:42] System: Question I have is the checklist.
+[17:59:46] System: Concept, the right concept, or do we have this?
+[17:59:50] System: Thing that is a to do.
+[17:59:53] System: And then below the to do are like several types of checklists.
+[17:59:59] System: That sort of inherit.
+[18:00:01] System: The stuff from to do.
+[18:00:03] System: And then those types of checklists would be maybe a project type checklist.
+[18:00:11] System: Or a company type checklist.
+[18:00:14] System: Or a daily checklist. Whether or not those are actually fundamentally different is unclear to me. But do we have explore.
+[18:00:23] System: The data model.
+[18:00:25] System: Like, sit around with one of those little boxes and arrows things. I find the boxes and arrows things to be useful for me to understand.
+[18:00:35] System: The data model sometimes.
+[18:00:38] System: Is that in here or is that not in here? And is that intentional or is that non intentional?
+[18:00:46] System: So not intentional.
+[18:00:55] System: Sorry. I lost the plot. Give me a second.
+[18:01:01] System: There's been talk from multiple sources about are we approaching checklists properly, Is it like a standard operating procedure, or is this a thing that we should be attaching to other things, et cetera, et cetera?
+[18:01:15] System: And for me right now.
+[18:01:19] System: It's less about that.
+[18:01:22] System: And more about making the offering we have.
+[18:01:26] System: Not suck.
+[18:01:27] System: Right, because we get a lot of. We get a lot of support requests about the Wonky ui.
+[18:01:33] System: There's not much we can really do about the UI until.
+[18:01:36] System: We figure out the graph Ql situation till we rewrite the areas that generate that list that causes a full screen rerender. Blah, blah, blah, blah, blah, right?
+[18:01:48] System: So for me, that's the goal. But if we need to take a step back and look at, like, are we actually doing this right? Are we actually viewing checklists the way we need to. Do we even need to do their tasks anymore? Can we just roll those into checklists?
+[18:02:04] System: Those are questions that still have yet to be answered. But we're not the only ones working on that particular question.
+[18:02:11] System: That's a question the remodel is trying to answer. That's a question that.
+[18:02:22] System: So there are still a ton of questions to answer.
+[18:02:27] System: And I'm fine talking through those with regards to this again.
+[18:02:33] System: Leave these as comments. We can break that up and we can talk through what we think.
+[18:02:40] System: They are because there's a lot of opinions.
+[18:02:44] System: Around this, but I don't think it's a definitive decision around.
+[18:02:51] System: Our tasks actually different than checklists because right now they feel the same.
+[18:02:58] System: But our users tend to have different use cases and even between the user's tasks are used differently, et cetera.
+[18:03:08] System: And as mentioned in the statement, the executive summary, it's like we have current product requirements that we didn't have previously.
+[18:03:16] System: Right.
+[18:03:18] System: So maybe that's something that we need to take into consideration as well.
+[18:03:30] You: Yeah, that's been the question. We've all been driving at Daredevil.
+[18:03:39] System: But I also don't know that.
+[18:03:43] System: A parity rewrite is going to take away from. Let me rephrase that.
+[18:03:53] System: There's a world we can live in where a parity rewrite could include tasks.
+[18:04:01] System: But the reason I say that is because tasks can be handled independently.
+[18:04:07] System: Like checklist items.
+[18:04:09] System: Can be handled independently of checklists. Right? So, like, we do a parity rewrite, and then we say, okay.
+[18:04:15] System: Tasks that can be pinned to a project.
+[18:04:17] System: Right? Because you can. You have a project task list, right?
+[18:04:20] System: We add something in that says, okay, pin this, this.
+[18:04:24] System: Is a project checklist. This is like a whole project checklist.
+[18:04:28] System: That shows we can pin checklists, essentially. I think there's some information in there and that would take care of the R Tasks checklist kind of thing. We just pin this checklist to the project.
+[18:04:41] System: But we could also live in a world where we have company wide checklists, as you mentioned before. Right. And taking the time to do the rewrite, which will force us to really go through the data models for us really to go through the code to see what's possible with what we have now.
+[18:05:00] System: Could answer some of these questions as well.
+[18:05:03] System: Like, what can we do with what we have right now versus what should we be doing?
+[18:05:08] System: Yeah, that goes to. I think Nick posted something really interesting, which is like, every time I've been involved in rewrite, it has gone poorly.
+[18:05:15] System: Right.
+[18:05:18] System: And I read that the opposite is true for me, and I mean that as a true statement.
+[18:05:23] System: But the cases where it's not gone well.
+[18:05:27] System: Is when.
+[18:05:30] System: We've been stuck in the middle.
+[18:05:32] System: Right? And so either we go like, okay.
+[18:05:36] System: We took these two things, we sort of learned that the actual remodel, the actual data model that we need, and the actual features that we need. Here they are. This is what it actually looks like. We take the learnings and we build a new thing and migrate those old things to the new things.
+[18:05:53] System: Or we just are, you know, rewriting in place for some underlying technical reason.
+[18:06:02] System: Yeah. Yeah, exactly. And so the billing rewrite, by the way.
+[18:06:06] System: Was we got an entirely new data model.
+[18:06:10] System: We figured out that we had the wrong data model and we needed a new data model, and we moved from the old to the new.
+[18:06:17] System: Right.
+[18:06:18] System: And so I guess what I'm trying to understand.
+[18:06:21] System: Is what we think right now, because I don't actually know the answer to what I think about that.
+[18:06:30] System: Currently.
+[18:06:32] System: See, I don't have an answer for that either, which is why I'm showing this to y'all, so we can kind of spur that conversation. Let's. There's a lot of really smart people on this team, and Christopher.
+[18:06:44] You: Yes.
+[18:06:47] System: For now.
+[18:06:49] System: There's a lot of really smart people on this team, and I am definitely not the smartest on the team.
+[18:06:55] System: I'm just getting the ball started so we can kind of go through this and be like, okay, let's answer this question together. Let's make sure that what we have now isn't something that we can just kind of.
+[18:07:10] System: Isn't something that we can just kind of like. Let's modify it.
+[18:07:13] System: Right. And then that'll give us what we think we need versus if we do the whole.
+[18:07:20] System: If we do the full rewrite, you know, that opens a lot of.
+[18:07:26] System: Doors, but could also be kind of a shit show, right? And so I think what I'd like to do is.
+[18:07:37] System: I'm going to phrase it this way, but I don't mean, like, schedule some quiet time. Let's think through it.
+[18:07:43] System: We're not going.
