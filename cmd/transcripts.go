@@ -57,6 +57,7 @@ func NewTranscriptsCmd(logger *log.Logger) *cobra.Command {
 func writeTranscripts(logger *log.Logger) error {
 	cacheFile := viper.GetString("cache-file")
 
+	fmt.Println("Reading Granola cache file...")
 	logger.Info("Reading Granola cache file", "file", cacheFile)
 	cacheData, err := cache.ReadCache(cacheFile)
 	if err != nil {
@@ -66,6 +67,7 @@ func writeTranscripts(logger *log.Logger) error {
 	logger.Info("Loaded cache data", "documents", len(cacheData.Documents), "transcripts", len(cacheData.Transcripts))
 
 	outputDir := viper.GetString("transcript-output")
+	fmt.Printf("Exporting %d transcripts to %s...\n", len(cacheData.Transcripts), outputDir)
 	logger.Info("Writing transcripts to files", "output", outputDir)
 
 	// Create output directory
@@ -122,6 +124,7 @@ func writeTranscripts(logger *log.Logger) error {
 		count++
 	}
 
+	fmt.Println("✓ Export completed successfully")
 	logger.Info("Export completed successfully", "files", count)
 
 	return nil

@@ -51,7 +51,7 @@ func NewRootCmd(logger *log.Logger) *cobra.Command {
 	return cmd
 }
 
-// Execute creates the logger, initializes configuration, and executes the root command.
+// Execute creates the logger, initializes configuration, and returns the root command.
 func Execute() *cobra.Command {
 	logger := log.NewWithOptions(os.Stderr, log.Options{
 		ReportCaller:    true,
@@ -64,9 +64,6 @@ func Execute() *cobra.Command {
 	})
 
 	cmd := NewRootCmd(logger)
-
-	// Execute the command - errors are handled by Cobra
-	_ = cmd.Execute()
 
 	return cmd
 }

@@ -71,6 +71,7 @@ func writeNotes(logger *log.Logger) error {
 
 	// TODO: Add URL to config.
 	timeout := viper.GetDuration("timeout")
+	fmt.Println("Fetching documents from Granola API...")
 	logger.Info("Fetching documents from Granola API", "timeout", timeout)
 	httpClient := http.Client{Timeout: timeout}
 	documents, err := api.GetDocuments("https://api.granola.ai/v2/get-documents", supabaseContent, &httpClient)
@@ -81,12 +82,14 @@ func writeNotes(logger *log.Logger) error {
 	logger.Info("Retrieved documents", "count", len(documents))
 
 	outputDir := viper.GetString("output")
+	fmt.Printf("Exporting %d notes to %s...\n", len(documents), outputDir)
 	logger.Info("Writing documents to Markdown files", "output", outputDir)
 
 	if err := writer.Write(documents, outputDir, appFS); err != nil {
 		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
 	}
 
+	fmt.Println("✓ Export completed successfully")
 	logger.Info("Export completed successfully", "files", len(documents))
 
 	return nil
