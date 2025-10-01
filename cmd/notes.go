@@ -69,7 +69,6 @@ func writeNotes(logger *log.Logger) error {
 		return fmt.Errorf("%w: %s", ErrDocumentExport, err)
 	}
 
-	// TODO: Add URL to config.
 	timeout := viper.GetDuration("timeout")
 	fmt.Println("Fetching documents from Granola API...")
 	logger.Info("Fetching documents from Granola API", "timeout", timeout)
