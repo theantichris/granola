@@ -45,7 +45,7 @@ func NewRootCmd(logger *log.Logger) *cobra.Command {
 	cmd.PersistentFlags().BoolVar(&debug, "debug", false, "enable debug mode")
 	cmd.PersistentFlags().StringVar(&supabaseFile, "supabase", "", "supabase.json file")
 
-	cmd.AddCommand(NewExportCmd(logger))
+	cmd.AddCommand(NewNotesCmd(logger))
 
 	return cmd
 }
@@ -64,11 +64,8 @@ func Execute() *cobra.Command {
 
 	cmd := NewRootCmd(logger)
 
-	if err := cmd.Execute(); err != nil {
-		logger.Error(ErrRootCmd.Error(), "error", err)
-
-		return nil
-	}
+	// Execute the command - errors are handled by Cobra
+	_ = cmd.Execute()
 
 	return cmd
 }

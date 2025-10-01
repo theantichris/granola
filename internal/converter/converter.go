@@ -47,10 +47,18 @@ func ToMarkdown(doc api.Document) (string, error) {
 	}
 
 	// Write content from ProseMirror if available, otherwise fall back to plain content field
+	// Priority: Notes (new API) > LastViewedPanel.Content (ProseMirror) > OriginalContent (HTML) > Content (raw transcript)
 	var content string
-	if doc.LastViewedPanel != nil && doc.LastViewedPanel.Content != nil {
-		content = prosemirror.ConvertToMarkdown(doc.LastViewedPanel.Content)
-	} else if doc.Content != "" {
+	if doc.Notes != nil {
+		content = strings.TrimSpace(prosemirror.ConvertToMarkdown(doc.Notes))
+	}
+	if content == "" && doc.LastViewedPanel != nil && doc.LastViewedPanel.Content != nil {
+		content = strings.TrimSpace(prosemirror.ConvertToMarkdown(doc.LastViewedPanel.Content))
+	}
+	if content == "" && doc.LastViewedPanel != nil && doc.LastViewedPanel.OriginalContent != "" {
+		content = doc.LastViewedPanel.OriginalContent
+	}
+	if content == "" && doc.Content != "" {
 		content = doc.Content
 	}
 

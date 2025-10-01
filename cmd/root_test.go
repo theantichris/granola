@@ -52,16 +52,16 @@ func TestNewRootCmd(t *testing.T) {
 			t.Error("expected PreRunE to be set")
 		}
 
-		// Check export subcommand is added
+		// Check notes subcommand is added
 		found := false
 		for _, subCmd := range cmd.Commands() {
-			if subCmd.Use == "export" {
+			if subCmd.Use == "notes" {
 				found = true
 				break
 			}
 		}
 		if !found {
-			t.Error("expected export subcommand to be added")
+			t.Error("expected notes subcommand to be added")
 		}
 	})
 }

@@ -18,29 +18,30 @@ import (
 var appFS = afero.NewOsFs()
 
 var (
-	ErrExportCmdInit  = errors.New("failed to initialize the export command")
+	ErrNotesCmdInit   = errors.New("failed to initialize the notes command")
 	ErrSupabaseEmpty  = errors.New("supabase cannot be empty")
 	ErrDocumentExport = errors.New("failed to export documents")
 )
 
-// NewExportCmd creates a new ExportCommand and binds its flags.
-func NewExportCmd(logger *log.Logger) *cobra.Command {
+// NewNotesCmd creates a new notes command and binds its flags.
+func NewNotesCmd(logger *log.Logger) *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "export",
-		Short: "Export Granola notes to Markdown.",
-		Long:  "Export Granola notes to Markdown files in the specified output directory.",
+		Use:        "notes",
+		Short:      "Export Granola notes to Markdown.",
+		Long:       "Export Granola notes to Markdown files in the specified output directory.",
+		SuggestFor: []string{"export"},
 		PreRunE: func(cmd *cobra.Command, args []string) error {
 			if err := viper.BindPFlag("timeout", cmd.Flags().Lookup("timeout")); err != nil {
-				return fmt.Errorf("%w: %s", ErrExportCmdInit, err)
+				return fmt.Errorf("%w: %s", ErrNotesCmdInit, err)
 			}
 			if err := viper.BindPFlag("output", cmd.Flags().Lookup("output")); err != nil {
-				return fmt.Errorf("%w: %s", ErrExportCmdInit, err)
+				return fmt.Errorf("%w: %s", ErrNotesCmdInit, err)
 			}
 
 			return nil
 		},
 		RunE: func(cmd *cobra.Command, args []string) error {
-			return exportNotes(logger)
+			return writeNotes(logger)
 		},
 	}
 
@@ -53,9 +54,9 @@ func NewExportCmd(logger *log.Logger) *cobra.Command {
 	return cmd
 }
 
-// exportNotes loads the contents of supabase.json and uses it to call and retrieve
+// writeNotes loads the contents of supabase.json and uses it to call and retrieve
 // the documents from the Granola API, then writes them to Markdown files.
-func exportNotes(logger *log.Logger) error {
+func writeNotes(logger *log.Logger) error {
 	filename := viper.GetString("supabase")
 
 	if strings.TrimSpace(filename) == "" {

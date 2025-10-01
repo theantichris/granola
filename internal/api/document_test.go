@@ -129,4 +129,132 @@ func TestGetDocuments(t *testing.T) {
 			t.Errorf("expected error containing %q, got %q", "401 Unauthorized", err.Error())
 		}
 	})
+
+	t.Run("handles last_viewed_panel content as JSON string", func(t *testing.T) {
+		t.Parallel()
+
+		// Simulate API returning content as a JSON string (escaped)
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte(`{"docs":[{"id":"doc1","title":"Test","content":"text","created_at":"2024-01-01T00:00:00Z","updated_at":"2024-01-01T00:00:00Z","tags":[],"last_viewed_panel":{"content":"{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Hello\"}]}]}"}}]}`))
+		}))
+		defer testServer.Close()
+
+		httpClient := &http.Client{Transport: testServer.Client().Transport}
+
+		docs, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), httpClient)
+		if err != nil {
+			t.Fatalf("expected no error, got %v", err)
+		}
+
+		if len(docs) != 1 {
+			t.Fatalf("expected 1 document, got %d", len(docs))
+		}
+
+		if docs[0].LastViewedPanel == nil {
+			t.Fatal("expected last_viewed_panel to be present")
+		}
+
+		if docs[0].LastViewedPanel.Content == nil {
+			t.Fatal("expected content to be present")
+		}
+
+		if docs[0].LastViewedPanel.Content.Type != "doc" {
+			t.Errorf("expected type 'doc', got %q", docs[0].LastViewedPanel.Content.Type)
+		}
+	})
+
+	t.Run("handles last_viewed_panel content as JSON object", func(t *testing.T) {
+		t.Parallel()
+
+		// Simulate API returning content as a JSON object (not escaped)
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte(`{"docs":[{"id":"doc2","title":"Test","content":"text","created_at":"2024-01-01T00:00:00Z","updated_at":"2024-01-01T00:00:00Z","tags":[],"last_viewed_panel":{"content":{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"World"}]}]}}}]}`))
+		}))
+		defer testServer.Close()
+
+		httpClient := &http.Client{Transport: testServer.Client().Transport}
+
+		docs, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), httpClient)
+		if err != nil {
+			t.Fatalf("expected no error, got %v", err)
+		}
+
+		if len(docs) != 1 {
+			t.Fatalf("expected 1 document, got %d", len(docs))
+		}
+
+		if docs[0].LastViewedPanel == nil {
+			t.Fatal("expected last_viewed_panel to be present")
+		}
+
+		if docs[0].LastViewedPanel.Content == nil {
+			t.Fatal("expected content to be present")
+		}
+
+		if docs[0].LastViewedPanel.Content.Type != "doc" {
+			t.Errorf("expected type 'doc', got %q", docs[0].LastViewedPanel.Content.Type)
+		}
+	})
+
+	t.Run("handles notes field as JSON object", func(t *testing.T) {
+		t.Parallel()
+
+		// Simulate new API returning notes as a JSON object
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte(`{"docs":[{"id":"doc3","title":"Test","content":"text","created_at":"2024-01-01T00:00:00Z","updated_at":"2024-01-01T00:00:00Z","tags":[],"notes":{"type":"doc","content":[{"type":"paragraph","content":[{"type":"text","text":"Notes content"}]}]}}]}`))
+		}))
+		defer testServer.Close()
+
+		httpClient := &http.Client{Transport: testServer.Client().Transport}
+
+		docs, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), httpClient)
+		if err != nil {
+			t.Fatalf("expected no error, got %v", err)
+		}
+
+		if len(docs) != 1 {
+			t.Fatalf("expected 1 document, got %d", len(docs))
+		}
+
+		if docs[0].Notes == nil {
+			t.Fatal("expected notes to be present")
+		}
+
+		if docs[0].Notes.Type != "doc" {
+			t.Errorf("expected type 'doc', got %q", docs[0].Notes.Type)
+		}
+	})
+
+	t.Run("handles notes field as JSON string", func(t *testing.T) {
+		t.Parallel()
+
+		// Simulate new API returning notes as a JSON string (escaped)
+		testServer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+			w.WriteHeader(http.StatusOK)
+			_, _ = w.Write([]byte(`{"docs":[{"id":"doc4","title":"Test","content":"text","created_at":"2024-01-01T00:00:00Z","updated_at":"2024-01-01T00:00:00Z","tags":[],"notes":"{\"type\":\"doc\",\"content\":[{\"type\":\"paragraph\",\"content\":[{\"type\":\"text\",\"text\":\"Notes string\"}]}]}"}]}`))
+		}))
+		defer testServer.Close()
+
+		httpClient := &http.Client{Transport: testServer.Client().Transport}
+
+		docs, err := GetDocuments(testServer.URL, []byte(accessTokenJSON), httpClient)
+		if err != nil {
+			t.Fatalf("expected no error, got %v", err)
+		}
+
+		if len(docs) != 1 {
+			t.Fatalf("expected 1 document, got %d", len(docs))
+		}
+
+		if docs[0].Notes == nil {
+			t.Fatal("expected notes to be present")
+		}
+
+		if docs[0].Notes.Type != "doc" {
+			t.Errorf("expected type 'doc', got %q", docs[0].Notes.Type)
+		}
+	})
 }
