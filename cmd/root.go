@@ -21,16 +21,16 @@ func NewRootCmd(logger *log.Logger) *cobra.Command {
 		Use:   "granola",
 		Short: "An application for exporting Granola meeting notes.",
 		Long:  "An application for exporting Granola meeting notes to Markdown files.",
-		PreRunE: func(cmd *cobra.Command, args []string) error {
-			if err := viper.BindPFlag("config", cmd.PersistentFlags().Lookup("config")); err != nil {
+		PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+			if err := viper.BindPFlag("config", cmd.Root().PersistentFlags().Lookup("config")); err != nil {
 				return fmt.Errorf("%w: %s", ErrRootCmd, err)
 			}
 
-			if err := viper.BindPFlag("debug", cmd.PersistentFlags().Lookup("debug")); err != nil {
+			if err := viper.BindPFlag("debug", cmd.Root().PersistentFlags().Lookup("debug")); err != nil {
 				return fmt.Errorf("%w: %s", ErrRootCmd, err)
 			}
 
-			if err := viper.BindPFlag("supabase", cmd.PersistentFlags().Lookup("supabase")); err != nil {
+			if err := viper.BindPFlag("supabase", cmd.Root().PersistentFlags().Lookup("supabase")); err != nil {
 				return fmt.Errorf("%w: %s", ErrRootCmd, err)
 			}
 
