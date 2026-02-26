@@ -33,7 +33,16 @@ type CacheData struct {
 	Transcripts map[string][]TranscriptSegment     `json:"transcripts"`
 }
 
+// cacheState holds the inner state structure from the cache file.
+type cacheState struct {
+	State struct {
+		Documents   map[string]json.RawMessage `json:"documents"`
+		Transcripts map[string]json.RawMessage `json:"transcripts"`
+	} `json:"state"`
+}
+
 // ReadCache reads and parses the Granola cache file.
+// Supports both v4 (cache is a JSON object) and v3 (cache is a JSON string).
 func ReadCache(cachePath string) (*CacheData, error) {
 	// Read cache file
 	data, err := os.ReadFile(cachePath)
@@ -41,25 +50,28 @@ func ReadCache(cachePath string) (*CacheData, error) {
 		return nil, fmt.Errorf("failed to read cache file: %w", err)
 	}
 
-	// Parse outer JSON (contains cache as a JSON string)
+	// Parse outer JSON — cache field may be an object (v4) or a string (v3)
 	var outer struct {
-		Cache string `json:"cache"`
+		Cache json.RawMessage `json:"cache"`
 	}
 
 	if err := json.Unmarshal(data, &outer); err != nil {
 		return nil, fmt.Errorf("failed to parse cache JSON: %w", err)
 	}
 
-	// Parse inner JSON (the actual cache data)
-	var inner struct {
-		State struct {
-			Documents   map[string]json.RawMessage `json:"documents"`
-			Transcripts map[string]json.RawMessage `json:"transcripts"`
-		} `json:"state"`
-	}
+	var inner cacheState
 
-	if err := json.Unmarshal([]byte(outer.Cache), &inner); err != nil {
-		return nil, fmt.Errorf("failed to parse cache state: %w", err)
+	// Try v4 format first: cache is a direct JSON object
+	if err := json.Unmarshal(outer.Cache, &inner); err != nil {
+		// Fall back to v3 format: cache is a JSON-encoded string
+		var cacheStr string
+		if strErr := json.Unmarshal(outer.Cache, &cacheStr); strErr != nil {
+			return nil, fmt.Errorf("failed to parse cache field (tried object and string): %w", err)
+		}
+
+		if err := json.Unmarshal([]byte(cacheStr), &inner); err != nil {
+			return nil, fmt.Errorf("failed to parse cache state: %w", err)
+		}
 	}
 
 	// Parse documents
@@ -99,5 +111,5 @@ func GetDefaultCachePath() string {
 	}
 
 	// macOS path
-	return filepath.Join(home, "Library", "Application Support", "Granola", "cache-v3.json")
+	return filepath.Join(home, "Library", "Application Support", "Granola", "cache-v4.json")
 }
