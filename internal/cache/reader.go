@@ -41,16 +41,30 @@ func ReadCache(cachePath string) (*CacheData, error) {
 		return nil, fmt.Errorf("failed to read cache file: %w", err)
 	}
 
-	// Parse outer JSON (contains cache as a JSON string)
-	var outer struct {
-		Cache string `json:"cache"`
+	// Parse outer JSON - cache field may be a JSON string (v3) or object (v6+)
+	var outerRaw struct {
+		Cache json.RawMessage `json:"cache"`
 	}
 
-	if err := json.Unmarshal(data, &outer); err != nil {
+	if err := json.Unmarshal(data, &outerRaw); err != nil {
 		return nil, fmt.Errorf("failed to parse cache JSON: %w", err)
 	}
 
-	// Parse inner JSON (the actual cache data)
+	// Determine if cache is a string (double-encoded) or object
+	var cacheBytes []byte
+	if len(outerRaw.Cache) > 0 && outerRaw.Cache[0] == '"' {
+		// Double-encoded: cache is a JSON string containing JSON
+		var cacheStr string
+		if err := json.Unmarshal(outerRaw.Cache, &cacheStr); err != nil {
+			return nil, fmt.Errorf("failed to parse cache JSON: %w", err)
+		}
+		cacheBytes = []byte(cacheStr)
+	} else {
+		// Direct object: cache is already a JSON object
+		cacheBytes = outerRaw.Cache
+	}
+
+	// Parse cache data
 	var inner struct {
 		State struct {
 			Documents   map[string]json.RawMessage `json:"documents"`
@@ -58,7 +72,7 @@ func ReadCache(cachePath string) (*CacheData, error) {
 		} `json:"state"`
 	}
 
-	if err := json.Unmarshal([]byte(outer.Cache), &inner); err != nil {
+	if err := json.Unmarshal(cacheBytes, &inner); err != nil {
 		return nil, fmt.Errorf("failed to parse cache state: %w", err)
 	}
 
